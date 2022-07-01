@@ -59,8 +59,8 @@ public class CommercialController {
 	
 	@GetMapping("/commerciales/{id}")
 	public Commercial chercherun(@PathVariable("id") int id) {
-		Commercial a=cService.chercherParId(id).get(); 
-		return a; 
+		Commercial c=cService.chercherParId(id).get(); 
+		return c; 
 	}
 	
 	@DeleteMapping("/commerciales/{id}")
@@ -69,8 +69,8 @@ public class CommercialController {
 	}
 	
 	@PutMapping("/commerciales")
-	public void modifier(@RequestBody Commercial a) {
-		cService.ajouter(a); 
+	public void modifier(@RequestBody Commercial c) {
+		cService.ajouter(c); 
 	}
 	
 
