@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Formateur")
 public class Formateur extends Utilisateur{
 
 	@OneToMany(mappedBy="formateur", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Formation> formations;
 
 	public List<Formation> getFormations() {
