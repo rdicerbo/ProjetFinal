@@ -1,0 +1,37 @@
+<h1> Liste formations</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: oldlace">Id Formation</td>
+        <td style="background-color: oldlace">Nom formation</td>
+        <td style="background-color: oldlace">Description</td>
+        <td style="background-color: oldlace">Date debut</td>
+        <td style="background-color: oldlace">Date fin</td>
+        <td style="background-color: oldlace">Prix</td>
+
+        <td style="background-color: oldlace">Action1</td>
+        <td style="background-color: oldlace">Action2</td>
+        <td style="background-color: oldlace">Action3</td>
+
+
+    </tr>
+
+    <tr *ngFor="let f of formations">
+            <td>{{f.idFormation}}</td>
+            <td>{{f.libForm}}</td>
+            <td>{{f.description}}</td>
+            <td>{{f.dateDebut}}</td>
+            <td>{{f.dateFin}}</td>
+            <td>{{f.prix}}</td>
+            <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
+            <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+    
+            <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
+            </td>
+    </tr>
+
+</table>
+
+<button class="class3"  (click)="AjouterFormation()">Ajouter une formation</button>
+<br>

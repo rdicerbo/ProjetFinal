@@ -1,0 +1,11 @@
+
+    <!--Login-->
+    <p *ngIf="invalidLogin">Error login and/or password</p>
+                    
+    <input type="text" name="username" placeholder="Username" class="class2" [(ngModel)]="username">
+    <input  type="password" name="password" placeholder="Password" class="class2"  [(ngModel)]="password">
+    <br>
+    <button class="class2" (click)=authentification()>Connexion</button>
+    <br>
+
+  
