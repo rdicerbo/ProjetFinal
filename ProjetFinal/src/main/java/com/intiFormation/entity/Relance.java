@@ -1,5 +1,7 @@
 package com.intiFormation.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,9 @@ public class Relance {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idRelance; 
 	
+	private LocalDate date; 
+	private double montant;
+	
 	@ManyToOne
 	@JoinColumn(name="idParticipant")
 	private Participant participant;
@@ -20,6 +25,32 @@ public class Relance {
 	@ManyToOne
 	@JoinColumn(name="idAssistant")
 	private Assistant assistant;
+
+	
+	
+	public int getIdRelance() {
+		return idRelance;
+	}
+
+	public void setIdRelance(int idRelance) {
+		this.idRelance = idRelance;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public double getMontant() {
+		return montant;
+	}
+
+	public void setMontant(double montant) {
+		this.montant = montant;
+	}
 
 	public Participant getParticipant() {
 		return participant;

@@ -1,0 +1,23 @@
+<h1> Liste paiements</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: oldlace">Id Paiement</td>
+        <td style="background-color: oldlace">Date paiement</td>
+        <td style="background-color: oldlace">Montant du paiement</td>
+        <td style="background-color: oldlace">Reste à payer</td>
+
+    </tr>
+
+    <tr *ngFor="let p of paiements">
+            <td>{{p.idPaiement}}</td>
+            <td>{{p.date}}</td>
+            <td>{{p.montant}}</td>
+            <td>{{p.reste}}</td>
+         
+    </tr>
+
+</table>
+<td>
+    <button class="class3"  (click)="Retour()">Retour</button>

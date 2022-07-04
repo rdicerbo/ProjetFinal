@@ -1,0 +1,33 @@
+<h1> Liste admins</h1>
+
+
+<table class="center">
+	<tr>
+		<td style="background-color: oldlace">Id</td>
+        <td style="background-color: oldlace">mail</td>
+        <td style="background-color: oldlace">nom</td>
+        <td style="background-color: oldlace">prenom</td>
+        <td style="background-color: oldlace">username</td>
+        <td style="background-color: oldlace">password</td>
+
+        
+        <td style="background-color: oldlace">Action1</td>
+        <td style="background-color: oldlace">Action2</td>
+        
+</tr>
+<tr *ngFor="let a of admins">
+    <td>{{a.id}}</td>
+    <td>{{a.mail}}</td>
+    <td>{{a.nom}}</td>
+    <td>{{a.prenom}}</td>
+    <td>{{a.username}}</td>
+    <td>{{a.password}}</td>
+    <td><button (click)="supprimer(a.id)">Supprimer</button></td>
+    <td><button (click)="modifier(a.id)">Modifier</button></td>
+</tr>	
+		
+</table>
+
+<button class="class3"  (click)="AjouterAdmin()">Ajouter un admin</button>
+<br>
+<button class="class3"  (click)="Retour()">Retour</button>

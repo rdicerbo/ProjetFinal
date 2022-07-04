@@ -67,6 +67,15 @@ export class ListeFormationsComponent implements OnInit {
     this.router.navigateByUrl('afficherFormateurAssocie/' + id)
   }
 
+Admin()
+ {
+   this.router.navigateByUrl('afficherAdmins');
+ }
+
+ Participant()
+ {
+   this.router.navigateByUrl('afficherParticipants');
+ }
 
   GestionFormateurs() {
     this.router.navigateByUrl('afficherFormateur')

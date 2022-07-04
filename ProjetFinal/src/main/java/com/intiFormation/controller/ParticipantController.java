@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Role;
 import com.intiFormation.entity.Utilisateur;
+import com.intiFormation.service.IformationService;
 import com.intiFormation.service.IparticipantService;
 import com.intiFormation.service.IroleService;
 import com.intiFormation.service.IutilisateurService;
@@ -34,11 +36,14 @@ public class ParticipantController {
 	IroleService rService; 
 	
 	@Autowired
+	IformationService fService; 
+	
+	@Autowired
 	BCryptPasswordEncoder bc; 
 	
 
-	@PostMapping("/participants")
-	public void inserer (@RequestBody Participant p) {
+	@PostMapping("/participants/{id}")
+	public void inserer (@RequestBody Participant p,@PathVariable("id") int idFormateur) {
 		p.setPassword(bc.encode(p.getPassword()));
 		pService.ajouter(p);
 		Utilisateur u=uService.chercherParId(p.getId()).get();
@@ -46,7 +51,14 @@ public class ParticipantController {
 		r.add(rService.chercherParId(4).get());
 		u.setRoles(r);
 		uService.ajouter(u);
+		
+		//Ajouter formation au participant
+		List<Formation> f= new ArrayList<Formation>(); 
+		f.add(fService.chercherParId(idFormateur).get());
+		p.setFormations(f);
+		pService.ajouter(p);
 	}
+	
 	
 	@GetMapping("/participants")
 	public List<Participant> cherchertt(){
@@ -65,9 +77,12 @@ public class ParticipantController {
 		pService.supprimer(id);
 	}
 	
-	@PutMapping("/participants")
-	public void modifier(@RequestBody Participant p) {
-		pService.ajouter(p); 
+	@PutMapping("/participants/{id}")
+	public void modifier(@RequestBody Participant p,@PathVariable("id") int idFormateur) {
+		List<Formation> f= new ArrayList<Formation>(); 
+		f.add(fService.chercherParId(idFormateur).get());
+		p.setFormations(f);
+		pService.ajouter(p);
 	}
 
 }

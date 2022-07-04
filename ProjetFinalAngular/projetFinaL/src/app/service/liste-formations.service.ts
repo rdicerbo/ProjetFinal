@@ -42,5 +42,11 @@ export class ListeFormationsService {
     return this.http.get<Formation>('http://localhost:4222/formationsParFormateur/' + idFormateur);
   }
 
+   //Methode recuperer formations associé participant
+   formationsByIdParticipant(idParticipant:number)
+   {
+     return this.http.get<Formation[]>('http://localhost:4222/formationsByIdParticipant/'+idParticipant);
+   }
+
 
 }

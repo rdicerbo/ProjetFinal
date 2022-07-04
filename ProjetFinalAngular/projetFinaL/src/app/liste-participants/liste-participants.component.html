@@ -1,0 +1,36 @@
+<h1> Liste participants</h1>
+
+
+<table class="center">
+	<tr>
+		<td style="background-color: oldlace">Id</td>
+        <td style="background-color: oldlace">mail</td>
+        <td style="background-color: oldlace">nom</td>
+        <td style="background-color: oldlace">prenom</td>
+        <td style="background-color: oldlace">username</td>
+        <td style="background-color: oldlace">password</td>
+
+        
+        <td style="background-color: oldlace">Action1</td>
+        <td style="background-color: oldlace">Action2</td>
+        
+</tr>
+<tr *ngFor="let p of participants">
+    <td>{{p.id}}</td>
+    <td>{{p.mail}}</td>
+    <td>{{p.nom}}</td>
+    <td>{{p.prenom}}</td>
+    <td>{{p.username}}</td>
+    <td>{{p.password}}</td>
+    <td><button (click)="supprimer(p.id)">Supprimer</button></td>
+    <td><button (click)="modifier(p.id)">Modifier</button></td>
+    <td><button (click)="formationAssocie(p.id)">Formations</button></td>
+    <td><button (click)="RelanceAssocie(p.id)">Relances</button></td>
+    <td><button (click)="PaiementAssocie(p.id)">Paiements</button></td>
+</tr>	
+		
+</table>
+
+<button class="class3"  (click)="AjouterParticipant()">Ajouter un participant</button>
+<br>
+<button class="class3"  (click)="Retour()">Retour</button>

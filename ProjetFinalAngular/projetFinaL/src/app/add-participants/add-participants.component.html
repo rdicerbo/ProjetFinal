@@ -1,0 +1,25 @@
+<h1> Ajouter participant</h1>
+
+
+<form (ngSubmit)="AjouterParticipant()">
+
+    
+    Nom : <input type="text" name="nom" placeholder="Nom" [(ngModel)]="participant.nom"/>
+    <br>
+    Prenom : <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="participant.prenom"/>
+    <br>
+    Mail : <input type="text" name="mail" placeholder="Mail" [(ngModel)]="participant.mail"/>
+    <br>
+    Username : <input type="text" name="username" placeholder="Username" [(ngModel)]="participant.username"/>
+    <br>
+    Password : <input type="password" name="password" placeholder="Password" [(ngModel)]="participant.password"/>
+    <br>
+    Formation : <select name="selectedId" [(ngModel)]="selectedId">
+        <option *ngFor="let f of formations" [ngValue]="f.idFormation">
+            {{f.libForm}}
+        </option>
+    </select>
+    <br>
+    <button type="submit">Valider</button>
+    
+</form>

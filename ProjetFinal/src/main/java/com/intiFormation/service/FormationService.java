@@ -6,9 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intiFormation.dao.IformateurDao;
 import com.intiFormation.dao.IformationDao;
-import com.intiFormation.entity.Formateur;
 import com.intiFormation.entity.Formation;
 
 @Service
@@ -65,6 +63,13 @@ public class FormationService implements IformationService{
 	public List<Formation> getByPrice (double prix)
 	{
 		List<Formation> listeF=fordao.findByPrixEquals(prix);
+		return listeF;
+	}
+
+	@Override
+	public List<Formation> chercherAllParByIdPar(int id) {
+		// TODO Auto-generated method stub
+		List<Formation> listeF=fordao.findByParticipants_id(id);
 		return listeF;
 	}
 	

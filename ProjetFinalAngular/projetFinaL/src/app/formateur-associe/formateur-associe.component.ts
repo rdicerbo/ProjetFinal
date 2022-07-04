@@ -39,4 +39,6 @@ export class FormateurAssocieComponent implements OnInit {
     this.router.navigateByUrl('afficherFormation')
   }
 
+
+
 }

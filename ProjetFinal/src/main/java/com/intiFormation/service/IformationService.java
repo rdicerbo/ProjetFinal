@@ -14,6 +14,11 @@ public interface IformationService {
 	public void modifier(Formation f); 
 	public Formation getByName (String libForm);
 	public List<Formation> getByPrice (double prix);
+<<<<<<< HEAD
 	
 	public Formation findByFormateur_id(int id);
+=======
+	public List<Formation> chercherAllParByIdPar (int id);
+	
+>>>>>>> main
 }
