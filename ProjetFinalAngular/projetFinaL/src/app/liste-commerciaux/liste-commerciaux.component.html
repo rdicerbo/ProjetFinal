@@ -1,1 +1,39 @@
-<p>liste-commerciaux works!</p>
+<h1> Liste Commerciaux</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: oldlace">Id Commercial</td>
+        <td style="background-color: oldlace">Mail</td>
+        <td style="background-color: oldlace">Nom Commercial</td>
+        <td style="background-color: oldlace">Prenom Commercial</td>
+
+        <td style="background-color: oldlace">Action1</td>
+        <td style="background-color: oldlace">Action2</td>
+        <td style="background-color: oldlace">Action3</td>
+
+
+    </tr>
+
+    <tr *ngFor="let c of commerciaux">
+        <td>{{c.id}}</td>
+        <td>{{c.mail}}</td>
+        <td>{{c.nom}}</td>
+        <td>{{c.prenom}}</td>
+
+        <td><button (click)="supprimer(c.id)">Supprimer</button></td>
+        <td><button (click)="modifier(c.id)">Modifier</button></td>
+        <td><button (click)="afficher(c.id)">Contacts</button></td>
+
+
+
+
+    </tr>
+
+</table>
+
+<button class="class3" (click)="AjouterCommercial()">Ajouter un commercial</button>
+<br>
+
+<button class="class3" (click)="retour()">Retour</button>
+<br>

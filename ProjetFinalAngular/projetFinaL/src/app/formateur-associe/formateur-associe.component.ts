@@ -12,30 +12,31 @@ import { UtilisateurService } from '../service/utilisateur.service';
 })
 export class FormateurAssocieComponent implements OnInit {
 
-  utilisateur!:Utilisateur;
+  utilisateur!: Utilisateur;
 
-  constructor(private router:Router,
-    private service:UtilisateurService,
+  constructor(private router: Router,
+    private service: UtilisateurService,
     private route: ActivatedRoute) { }
 
   //Methode ngOnInit
-  ngOnInit(): void 
-  {
-    this.utilisateur= new Utilisateur;
+  ngOnInit(): void {
+    this.utilisateur = new Utilisateur;
     this.FormateurAssocie();
   }
 
   //Methode FormateurAssocie
-  FormateurAssocie()
-  {
-    const id=+this.route.snapshot.params['id'];
+  FormateurAssocie() {
+    const id = +this.route.snapshot.params['id'];
     this.service.getById(id).subscribe(
-      response =>
-      {
-        this.utilisateur=response
+      response => {
+        this.utilisateur = response
       }
     )
   }
 
+  // Bouton retour
+  retour() {
+    this.router.navigateByUrl('afficherFormation')
+  }
 
 }

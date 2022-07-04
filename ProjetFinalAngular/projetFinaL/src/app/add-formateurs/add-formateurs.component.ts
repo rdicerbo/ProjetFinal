@@ -18,7 +18,7 @@ export class AddFormateursComponent implements OnInit {
   ngOnInit(): void {
     this.formateur = new Formateur
   }
-  //AjouterFormation
+  //AjouterFormateur
   AjouterFormateur() {
     this.service.ajouterF(this.formateur).subscribe(
       response => {

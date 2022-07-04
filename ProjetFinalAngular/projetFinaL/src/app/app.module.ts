@@ -17,6 +17,10 @@ import { AddFormateursComponent } from './add-formateurs/add-formateurs.componen
 import { ModifFormateursComponent } from './modif-formateurs/modif-formateurs.component';
 import { FormationAssocieeComponent } from './formation-associee/formation-associee.component';
 import { ListeCommerciauxComponent } from './liste-commerciaux/liste-commerciaux.component';
+import { AddCommerciauxComponent } from './add-commerciaux/add-commerciaux.component';
+import { ModifCommerciauxComponent } from './modif-commerciaux/modif-commerciaux.component';
+import { ListeContactsComponent } from './liste-contacts/liste-contacts.component';
+import { ContactsAssociesComponent } from './contacts-associes/contacts-associes.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { ListeCommerciauxComponent } from './liste-commerciaux/liste-commerciaux
     AddFormateursComponent,
     ModifFormateursComponent,
     FormationAssocieeComponent,
-    ListeCommerciauxComponent
+    ListeCommerciauxComponent,
+    AddCommerciauxComponent,
+    ModifCommerciauxComponent,
+    ListeContactsComponent,
+    ContactsAssociesComponent
   ],
   imports: [
     BrowserModule,

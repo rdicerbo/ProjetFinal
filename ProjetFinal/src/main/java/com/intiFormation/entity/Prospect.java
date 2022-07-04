@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Prospect {
 	@Id
@@ -21,6 +23,7 @@ public class Prospect {
 	private String emailProspect;
 	
 	@OneToMany(mappedBy="prospect", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Contact> contacts;
 	
 	

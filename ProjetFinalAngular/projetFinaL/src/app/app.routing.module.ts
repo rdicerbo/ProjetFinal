@@ -1,15 +1,18 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCommerciauxComponent } from './add-commerciaux/add-commerciaux.component';
 import { AddFormateursComponent } from './add-formateurs/add-formateurs.component';
 import { AddFormationsComponent } from './add-formations/add-formations.component';
 
 import { AuthComponent } from './auth/auth.component';
 import { BodyComponent } from './body/body.component';
+import { ContactsAssociesComponent } from './contacts-associes/contacts-associes.component';
 import { FormateurAssocieComponent } from './formateur-associe/formateur-associe.component';
 import { FormationAssocieeComponent } from './formation-associee/formation-associee.component';
 import { ListeCommerciauxComponent } from './liste-commerciaux/liste-commerciaux.component';
 import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.component';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
+import { ModifCommerciauxComponent } from './modif-commerciaux/modif-commerciaux.component';
 import { ModifFormateursComponent } from './modif-formateurs/modif-formateurs.component';
 import { ModifFormationsComponent } from './modif-formations/modif-formations.component';
 
@@ -29,7 +32,10 @@ const routes: Routes = [
   { path: 'afficherFormationAssociee/:id', component: FormationAssocieeComponent },
 
 
-  { path: 'afficherCommerciaux', component: ListeCommerciauxComponent }
+  { path: 'afficherCommerciaux', component: ListeCommerciauxComponent },
+  { path: 'modifierCmmercial/:idCommercial', component: ModifCommerciauxComponent },
+  { path: 'afficherContactsAssocies/:idCommercial', component: ContactsAssociesComponent },
+  { path: 'AjouterCommercial', component: AddCommerciauxComponent }
 
 
 ];
