@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Admin;
 import com.intiFormation.entity.Assistant;
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Role;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IadminService;
@@ -72,4 +73,14 @@ public class AssistantController {
 	public void modifier(@RequestBody Assistant a) {
 		aService.ajouter(a); 
 	}
+	
+	//Methode chercherName
+	@GetMapping("/assistantsByName/{nom}")
+	public Assistant chercherName(@PathVariable("nom") String nom)
+	{
+		Assistant a = aService.getByName(nom);
+				
+		return a;
+	}
+	
 }

@@ -62,9 +62,9 @@ public class FormationService implements IformationService{
 	}
 
 	//Methode getByPrice
-	public List<Formation> getByPrice (double prix)
+	public Formation getByPrice (double prix)
 	{
-		List<Formation> listeF=fordao.findByPrixEquals(prix);
+		Formation listeF=fordao.findByPrixEquals(prix);
 		return listeF;
 	}
 	

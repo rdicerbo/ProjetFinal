@@ -52,4 +52,11 @@ AjouterFormation()
    )
  }
 
+ //Methode afficherFormations
+afficherFormations()
+{
+  this.route.navigateByUrl('afficherFormation');
+}
+
+
 }

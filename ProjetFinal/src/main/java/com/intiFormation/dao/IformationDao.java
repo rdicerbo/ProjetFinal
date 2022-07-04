@@ -9,6 +9,6 @@ import com.intiFormation.entity.Formation;
 public interface IformationDao extends JpaRepository<Formation, Integer>{
 	
 	public Formation findByLibForm(String libForm);
-	public List<Formation> findByPrixEquals(double prix);
+	public Formation findByPrixEquals(double prix);
 	
 }

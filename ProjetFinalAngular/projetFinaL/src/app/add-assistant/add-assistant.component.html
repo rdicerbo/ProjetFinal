@@ -1,0 +1,31 @@
+<h1>Ajouter un assistant</h1>
+
+
+<form (ngSubmit)="AjouterAssistant()">
+    
+    <p>Nom</p>
+    <input type="text" name="nom" placeholder="Nom" [(ngModel)]="assistant.nom">
+    <br>
+
+    <p>Prenom</p>
+    <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="assistant.prenom">
+    <br>
+
+    <p>Adresse mail</p>
+    <input type="text" name="mail" placeholder="Mail" [(ngModel)]="assistant.mail">
+    <br>
+
+    <p>Username</p>
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="assistant.username">
+    <br>
+
+    <p>Password</p>
+    <input type="text" name="password" placeholder="Password" [(ngModel)]="assistant.password">
+    <br>
+    <br>
+    <br>
+    <button class="class1" type="submit">Ajouter</button>
+</form>
+
+<br>
+<button (click)="afficherAssistants()">Retour</button>

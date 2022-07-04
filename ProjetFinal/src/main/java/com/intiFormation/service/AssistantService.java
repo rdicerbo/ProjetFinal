@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.IassistantDao;
 import com.intiFormation.entity.Assistant;
+import com.intiFormation.entity.Formation;
 
 @Service
 public class AssistantService implements IassistantService{
@@ -42,5 +43,14 @@ public class AssistantService implements IassistantService{
 		// TODO Auto-generated method stub
 		adao.save(a); 
 	}
+	
+	//Methode getByName
+	public Assistant getByName (String nom)
+	{
+		Assistant a= adao.findByNom(nom);
+		return a;
+				
+	}	
+
 
 }

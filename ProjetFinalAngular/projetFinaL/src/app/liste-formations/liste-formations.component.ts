@@ -16,6 +16,14 @@ export class ListeFormationsComponent implements OnInit {
   formateur!: Formateur;
 
   
+  filterTerm: string='';
+  selectedF!: string;
+  formation!: Formation;
+
+  selectedId!: number;
+
+  selectedPrice!: number;
+
   @Output() newItemEvent=new EventEmitter<number>();
 
 
@@ -27,6 +35,7 @@ export class ListeFormationsComponent implements OnInit {
   {
     this.chargerFormations();
 
+    this.formation=new Formation;
   }
 
 
@@ -72,6 +81,61 @@ afficher(id:number): void
 {
   this.router.navigateByUrl('afficherFormateurAssocie/'+id)
 }
+
+
+//Methode deconnexion
+deconnexion()
+{
+  sessionStorage.removeItem("token");
+  this.router.navigateByUrl("authentification");
+  console.log("ko");
+}
+
+
+//Methode afficher2
+afficher2()
+{
+  console.log(this.selectedF);
+  this.service.getByName(this.selectedF).subscribe(
+    response =>
+    {
+      this.formation=response;
+    }
+  )
+}
+
+
+//Methode afficherById
+afficherById()
+{
+  console.log(this.selectedId);
+  this.service.getById(this.selectedId).subscribe(
+    response =>
+    {
+      this.formation=response;
+    }
+  )
+}
+
+
+//Methode afficherByPrice
+afficherByPrice()
+{
+  console.log(this.selectedPrice);
+  this.service.getByPrice(this.selectedPrice).subscribe(
+    response =>
+    {
+      this.formation=response;
+    }
+  )
+}
+
+//Methode afficherAssistants
+afficherAssistants()
+{
+  this.router.navigateByUrl('afficherAssistants');
+}
+
 
 
 

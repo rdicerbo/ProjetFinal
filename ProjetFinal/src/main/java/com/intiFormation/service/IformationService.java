@@ -13,5 +13,5 @@ public interface IformationService {
 	public void supprimer(int id); 
 	public void modifier(Formation f); 
 	public Formation getByName (String libForm);
-	public List<Formation> getByPrice (double prix);
+	public Formation getByPrice (double prix);
 }

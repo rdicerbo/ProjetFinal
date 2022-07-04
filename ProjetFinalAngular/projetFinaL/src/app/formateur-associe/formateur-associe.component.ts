@@ -37,5 +37,12 @@ export class FormateurAssocieComponent implements OnInit {
     )
   }
 
+//Methode afficherFormations
+afficherFormations()
+{
+  this.router.navigateByUrl('afficherFormation');
+}
+
+
 
 }
