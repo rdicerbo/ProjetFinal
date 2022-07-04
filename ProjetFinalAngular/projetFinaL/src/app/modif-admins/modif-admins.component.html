@@ -1,0 +1,19 @@
+<h1> Modifier admin {{admin.id}}</h1>
+
+
+<form (ngSubmit)="modif()">
+
+    
+    Nom : <input type="text" name="nom" [(ngModel)]="admin.nom"/>
+    <br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="admin.prenom"/>
+    <br>
+    Mail : <input type="text" name="mail" [(ngModel)]="admin.mail"/>
+    <br>
+    Username : <input type="text" name="username" [(ngModel)]="admin.username"/>
+    <br>
+    Password : <input type="text" name="password" [(ngModel)]="admin.password"/>
+    <br>
+    <button type="submit">Valider</button>
+    
+</form>

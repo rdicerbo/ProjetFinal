@@ -10,5 +10,6 @@ public interface IformationDao extends JpaRepository<Formation, Integer>{
 	
 	public Formation findByLibForm(String libForm);
 	public List<Formation> findByPrixEquals(double prix);
+	public List<Formation> findByParticipants_id(int id);
 	
 }

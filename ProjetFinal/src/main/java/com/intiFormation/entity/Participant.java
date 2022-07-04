@@ -10,18 +10,23 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Participant")
 public class Participant extends Utilisateur{
 	
 	@ManyToMany(cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	@JoinTable(name="T_Formation_Participants",joinColumns = @JoinColumn(name="idParticipant"),inverseJoinColumns = @JoinColumn(name="idFormation"))
 	private List<Formation> formations;
 	
 	@OneToMany(mappedBy="participant", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Paiement> paiements;
 	
 	@OneToMany(mappedBy="participant", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Relance> relances;
 
 	public List<Formation> getFormations() {

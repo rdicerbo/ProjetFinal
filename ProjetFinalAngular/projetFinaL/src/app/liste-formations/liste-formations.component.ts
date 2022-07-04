@@ -73,6 +73,15 @@ afficher(id:number): void
   this.router.navigateByUrl('afficherFormateurAssocie/'+id)
 }
 
+Admin()
+ {
+   this.router.navigateByUrl('afficherAdmins');
+ }
+
+ Participant()
+ {
+   this.router.navigateByUrl('afficherParticipants');
+ }
 
 
 }
