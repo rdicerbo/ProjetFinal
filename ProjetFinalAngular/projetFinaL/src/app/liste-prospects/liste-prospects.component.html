@@ -1,0 +1,42 @@
+<h1> Liste prospect</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: oldlace">Id </td>
+
+        <td style="background-color: oldlace">Nom </td>
+        <td style="background-color: oldlace">Prenom </td>
+        <td style="background-color: oldlace">Mail</td>
+        <td style="background-color: oldlace">Tel</td>
+
+        <td style="background-color: oldlace">Action1</td>
+        <td style="background-color: oldlace">Action2</td>
+        <td style="background-color: oldlace">Action3</td>
+
+
+    </tr>
+
+    <tr *ngFor="let p of prospects">
+        <td>{{p.idProspect}}</td>
+
+        <td>{{p.nomProspect}}</td>
+        <td>{{p.prenomProspect}}</td>
+        <td>{{p.emailProspect}}</td>
+        <td>{{p.numTel}}</td>
+
+        <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
+        <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
+        <td><button (click)=" afficher(p.idProspect)"> Afficher </button></td>
+
+
+
+    </tr>
+
+</table>
+
+<button class="class3" (click)="AjouterProspect()">Ajouter un prospect</button>
+<br>
+
+<button class="class3" (click)="retour()">Retour</button>
+<br>

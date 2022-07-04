@@ -47,5 +47,9 @@ public class ContactService implements IcontactService{
 	public List<Contact> findByCommercial_id(int id){
 		return cdao.getByCommercial_id(id);
 	}
+	
+	public Contact getByProspect_idProspect(int id) {
+		return cdao.getByProspect_idProspect(id);
+	}
 
 }

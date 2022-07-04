@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Contact;
-import com.intiFormation.entity.Prospect;
 import com.intiFormation.service.IcontactService;
 
 @RestController
@@ -59,4 +58,9 @@ public class ContactController {
 		return liste; 
 	}
 	
+	@GetMapping("/contactsIdProsptect/{id}")
+	public Contact chercherunProspect(@PathVariable("id") int id) {
+		Contact c=cService.getByProspect_idProspect(id); 
+		return c; 
+	}
 }

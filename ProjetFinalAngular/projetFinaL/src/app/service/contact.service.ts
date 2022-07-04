@@ -14,4 +14,30 @@ export class ContactService {
     return this.http.get<Contact[]>('http://localhost:4222/contactsIdCommercial/' + id);
 
   }
+
+  //Methode ajouterC
+  ajouterC(c: Contact) {
+    return this.http.post<Contact>('http://localhost:4222/contacts', c);
+  }
+
+  //Methode supprimer
+  supprimer(id: number) {
+    return this.http.delete('http://localhost:4222/contacts/' + id);
+
+  }
+
+  //Methode modifierC
+  modifierC(c: Contact) {
+    return this.http.put<Contact>('http://localhost:4222/contacts', c);
+  }
+
+  //Methode getById
+  getById(id: number) {
+    return this.http.get<Contact>('http://localhost:4222/contacts/' + id);
+  }
+
+  //Methode getByIdProspect
+  getByIdProspect(id: number) {
+    return this.http.get<Contact>('http://localhost:4222/contactsIdProsptect/' + id);
+  }
 }

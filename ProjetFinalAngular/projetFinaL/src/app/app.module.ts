@@ -21,6 +21,11 @@ import { AddCommerciauxComponent } from './add-commerciaux/add-commerciaux.compo
 import { ModifCommerciauxComponent } from './modif-commerciaux/modif-commerciaux.component';
 import { ListeContactsComponent } from './liste-contacts/liste-contacts.component';
 import { ContactsAssociesComponent } from './contacts-associes/contacts-associes.component';
+import { AddContactComponent } from './add-contact/add-contact.component';
+import { AddProspectComponent } from './add-prospect/add-prospect.component';
+import { ListeProspectsComponent } from './liste-prospects/liste-prospects.component';
+import { ModifProspectsComponent } from './modif-prospects/modif-prospects.component';
+import { ContactAssocieComponent } from './contact-associe/contact-associe.component';
 
 
 @NgModule({
@@ -39,7 +44,12 @@ import { ContactsAssociesComponent } from './contacts-associes/contacts-associes
     AddCommerciauxComponent,
     ModifCommerciauxComponent,
     ListeContactsComponent,
-    ContactsAssociesComponent
+    ContactsAssociesComponent,
+    AddContactComponent,
+    AddProspectComponent,
+    ListeProspectsComponent,
+    ModifProspectsComponent,
+    ContactAssocieComponent
   ],
   imports: [
     BrowserModule,

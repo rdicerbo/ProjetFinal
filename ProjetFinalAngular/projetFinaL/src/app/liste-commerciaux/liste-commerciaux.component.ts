@@ -40,7 +40,7 @@ export class ListeCommerciauxComponent implements OnInit {
 
   //Methode modifier
   modifier(idCommercial: number) {
-    this.router.navigateByUrl('modifierCmmercial/' + idCommercial);
+    this.router.navigateByUrl('modifierCommercial/' + idCommercial);
   }
 
 
@@ -49,9 +49,19 @@ export class ListeCommerciauxComponent implements OnInit {
     this.router.navigateByUrl('AjouterCommercial');
   }
 
-  //Méthode AfficherContacts
+  //Methode AfficherContacts
   afficher(idCommercial: number) {
     this.router.navigateByUrl('afficherContactsAssocies/' + idCommercial);
+  }
+
+  //Methode creer Contact
+  CreerContact() {
+    this.router.navigateByUrl('AjouterContact');
+  }
+
+  // Methode creer Prospect
+  CreerProspect() {
+    this.router.navigateByUrl('AjouterProspect');
   }
 
   // Bouton retour

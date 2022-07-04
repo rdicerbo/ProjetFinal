@@ -12,5 +12,6 @@ public interface IprospectService {
 	public List<Prospect> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Prospect p); 
+	public List<Prospect> findByContactsIsNull();
 
 }

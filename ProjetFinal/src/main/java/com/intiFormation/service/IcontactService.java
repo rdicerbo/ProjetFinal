@@ -14,6 +14,7 @@ public interface IcontactService {
 	public void modifier(Contact p); 
 	
 	public List<Contact> findByCommercial_id(int id);
+	public Contact getByProspect_idProspect(int id);
 
 
 }

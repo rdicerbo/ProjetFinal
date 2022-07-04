@@ -76,5 +76,9 @@ export class ListeFormationsComponent implements OnInit {
     this.router.navigateByUrl('afficherCommerciaux')
   }
 
+  GestionsProspects() {
+    this.router.navigateByUrl('afficherProspects')
+  }
+
 
 }
