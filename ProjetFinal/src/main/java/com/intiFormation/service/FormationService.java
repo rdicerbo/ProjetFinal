@@ -73,6 +73,11 @@ public class FormationService implements IformationService{
 		return listeF;
 	}
 	
+	//Methode findByFormateur
+	public Formation findByFormateur_id(int id) {
+		return fordao.findByFormateur_id(id);
+	}
+	
 	
 	
 }

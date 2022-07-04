@@ -52,6 +52,13 @@ public class FormationController {
 			return f; 
 		}
 		
+		//Methode chercherun par formateur
+		@GetMapping("/formationsParFormateur/{id}")
+		public Formation chercherParIdFormateur(@PathVariable("id") int id) {
+			Formation f=forService.findByFormateur_id(id); 
+			return f; 
+		}
+		
 		//Methode supprimer
 		@DeleteMapping("/formations/{id}")
 		public void supprimer(@PathVariable("id") int id) {

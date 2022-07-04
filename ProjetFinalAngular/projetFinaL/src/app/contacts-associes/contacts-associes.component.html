@@ -1,0 +1,29 @@
+<h1>Contacts associes</h1>
+
+<table class="center">
+    <tr>
+        <td style="background-color: oldlace">Id Contact</td>
+        <td style="background-color: oldlace">Id Prospect</td>
+        <td style="background-color: oldlace">nom</td>
+        <td style="background-color: oldlace">prenom</td>
+        <td style="background-color: oldlace">mail</td>
+        <td style="background-color: oldlace">tel</td>
+
+    </tr>
+
+
+    <tr *ngFor="let c of contacts">
+        <td>{{c.idContact}}</td>
+        <td>{{c.prospect.idProspect}}</td>
+        <td>{{c.prospect.nomProspect}}</td>
+        <td>{{c.prospect.prenomProspect}}</td>
+        <td>{{c.prospect.emailProspect}}</td>
+        <td>{{c.prospect.numTel}}</td>
+
+
+    </tr>
+</table>
+
+<br>
+
+<button class="class3" (click)="retour()">Retour</button>

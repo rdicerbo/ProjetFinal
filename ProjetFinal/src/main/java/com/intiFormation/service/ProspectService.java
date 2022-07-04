@@ -43,5 +43,9 @@ public class ProspectService implements IprospectService {
 		// TODO Auto-generated method stub
 		pdao.save(p); 
 	}
+	
+	public List<Prospect> findByContactsIsNull(){
+		return pdao.findByContactsIsNull();
+	}
 
 }
