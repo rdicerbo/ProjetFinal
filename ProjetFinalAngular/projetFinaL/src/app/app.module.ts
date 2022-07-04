@@ -12,6 +12,11 @@ import { ListeFormationsComponent } from './liste-formations/liste-formations.co
 import { ModifFormationsComponent } from './modif-formations/modif-formations.component';
 import { AddFormationsComponent } from './add-formations/add-formations.component';
 import { FormateurAssocieComponent } from './formateur-associe/formateur-associe.component';
+import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.component';
+import { AddFormateursComponent } from './add-formateurs/add-formateurs.component';
+import { ModifFormateursComponent } from './modif-formateurs/modif-formateurs.component';
+import { FormationAssocieeComponent } from './formation-associee/formation-associee.component';
+import { ListeCommerciauxComponent } from './liste-commerciaux/liste-commerciaux.component';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { FormateurAssocieComponent } from './formateur-associe/formateur-associe
     ListeFormationsComponent,
     ModifFormationsComponent,
     AddFormationsComponent,
-    FormateurAssocieComponent
+    FormateurAssocieComponent,
+    ListeFormateursComponent,
+    AddFormateursComponent,
+    ModifFormateursComponent,
+    FormationAssocieeComponent,
+    ListeCommerciauxComponent
   ],
   imports: [
     BrowserModule,
