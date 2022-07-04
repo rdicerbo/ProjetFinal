@@ -23,20 +23,7 @@
 
     </tr>
 
-<<<<<<< HEAD
-    <tr *ngFor="let f of formations| filter: filterTerm">
-            <td>{{f.idFormation}}</td>
-            <td>{{f.libForm}}</td>
-            <td>{{f.description}}</td>
-            <td>{{f.dateDebut}}</td>
-            <td>{{f.dateFin}}</td>
-            <td>{{f.prix}}</td>
-            <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
-            <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
-    
-            <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
-            </td>
-=======
+
     <tr *ngFor="let f of formations">
         <td>{{f.idFormation}}</td>
         <td>{{f.libForm}}</td>
@@ -49,12 +36,11 @@
 
         <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
         </td>
->>>>>>> main
+
     </tr>
 
 </table>
 
-<<<<<<< HEAD
 <br>
 <br>
 <br>
@@ -62,7 +48,7 @@
 <h3>Ajouter une formation</h3>
 <hr>
 <br>
-<button class="chercher3"  (click)="AjouterFormation()">Ajouter une formation</button>
+<button class="chercher3" (click)="AjouterFormation()">Ajouter une formation</button>
 <br>
 <br>
 <br>
@@ -74,41 +60,41 @@
 
 <!--Trouver une formation par nom-->
 <h4>Rechercher une formation par <span class="el">nom</span></h4>
-  <form class="form-search form-inline" (ngSubmit)="afficher2()">
-    <input type="text" class="chercher2" placeholder="Formation par nom" name="selectedF"
-    [(ngModel)]="selectedF" [(ngModel)]="filterTerm"/>
+<form class="form-search form-inline" (ngSubmit)="afficher2()">
+    <input type="text" class="chercher2" placeholder="Formation par nom" name="selectedF" [(ngModel)]="selectedF"
+        [(ngModel)]="filterTerm" />
     <button class="chercher" type="submit">Valider</button>
-  </form>
-  <br>
-  <br>
- 
-  <!--Trouver une formation par id-->
-  <h4>Rechercher une formation par <span class="el">id</span></h4>
-  <form class="form-search form-inline" (ngSubmit)="afficherById()">
-    <input type="text" class="chercher2" placeholder="Formation par id" name="selectedId"
-    [(ngModel)]="selectedId" [(ngModel)]="filterTerm"/>
-    <button class="chercher" type="submit">Valider</button>
-  </form>
-  <br>
-  <br>
+</form>
+<br>
+<br>
 
-  <!--Trouver une formation par prix-->
-  <h4>Rechercher une formation par <span class="el">prix</span></h4>
-   <form class="form-search form-inline" (ngSubmit)="afficherById()">
-    <input class="chercher2" type="text" placeholder="Formation par prix" name="selectedPrice"
-    [(ngModel)]="selectedPrice" [(ngModel)]="filterTerm"/>
+<!--Trouver une formation par id-->
+<h4>Rechercher une formation par <span class="el">id</span></h4>
+<form class="form-search form-inline" (ngSubmit)="afficherById()">
+    <input type="text" class="chercher2" placeholder="Formation par id" name="selectedId" [(ngModel)]="selectedId"
+        [(ngModel)]="filterTerm" />
     <button class="chercher" type="submit">Valider</button>
-  </form>
-  <br>
-  <br>
-  <br>
+</form>
+<br>
+<br>
+
+<!--Trouver une formation par prix-->
+<h4>Rechercher une formation par <span class="el">prix</span></h4>
+<form class="form-search form-inline" (ngSubmit)="afficherById()">
+    <input class="chercher2" type="text" placeholder="Formation par prix" name="selectedPrice"
+        [(ngModel)]="selectedPrice" [(ngModel)]="filterTerm" />
+    <button class="chercher" type="submit">Valider</button>
+</form>
+<br>
+<br>
+<br>
 
 
 <hr>
 <h3>Redirections</h3>
 <hr>
 <br>
-<button  class="chercher3" (click)="afficherAssistants()">Afficher les assistants</button>
+<button class="chercher3" (click)="afficherAssistants()">Afficher les assistants</button>
 <br>
 <br>
 <br>
@@ -117,8 +103,8 @@
 <button class="deconnexion" (click)="deconnexion()">Deconnexion</button>
 
 
-    
-=======
+
+
 
 <button class="class3" (click)="AjouterFormation()">Ajouter une formation</button>
 <br>
@@ -136,4 +122,3 @@
 <button class="class3" (click)="Participant()">Gestion participant</button>
 
 <br>
->>>>>>> main

@@ -43,16 +43,16 @@ import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.co
 
 
 
-const routes: Routes =[
-  {path:'authentification',component:AuthComponent},
-  {path:'', component:BodyComponent},
-  {path:'afficherFormation', component:ListeFormationsComponent},
-  {path:'modifierF/:idFormation', component:ModifFormationsComponent},
-  {path: 'AjouterFormation', component:AddFormationsComponent},
-  {path: 'afficherFormateurAssocie/:id', component:FormateurAssocieComponent},
-  {path: 'afficherAssistants', component:ListeAssistantsComponent},
-  {path: 'AjouterAssistant', component:AddAssistantComponent},
-  {path: 'modifierAssistant/:idAssistant', component:ModifAssistantsComponent},
+const routes: Routes = [
+  { path: 'authentification', component: AuthComponent },
+  { path: '', component: BodyComponent },
+  { path: 'afficherFormation', component: ListeFormationsComponent },
+  { path: 'modifierF/:idFormation', component: ModifFormationsComponent },
+  { path: 'AjouterFormation', component: AddFormationsComponent },
+  { path: 'afficherFormateurAssocie/:id', component: FormateurAssocieComponent },
+  { path: 'afficherAssistants', component: ListeAssistantsComponent },
+  { path: 'AjouterAssistant', component: AddAssistantComponent },
+  { path: 'modifierAssistant/:idAssistant', component: ModifAssistantsComponent },
 
 
   { path: 'afficherFormateur', component: ListeFormateursComponent },
