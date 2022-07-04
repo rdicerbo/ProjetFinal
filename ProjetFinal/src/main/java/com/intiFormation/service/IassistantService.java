@@ -11,5 +11,6 @@ public interface IassistantService {
 	public List<Assistant> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Assistant a); 
+	public Assistant getByName (String nom);
 
 }

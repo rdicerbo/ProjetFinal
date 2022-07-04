@@ -48,5 +48,17 @@ export class ListeFormationsService {
      return this.http.get<Formation[]>('http://localhost:4222/formationsByIdParticipant/'+idParticipant);
    }
 
+//Methode getByName
+getByName(libForm:string)
+{
+  return this.http.get<Formation>('http://localhost:4222/formationsName/'+libForm);
+}
+
+//Methode getByPrice
+getByPrice(prix:number)
+{
+  return this.http.get<Formation>('http://localhost:4222/formationsPrix/'+prix);
+}
+
 
 }

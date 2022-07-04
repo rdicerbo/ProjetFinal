@@ -16,11 +16,5 @@ getById(id:number)
   return this.http.get<Utilisateur>('http://localhost:4222/utilisateurs/'+id);
 }
 
-//Methode getAll
-/*getAllF()
-{
-  return this.http.get<Formateur[]>('http://localhost:4222/formateurs');
-}*/
-
 
 }

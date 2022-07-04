@@ -34,10 +34,18 @@ export class FormateurAssocieComponent implements OnInit {
     )
   }
 
+
+//Methode afficherFormations
+afficherFormations()
+{
+  this.router.navigateByUrl('afficherFormation');
+}
+
   // Bouton retour
   retour() {
     this.router.navigateByUrl('afficherFormation')
   }
+
 
 
 

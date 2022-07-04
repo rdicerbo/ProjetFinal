@@ -1,0 +1,21 @@
+<h1>Modifier l'assistant souhaite</h1>
+
+<form (ngSubmit)="modif()">
+    <p>Nom</p>  
+    <input type="text" name="nom" placeholder="Nom" [(ngModel)]="assistant.nom">
+    <br>
+
+    <p>Prenom</p>
+    <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="assistant.prenom">
+    <br>
+
+    <p>Adresse mail</p>
+    <input type="text" name="mail" placeholder="Mail" [(ngModel)]="assistant.mail">
+    <br>
+    <br>
+    <button class="class2" type="submit">Valider</button>
+    
+</form>
+
+<br>
+<button (click)="afficherAssistants()">Retour</button>

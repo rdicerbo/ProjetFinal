@@ -67,6 +67,11 @@ chargerFormations()
     )
   }
  
+//Methode afficherFormations
+afficherFormations()
+{
+  this.router.navigateByUrl('afficherFormation');
+}
 
 
 }

@@ -1,23 +1,40 @@
+<h1>Modifier la formation souhaitee</h1>
+
 
 <form (ngSubmit)="modif()">
 
-    
-    Nom : <input type="text" name="libForm" [(ngModel)]="formation.libForm"/>
+    <p>Nom de la formation</p>
+    <input type="text" name="libForm" [(ngModel)]="formation.libForm"/>
     <br>
 
-    Description : <input type="text" name="description" [(ngModel)]="formation.description"/>
+    <p>Description de la formation</p>
+     <input type="text" name="description" [(ngModel)]="formation.description"/>
     <br>
-    Date debut <input type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateDebut">
+
+    <p>Date de debut de la formation</p>
+    <input class="class1" type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateDebut">
     <br>
-    Date fin <input type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateFin">
+
+    <p>Date de fin de la formation</p>
+    <input class="class1" type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateFin">
     <br>
-    Prix <input type="text" name="prix" placeholder="Prix" [(ngModel)]="formation.prix">
+
+    <p>Prix de la formation</p>
+    <input type="text" name="prix" placeholder="Prix" [(ngModel)]="formation.prix">
     <br>
-    Formateurs <select name="selectedId" [(ngModel)]="selectedId">
+
+    <p>Formateur assurant la formation</p>
+    <select class="class2" name="selectedId" [(ngModel)]="selectedId">
         <option *ngFor="let f of formateurs" [ngValue]="f.id">
             {{f.nom}}
         </option>
     </select>
-    <button type="submit">Valider</button>
+    <br>
+    <br>
+    <br>
+    <button class="class2" type="submit">Valider</button>
     
 </form>
+
+<br>
+<button (click)="afficherFormations()">Retour</button>

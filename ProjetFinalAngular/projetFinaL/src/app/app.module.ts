@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorBasicAuthService } from './service/http-interceptor-basic-auth.service';
 import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 import { AuthComponent } from './auth/auth.component';
@@ -12,6 +13,10 @@ import { ListeFormationsComponent } from './liste-formations/liste-formations.co
 import { ModifFormationsComponent } from './modif-formations/modif-formations.component';
 import { AddFormationsComponent } from './add-formations/add-formations.component';
 import { FormateurAssocieComponent } from './formateur-associe/formateur-associe.component';
+import { ListeAssistantsComponent } from './liste-assistants/liste-assistants.component';
+import { AddAssistantComponent } from './add-assistant/add-assistant.component';
+import { ModifAssistantsComponent } from './modif-assistants/modif-assistants.component';
+
 
 import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.component';
 import { AddFormateursComponent } from './add-formateurs/add-formateurs.component';
@@ -50,6 +55,11 @@ import { ListeAdminsComponent } from './liste-admins/liste-admins.component';
     AddFormationsComponent,
     FormateurAssocieComponent,
 
+    ListeAssistantsComponent,
+    AddAssistantComponent,
+    ModifAssistantsComponent,
+
+
     ListeFormateursComponent,
     AddFormateursComponent,
     ModifFormateursComponent,
@@ -75,12 +85,14 @@ import { ListeAdminsComponent } from './liste-admins/liste-admins.component';
     PaiementAssocieParticipantComponent,
     RelanceAssocieParticipantComponent
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }

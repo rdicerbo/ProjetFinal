@@ -86,9 +86,9 @@ public class FormationController {
 		
 		//Methode chercherPrix
 		@GetMapping("/formationsPrix/{prix}")
-		public List<Formation> chercherPrix(@PathVariable("prix") double prix)
+		public Formation chercherPrix(@PathVariable("prix") double prix)
 		{
-			List<Formation> listeF = forService.getByPrice(prix);
+			Formation listeF = forService.getByPrice(prix);
 					
 			return listeF;
 		}
