@@ -7,40 +7,46 @@ import { Formation } from '../models/Formation.model';
 })
 export class ListeFormationsService {
 
-  constructor(private http:HttpClient) { }
-
-  
-//Methode getAll
-getAll()
-{
-  return this.http.get<Formation[]>('http://localhost:4222/formations');
-}
+  constructor(private http: HttpClient) { }
 
 
-//Methode ajouterF
-ajouterF(id:number, f:Formation)
-{
-  return this.http.post<Formation>('http://localhost:4222/formations/'+id,f);
-}
+  //Methode getAll
+  getAll() {
+    return this.http.get<Formation[]>('http://localhost:4222/formations');
+  }
 
-//Methode supprimer
-supprimer(idFormation:number)
-{ 
-  return this.http.delete('http://localhost:4222/formations/'+idFormation);
 
-}
+  //Methode ajouterF
+  ajouterF(id: number, f: Formation) {
+    return this.http.post<Formation>('http://localhost:4222/formations/' + id, f);
+  }
 
-//Methode modifierF
-modifierF(id:number,formation:Formation)
-{
-  return this.http.put<Formation>('http://localhost:4222/formations/'+id,formation);
-}
+  //Methode supprimer
+  supprimer(idFormation: number) {
+    return this.http.delete('http://localhost:4222/formations/' + idFormation);
 
-//Methode getById
-getById(idFormation:number)
-{
-  return this.http.get<Formation>('http://localhost:4222/formations/'+idFormation);
-}
+  }
+
+  //Methode modifierF
+  modifierF(id: number, formation: Formation) {
+    return this.http.put<Formation>('http://localhost:4222/formations/' + id, formation);
+  }
+
+  //Methode getById
+  getById(idFormation: number) {
+    return this.http.get<Formation>('http://localhost:4222/formations/' + idFormation);
+  }
+
+  //Methode getByIdFormateur
+  getByIdFormateur(idFormateur: number) {
+    return this.http.get<Formation>('http://localhost:4222/formationsParFormateur/' + idFormateur);
+  }
+
+   //Methode recuperer formations associé participant
+   formationsByIdParticipant(idParticipant:number)
+   {
+     return this.http.get<Formation[]>('http://localhost:4222/formationsByIdParticipant/'+idParticipant);
+   }
 
 //Methode getByName
 getByName(libForm:string)

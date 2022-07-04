@@ -1,0 +1,14 @@
+<form (ngSubmit)="modif()">
+    Nom <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
+    <br>
+    Prenom <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
+    <br>
+    Mail <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
+    <br>
+
+    Telephone <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+
+
+
+    <button type="submit">Modifier</button>
+</form>

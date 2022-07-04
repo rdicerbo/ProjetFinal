@@ -1,0 +1,16 @@
+<form (ngSubmit)="modif()">
+    Nom <input type="text" name="nom" placeholder="Nom" [(ngModel)]="commercial.nom">
+    <br>
+    Prenom <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="commercial.prenom">
+    <br>
+    Mail <input type="text" name="mail" placeholder="Mail" [(ngModel)]="commercial.mail">
+    <br>
+
+    Username <input type="text" name="username" placeholder="Username" [(ngModel)]="commercial.username">
+    <br>
+    Password <input type="password" name="password" placeholder="Password" [(ngModel)]="commercial.password">
+    <br>
+
+
+    <button type="submit">Modifier</button>
+</form>

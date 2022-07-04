@@ -1,0 +1,14 @@
+<form (ngSubmit)="AjouterContact()">
+
+    Commercial <select name="selectedC" [(ngModel)]="selectedC">
+        <option *ngFor="let c of commerciaux" [ngValue]="c">
+            {{c.nom}}
+        </option>
+    </select>
+    Prospect <select name="selectedP" [(ngModel)]="selectedP">
+        <option *ngFor="let p of prospects" [ngValue]="p">
+            {{p.nomProspect}}
+        </option>
+    </select>
+    <button type="submit">Ajouter</button>
+</form>

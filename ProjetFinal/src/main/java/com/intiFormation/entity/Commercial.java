@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Commercial")
 public class Commercial extends Utilisateur{
 	
 	@OneToMany(mappedBy="commercial", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Contact> contacts;
 
 	public List<Contact> getContacts() {

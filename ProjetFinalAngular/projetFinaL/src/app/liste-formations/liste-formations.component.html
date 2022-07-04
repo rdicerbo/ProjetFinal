@@ -23,6 +23,7 @@
 
     </tr>
 
+<<<<<<< HEAD
     <tr *ngFor="let f of formations| filter: filterTerm">
             <td>{{f.idFormation}}</td>
             <td>{{f.libForm}}</td>
@@ -35,10 +36,25 @@
     
             <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
             </td>
+=======
+    <tr *ngFor="let f of formations">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libForm}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.prix}}</td>
+        <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
+        <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+
+        <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
+        </td>
+>>>>>>> main
     </tr>
 
 </table>
 
+<<<<<<< HEAD
 <br>
 <br>
 <br>
@@ -102,3 +118,22 @@
 
 
     
+=======
+
+<button class="class3" (click)="AjouterFormation()">Ajouter une formation</button>
+<br>
+<br>
+<br>
+<button class="class3" (click)="GestionFormateurs()">Gestion Formateurs</button>
+<br>
+<button class="class3" (click)="GestionsCommerciaux()">Gestion Commerciaux</button>
+<br>
+<button class="class3" (click)="GestionsProspects()">Gestion Prospects</button>
+
+<br>
+<button class="class3" (click)="Admin()">Gestion administrateur</button>
+<br>
+<button class="class3" (click)="Participant()">Gestion participant</button>
+
+<br>
+>>>>>>> main

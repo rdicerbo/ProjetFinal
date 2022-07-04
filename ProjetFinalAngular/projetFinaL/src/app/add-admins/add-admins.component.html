@@ -1,0 +1,19 @@
+<h1> Ajouter admin</h1>
+
+
+<form (ngSubmit)="AjouterAdmin()">
+
+    
+    Nom : <input type="text" name="nom" placeholder="Nom" [(ngModel)]="admin.nom"/>
+    <br>
+    Prenom : <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="admin.prenom"/>
+    <br>
+    Mail : <input type="text" name="mail" placeholder="Mail" [(ngModel)]="admin.mail"/>
+    <br>
+    Username : <input type="text" name="username" placeholder="Username" [(ngModel)]="admin.username"/>
+    <br>
+    Password : <input type="text" name="password" placeholder="Password" [(ngModel)]="admin.password"/>
+    <br>
+    <button type="submit">Valider</button>
+    
+</form>
