@@ -14,6 +14,13 @@ export class ParticipantService {
   {
     return this.http.get<Participant[]>('http://localhost:4222/participants');
   }
+
+  //Methode participantsByIdFormation
+  participantsByIdFormation(id:number)
+  {
+    return this.http.get<Participant[]>('http://localhost:4222/participantsByIdFormation/'+id);
+  }
+
   
   
   //Methode ajouterP

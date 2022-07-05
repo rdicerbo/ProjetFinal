@@ -51,14 +51,16 @@ public class Security extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.csrf().disable()
-		.authorizeRequests().antMatchers("/auth").permitAll()
+		
+		.authorizeRequests()
+		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+		.antMatchers("/auth").permitAll()
 
 		.antMatchers("/authentification/**").permitAll()
 		.antMatchers("/admins/**").permitAll()
 		.antMatchers("/participants/**").permitAll()
 
 		.antMatchers("/**").permitAll()
-		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
 		.anyRequest().authenticated()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().addFilterBefore(jwtrequestfilter, UsernamePasswordAuthenticationFilter.class);
