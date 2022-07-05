@@ -58,5 +58,11 @@ chargerParticipant()
      )
    }
 
+//Methode afficherParticipants
+afficherParticipants()
+{
+  this.router.navigateByUrl('afficherParticipants');
+}
+
  
 }

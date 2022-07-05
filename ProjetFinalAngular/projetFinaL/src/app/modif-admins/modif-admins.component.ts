@@ -42,6 +42,12 @@ chargerAdmin()
    this.router.navigateByUrl('afficherAdmins');
  }
 
- 
+ //Methode afficherAdmins
+ afficherAdmins()
+{
+  this.router.navigateByUrl('afficherAdmins');
+}
+
+
 
 }

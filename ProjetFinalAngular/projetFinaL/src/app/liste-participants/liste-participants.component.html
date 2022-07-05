@@ -3,16 +3,20 @@
 
 <table class="center">
 	<tr>
-		<td style="background-color: oldlace">Id</td>
-        <td style="background-color: oldlace">mail</td>
-        <td style="background-color: oldlace">nom</td>
-        <td style="background-color: oldlace">prenom</td>
-        <td style="background-color: oldlace">username</td>
-        <td style="background-color: oldlace">password</td>
+		<td style="background-color: rgb(127, 203, 144)">Id</td>
+        <td style="background-color: rgb(127, 203, 144)">Mail</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom</td>
+        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+        <td style="background-color: rgb(127, 203, 144)">Username</td>
+        <td style="background-color: rgb(127, 203, 144)">Password</td>
 
         
-        <td style="background-color: oldlace">Action1</td>
-        <td style="background-color: oldlace">Action2</td>
+        <td style="background-color: rgb(127, 203, 144)">Action1</td>
+        <td style="background-color: rgb(127, 203, 144)">Action2</td>
+
+        <td style="background-color: rgb(127, 203, 144)">Action3</td>
+        <td style="background-color: rgb(127, 203, 144)">Action4</td>
+        <td style="background-color: rgb(127, 203, 144)">Action5</td>
         
 </tr>
 <tr *ngFor="let p of participants">
@@ -24,6 +28,7 @@
     <td>{{p.password}}</td>
     <td><button (click)="supprimer(p.id)">Supprimer</button></td>
     <td><button (click)="modifier(p.id)">Modifier</button></td>
+
     <td><button (click)="formationAssocie(p.id)">Formations</button></td>
     <td><button (click)="RelanceAssocie(p.id)">Relances</button></td>
     <td><button (click)="PaiementAssocie(p.id)">Paiements</button></td>
@@ -31,6 +36,14 @@
 		
 </table>
 
-<button class="class3"  (click)="AjouterParticipant()">Ajouter un participant</button>
 <br>
-<button class="class3"  (click)="Retour()">Retour</button>
+<br>
+<br>
+<hr>
+<h3>Ajouter un participant</h3>
+<hr>
+<br>
+<button class="chercher3"  (click)="AjouterParticipant()">Ajouter un participant</button>
+
+<br>
+<button class="chercher2"  (click)="Retour()">Retour</button>

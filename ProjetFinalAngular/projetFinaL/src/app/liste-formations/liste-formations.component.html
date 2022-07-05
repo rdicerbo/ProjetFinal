@@ -23,7 +23,6 @@
 
     </tr>
 
-<<<<<<< HEAD
     <tr *ngFor="let f of formations| filter: filterTerm">
             <td>{{f.idFormation}}</td>
             <td>{{f.libForm}}</td>
@@ -36,25 +35,12 @@
     
             <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
             </td>
-=======
-    <tr *ngFor="let f of formations">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.prix}}</td>
-        <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
-        <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
 
-        <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
-        </td>
->>>>>>> main
     </tr>
 
 </table>
 
-<<<<<<< HEAD
+
 <br>
 <br>
 <br>
@@ -105,35 +91,23 @@
 
 
 <hr>
-<h3>Redirections</h3>
+<h3> <h3>Redirections</h3>
+  <iframe src="https://giphy.com/embed/LOtwcbjWL6Pwr2qO8t" width="100" height="100" frameBorder="0"></iframe>
+</h3>
 <hr>
+
 <br>
-<button  class="chercher3" (click)="afficherAssistants()">Afficher les assistants</button>
+<button class="chercher4" (click)="afficherAssistants()">Gestion des assistants</button> 
 <br>
+<button class="chercher4" (click)="GestionFormateurs()">Gestion des formateurs</button>
 <br>
+<button class="chercher4" (click)="GestionsCommerciaux()">Gestion des commerciaux</button>
 <br>
+<button class="chercher4" (click)="GestionsProspects()">Gestion des prospects</button>
+<br>
+<button class="chercher4" (click)="Admin()">Gestion des administrateurs</button>
+<br>
+<button class="chercher4" (click)="Participant()">Gestion des participants</button>
 
 <br>
 <button class="deconnexion" (click)="deconnexion()">Deconnexion</button>
-
-
-    
-=======
-
-<button class="class3" (click)="AjouterFormation()">Ajouter une formation</button>
-<br>
-<br>
-<br>
-<button class="class3" (click)="GestionFormateurs()">Gestion Formateurs</button>
-<br>
-<button class="class3" (click)="GestionsCommerciaux()">Gestion Commerciaux</button>
-<br>
-<button class="class3" (click)="GestionsProspects()">Gestion Prospects</button>
-
-<br>
-<button class="class3" (click)="Admin()">Gestion administrateur</button>
-<br>
-<button class="class3" (click)="Participant()">Gestion participant</button>
-
-<br>
->>>>>>> main

@@ -1,14 +1,26 @@
+<h1>Modifier le prospect souhaite</h1>
+
 <form (ngSubmit)="modif()">
-    Nom <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
-    <br>
-    Prenom <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
-    <br>
-    Mail <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
+
+    <p>Nom</p>  
+    <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
     <br>
 
-    Telephone <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+    <p>Prenom</p>  
+    <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
+    <br>
 
+    <p>Adresse mail</p>  
+    <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
+    <br>
 
+    <p>Numero de telephone</p>  
+    <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+    <br>
+    <br>  
+    <button class="class2" type="submit">Modifier</button>
 
-    <button type="submit">Modifier</button>
 </form>
+
+<br>
+<button (click)="afficherProspects()">Retour</button>

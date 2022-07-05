@@ -1,14 +1,27 @@
+<h1>Ajouter un prospect</h1>
+
 <form (ngSubmit)="AjouterProspect()">
-    Nom <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
-    <br>
-    Prenom <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
-    <br>
-    Mail <input type="text" name="emailProspect" placeholder="Email" [(ngModel)]="prospect.emailProspect">
+
+    <p>Nom</p>
+    <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
     <br>
 
-    Numero de tel <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+    <p>Prenom</p>
+    <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
+    <br>
 
+    <p>Adresse mail</p>
+    <input type="text" name="emailProspect" placeholder="Email" [(ngModel)]="prospect.emailProspect">
+    <br>
 
+    <p>Numero de telephone</p>
+    <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+    <br>
+    <br>
+    <br>
+    <button class="class1" type="submit">Ajouter</button>
 
-    <button type="submit">Ajouter</button>
 </form>
+
+<br>
+<button (click)="afficherProspects()">Retour</button>

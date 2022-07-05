@@ -1,16 +1,30 @@
+<h1>Modifier le commerciel souhaite</h1>
+
 <form (ngSubmit)="modif()">
-    Nom <input type="text" name="nom" placeholder="Nom" [(ngModel)]="commercial.nom">
-    <br>
-    Prenom <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="commercial.prenom">
-    <br>
-    Mail <input type="text" name="mail" placeholder="Mail" [(ngModel)]="commercial.mail">
+
+    <p>Nom</p>  
+    <input type="text" name="nom" placeholder="Nom" [(ngModel)]="commercial.nom">
     <br>
 
-    Username <input type="text" name="username" placeholder="Username" [(ngModel)]="commercial.username">
-    <br>
-    Password <input type="password" name="password" placeholder="Password" [(ngModel)]="commercial.password">
+    <p>Prenom</p>  
+    <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="commercial.prenom">
     <br>
 
+    <p>Adresse mail</p>  
+    <input type="text" name="mail" placeholder="Mail" [(ngModel)]="commercial.mail">
+    <br>
 
-    <button type="submit">Modifier</button>
+    <p>Username</p>  
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="commercial.username">
+    <br>
+
+    <p>Password</p>  
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="commercial.password">
+    <br>
+    <br>
+    <button class="class2" type="submit">Valider</button>
+
 </form>
+
+<br>
+<button (click)="afficherCommerciaux()">Retour</button>
