@@ -23,27 +23,27 @@ export class PagePersoComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
-    console.log(this.utilisateur.nom);
     this.recupererRoles();
 
-    for (let i = 0; i < this.roles.length; i++) {
-      if (this.roles[i].id === 2) {
-        this.roleC = 1
+    for (let i = 0; i < 5; i++) {
+      if (this.roles[i].idRole == 2) {
+        this.roleC = 2
       }
-      if (this.roles[i].id === 5) {
+      if (this.roles[i].idRole == 5) {
         this.roleF = 1
       }
-      if (this.roles[i].id === 3) {
-        this.roleA = 1
+      if (this.roles[i].idRole == 3) {
+        this.roleA = 3
       }
-      if (this.roles[i].id === 4) {
+      if (this.roles[i].idRole == 4) {
         this.roleP = 1
       }
-      if (this.roles[i].id === 1) {
+      if (this.roles[i].idRole == 1) {
         this.roleAdmin = 1
       }
     }
 
+    
 
   }
 
