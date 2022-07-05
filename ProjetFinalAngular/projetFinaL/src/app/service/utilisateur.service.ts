@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Formateur } from '../models/Formateur.model';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 
 @Injectable({
@@ -25,5 +26,10 @@ export class UtilisateurService {
   //Methode modifierU
   modifierU(u: Utilisateur) {
     return this.http.put<Utilisateur>('http://localhost:4222/utilisateurs', u);
+  }
+
+  //Methode recuperer formations associé participant
+  rolesByIdUser(id: number) {
+    return this.http.get<Role[]>('http://localhost:4222/rolesByIdUtilisateur/' + id);
   }
 }
