@@ -28,26 +28,6 @@ export class PagePersoComponent implements OnInit {
     this.recupererRoles();
 
 
-
-    for (let i = 0; i < 5; i++) {
-      if (this.roles[i].idRole == 2) {
-        this.roleC = 2
-      }
-      if (this.roles[i].idRole == 5) {
-        this.roleF = 1
-      }
-      if (this.roles[i].idRole == 3) {
-        this.roleA = 3
-      }
-      if (this.roles[i].idRole == 4) {
-        this.roleP = 1
-      }
-      if (this.roles[i].idRole == 1) {
-        this.roleAdmin = 1
-      }
-    }
-
-
   }
 
   modifierPassword() {
@@ -60,6 +40,36 @@ afficherFormations()
 {
   this.router.navigateByUrl('afficherFormation');
 }
+
+
+  recupererRoles() {
+    const id = this.utilisateur.id
+    this.service.rolesByIdUser(id).subscribe(
+      response => {
+        this.roles = response
+        //console.log(this.roles.length)
+        for (let i = 0; i < 5; i++) {
+
+          if (this.roles[i].idRole == 2) {
+            this.roleC = 1
+          }
+          if (this.roles[i].idRole == 5) {
+            this.roleF = 1
+          }
+          if (this.roles[i].idRole == 3) {
+            this.roleA = 1
+          }
+          if (this.roles[i].idRole == 4) {
+            this.roleP = 1
+          }
+          if (this.roles[i].idRole == 1) {
+            this.roleAdmin = 1
+
+          }
+        }
+      }
+    )
+  }
 
 
 }
