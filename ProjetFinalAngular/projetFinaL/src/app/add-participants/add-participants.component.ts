@@ -50,4 +50,9 @@ AjouterParticipant()
    )
  }
 
+  //Methode afficherParticipants
+  afficherParticipants()
+  {
+    this.route.navigateByUrl('afficherParticipants');
+  }
 }

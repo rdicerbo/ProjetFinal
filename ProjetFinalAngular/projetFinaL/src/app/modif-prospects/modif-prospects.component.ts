@@ -37,4 +37,12 @@ export class ModifProspectsComponent implements OnInit {
       response => this.prospect = response
     )
   }
+
+  
+  //Methode afficherCommerciaux
+  afficherProspects()
+ {
+   this.router.navigateByUrl('afficherProspects');
+ }
+
 }

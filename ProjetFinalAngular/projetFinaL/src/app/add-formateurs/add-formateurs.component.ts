@@ -18,6 +18,7 @@ export class AddFormateursComponent implements OnInit {
   ngOnInit(): void {
     this.formateur = new Formateur
   }
+
   //AjouterFormateur
   AjouterFormateur() {
     this.service.ajouterF(this.formateur).subscribe(
@@ -26,4 +27,10 @@ export class AddFormateursComponent implements OnInit {
       }
     )
   }
+
+  //Methode afficherFormateurs
+  afficherFormateurs()
+ {
+   this.router.navigateByUrl('afficherFormateur');
+ }
 }

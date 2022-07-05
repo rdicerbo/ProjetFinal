@@ -26,4 +26,11 @@ export class AddProspectComponent implements OnInit {
     )
   }
 
+
+  //Methode afficherCommerciaux
+  afficherProspects()
+ {
+   this.router.navigateByUrl('afficherProspects');
+ }
+
 }
