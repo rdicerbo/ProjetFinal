@@ -1,8 +1,8 @@
-export class Role
-{
+export class Role {
 
-  id!: number;
-  nom!: string;
+  idRole!: number;
+  librole!: string;
+  description!: string;
 
 
 

@@ -8,4 +8,6 @@ import com.intiFormation.entity.Role;
 public interface IroleService {
 	public Optional<Role> chercherParId(int id);
 	public List<Role> chercherTt(); 
+	public List<Role> chercherAllParByIdUser(int id); 
+	
 }
