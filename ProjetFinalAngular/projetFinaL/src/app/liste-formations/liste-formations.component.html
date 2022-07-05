@@ -23,7 +23,6 @@
 
     </tr>
 
-<<<<<<< HEAD
     <tr *ngFor="let f of formations| filter: filterTerm">
             <td>{{f.idFormation}}</td>
             <td>{{f.libForm}}</td>
@@ -36,7 +35,7 @@
     
             <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
             </td>
-=======
+
     <tr *ngFor="let f of formations">
         <td>{{f.idFormation}}</td>
         <td>{{f.libForm}}</td>
@@ -49,12 +48,11 @@
 
         <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
         </td>
->>>>>>> main
+
     </tr>
 
 </table>
 
-<<<<<<< HEAD
 <br>
 <br>
 <br>
@@ -118,7 +116,7 @@
 
 
     
-=======
+
 
 <button class="class3" (click)="AjouterFormation()">Ajouter une formation</button>
 <br>
@@ -136,4 +134,4 @@
 <button class="class3" (click)="Participant()">Gestion participant</button>
 
 <br>
->>>>>>> main
+

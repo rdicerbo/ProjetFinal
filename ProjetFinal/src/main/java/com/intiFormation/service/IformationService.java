@@ -1,5 +1,6 @@
 package com.intiFormation.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,13 @@ public interface IformationService {
 	public Formation findByFormateur_id(int id);
 
 	public List<Formation> chercherAllParByIdPar (int id);
+	
+	public List<Formation> chercherFormationsAVenir (LocalDate dateAjd,int id);
+	public List<Formation> chercherFormationsEnCours (LocalDate dateAjd,LocalDate dateAjd2,int id);
+	public List<Formation> chercherFormationsArchive (LocalDate dateAjd,int id);
+	public List<Formation> chercherFormationsGratuite ();
+	
+	
 	
 
 }
