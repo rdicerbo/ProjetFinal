@@ -103,7 +103,24 @@ public class FormationService implements IformationService{
 		List<Formation> listeF=fordao.findByPrix(zero);
 		return listeF;
 	}
-	
+
+	@Override
+	public List<Formation> chercherFormationsAVenirParParticipants(LocalDate dateAjd, int id) {
+		// TODO Auto-generated method stub
+		return fordao.findByDateDebutAfterAndParticipants_id(dateAjd,id);
+	}
+
+	@Override
+	public List<Formation> chercherFormationsEnCoursParParticipants(LocalDate dateAjd, LocalDate dateAjd2, int id) {
+		// TODO Auto-generated method stub
+		return fordao.findByDateFinAfterAndDateDebutBeforeAndParticipants_id(dateAjd,dateAjd,id);
+	}
+
+	@Override
+	public List<Formation> chercherFormationsArchiveParParticipants(LocalDate dateAjd, int id) {
+		// TODO Auto-generated method stub
+		return fordao.findByDateFinBeforeAndParticipants_id(dateAjd,id);
+	}
 	
 	
 }

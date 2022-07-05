@@ -127,5 +127,26 @@ public class FormationController {
 			List<Formation> liste=forService.chercherFormationsGratuite(); 
 			return liste; 
 		}
+		
+		@GetMapping("/formationsAVenirByParticipant/{id}")
+		public List<Formation> chercherFormAVenirByParticipant(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsAVenirParParticipants(todaysDate,id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsEnCoursByParticipant/{id}")
+		public List<Formation> chercherFormEnCoursByParticipant(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsEnCoursParParticipants(todaysDate,todaysDate,id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsArchivesByParticipant/{id}")
+		public List<Formation> chercherFormArchivesByParticipant(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsArchiveParParticipants(todaysDate,id); 
+			return liste; 
+		}
 
 }

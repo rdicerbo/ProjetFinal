@@ -40,10 +40,10 @@ public class AuthentificationController {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authentificationRequest.getUsername(), authentificationRequest.getPassword()));
 			System.out.println("test try");
 		} catch (Exception e) {
-			System.out.println("test catch");
-			//e.printStackTrace();
+			//System.out.println("test catch");
+			e.printStackTrace();
 			// TODO: handle exception
-			throw new Exception("incorrect username ou password",e);
+			//throw new Exception("incorrect username ou password",e);
 		}
 		
 		final UserDetails userdetails=custemUserDetailsService.loadUserByUsername(authentificationRequest.getUsername());

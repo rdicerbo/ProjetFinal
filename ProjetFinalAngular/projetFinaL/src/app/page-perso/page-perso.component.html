@@ -21,15 +21,15 @@
         <td>{{utilisateur.mail}}</td>
     </tr>
 
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Nom </td>
-        <td>{{utilisateur.nom}}</td>
-    </tr>
+    <div *ngIf="roleC==1">
+        coucou commercial
+        <app-liste-prospects></app-liste-prospects>
+    </div>
 
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
-        <td>{{utilisateur.prenom}}</td>
-    </tr>
+    <div *ngIf="roleA==1">
+        coucou assistant
+
+    </div>
 
     <tr>
         <td style="background-color: rgb(127, 203, 144)">Action 1 </td>

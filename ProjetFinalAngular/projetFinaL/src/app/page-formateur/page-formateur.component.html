@@ -1,0 +1,74 @@
+<h3>Formations</h3>
+
+<br>
+<table class="center">
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+        <td style="background-color: rgb(127, 203, 144)">Description</td>
+        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+
+        <td style="background-color: rgb(127, 203, 144)">Action1</td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Liste formations en cours</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr *ngFor="let f of formationsEncours">
+        <td style="background-color: #C4ABFE">{{f.idFormation}}</td>
+        <td style="background-color: #C4ABFE">{{f.libForm}}</td>
+        <td style="background-color: #C4ABFE">{{f.description}}</td>
+        <td style="background-color: #C4ABFE">{{f.dateDebut}}</td>
+        <td style="background-color: #C4ABFE">{{f.dateFin}}</td>
+        <td><button (click)=" afficher(f.idFormation)"> Participants </button>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Liste formations a venir</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr *ngFor="let f of formationsAvenir">
+        <td style="background-color: #E7A9FE">{{f.idFormation}}</td>
+        <td style="background-color: #E7A9FE">{{f.libForm}}</td>
+        <td style="background-color: #E7A9FE">{{f.description}}</td>
+        <td style="background-color: #E7A9FE">{{f.dateDebut}}</td>
+        <td style="background-color: #E7A9FE">{{f.dateFin}}</td>
+        <td><button (click)=" afficher(f.idFormation)"> Participants </button>
+        </td>
+
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Liste formations fini</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr *ngFor="let f of formationsFini">
+        <td style="background-color: #F4DCFE">{{f.idFormation}}</td>
+        <td style="background-color: #F4DCFE">{{f.libForm}}</td>
+        <td style="background-color:#F4DCFE">{{f.description}}</td>
+        <td style="background-color: #F4DCFE">{{f.dateDebut}}</td>
+        <td style="background-color: #F4DCFE">{{f.dateFin}}</td>
+
+        <td><button (click)=" afficher(f.idFormation)"> Participants </button>
+        </td>
+
+    </tr>
+
+</table>
