@@ -39,20 +39,25 @@ import { ListeCommerciauxComponent } from './liste-commerciaux/liste-commerciaux
 import { FormationAssocieeComponent } from './formation-associee/formation-associee.component';
 import { ModifFormateursComponent } from './modif-formateurs/modif-formateurs.component';
 import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.component';
+import { PagePersoComponent } from './page-perso/page-perso.component';
+import { ModifPasswordComponent } from './modif-password/modif-password.component';
 
 
 
 
-const routes: Routes =[
-  {path:'authentification',component:AuthComponent},
-  {path:'', component:BodyComponent},
-  {path:'afficherFormation', component:ListeFormationsComponent},
-  {path:'modifierF/:idFormation', component:ModifFormationsComponent},
-  {path: 'AjouterFormation', component:AddFormationsComponent},
-  {path: 'afficherFormateurAssocie/:id', component:FormateurAssocieComponent},
-  {path: 'afficherAssistants', component:ListeAssistantsComponent},
-  {path: 'AjouterAssistant', component:AddAssistantComponent},
-  {path: 'modifierAssistant/:idAssistant', component:ModifAssistantsComponent},
+const routes: Routes = [
+  { path: 'authentification', component: AuthComponent },
+  { path: '', component: BodyComponent },
+  { path: 'afficherFormation', component: ListeFormationsComponent },
+  { path: 'espacePerso', component: PagePersoComponent },
+  { path: 'modifPassword', component: ModifPasswordComponent },
+
+  { path: 'modifierF/:idFormation', component: ModifFormationsComponent },
+  { path: 'AjouterFormation', component: AddFormationsComponent },
+  { path: 'afficherFormateurAssocie/:id', component: FormateurAssocieComponent },
+  { path: 'afficherAssistants', component: ListeAssistantsComponent },
+  { path: 'AjouterAssistant', component: AddAssistantComponent },
+  { path: 'modifierAssistant/:idAssistant', component: ModifAssistantsComponent },
 
 
   { path: 'afficherFormateur', component: ListeFormateursComponent },

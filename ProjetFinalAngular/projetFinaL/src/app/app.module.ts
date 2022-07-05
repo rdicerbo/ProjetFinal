@@ -43,6 +43,8 @@ import { FormationAssocieParticipantComponent } from './formation-associe-partic
 import { PaiementAssocieParticipantComponent } from './paiement-associe-participant/paiement-associe-participant.component';
 import { RelanceAssocieParticipantComponent } from './relance-associe-participant/relance-associe-participant.component';
 import { ListeAdminsComponent } from './liste-admins/liste-admins.component';
+import { PagePersoComponent } from './page-perso/page-perso.component';
+import { ModifPasswordComponent } from './modif-password/modif-password.component';
 
 
 
@@ -83,7 +85,9 @@ import { ListeAdminsComponent } from './liste-admins/liste-admins.component';
     AddParticipantsComponent,
     FormationAssocieParticipantComponent,
     PaiementAssocieParticipantComponent,
-    RelanceAssocieParticipantComponent
+    RelanceAssocieParticipantComponent,
+    PagePersoComponent,
+    ModifPasswordComponent
 
 
   ],

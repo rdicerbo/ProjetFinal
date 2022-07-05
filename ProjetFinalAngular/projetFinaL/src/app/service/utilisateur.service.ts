@@ -8,13 +8,22 @@ import { Utilisateur } from '../models/Utilisateur.model';
 })
 export class UtilisateurService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-//Methode getById
-getById(id:number)
-{
-  return this.http.get<Utilisateur>('http://localhost:4222/utilisateurs/'+id);
-}
+  //Methode getById
+  getById(id: number) {
+    return this.http.get<Utilisateur>('http://localhost:4222/utilisateurs/' + id);
+  }
 
 
+  //Methode getByUsername
+  getByUsername(username: string) {
+    return this.http.get<Utilisateur>('http://localhost:4222/utilisateursByUsername/' + username)
+
+  }
+
+  //Methode modifierU
+  modifierU(u: Utilisateur) {
+    return this.http.put<Utilisateur>('http://localhost:4222/utilisateurs', u);
+  }
 }

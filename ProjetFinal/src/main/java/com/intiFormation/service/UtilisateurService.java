@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.IutilisateurDao;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Utilisateur;
 
 @Service
@@ -31,6 +32,11 @@ public class UtilisateurService implements IutilisateurService{
 	@Override
 	public Optional<Utilisateur> chercherParId(int id) {
 		return udao.findById(id);
+	}
+	
+	@Override
+	public void modifier(Utilisateur u) {
+		udao.save(u); 
 	}
 
 }
