@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { UtilisateurService } from '../service/utilisateur.service';
 
@@ -11,16 +12,51 @@ import { UtilisateurService } from '../service/utilisateur.service';
 export class PagePersoComponent implements OnInit {
 
   utilisateur!: Utilisateur
+  roles!: Role[]
+  roleF = 0;
+  roleC = 0;
+  roleA = 0;
+  roleP = 0;
+  roleAdmin = 0;
 
   constructor(private service: UtilisateurService, private router: Router) { }
 
   ngOnInit(): void {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
-    console.log(this.utilisateur.nom)
+    console.log(this.utilisateur.nom);
+    this.recupererRoles();
+
+    for (let i = 0; i < this.roles.length; i++) {
+      if (this.roles[i].id === 2) {
+        this.roleC = 1
+      }
+      if (this.roles[i].id === 5) {
+        this.roleF = 1
+      }
+      if (this.roles[i].id === 3) {
+        this.roleA = 1
+      }
+      if (this.roles[i].id === 4) {
+        this.roleP = 1
+      }
+      if (this.roles[i].id === 1) {
+        this.roleAdmin = 1
+      }
+    }
+
+
   }
 
   modifierPassword() {
     this.router.navigateByUrl('modifPassword')
+  }
+
+  recupererRoles() {
+    this.service.rolesByIdUser(this.utilisateur.id).subscribe(
+      response => {
+        this.roles = response
+      }
+    )
   }
 
 }

@@ -1,12 +1,15 @@
 package com.intiFormation.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Role;
 import com.intiFormation.service.IroleService;
 
@@ -22,5 +25,10 @@ public class RoleController {
 		return r; 
 	}
 
+	@GetMapping("/rolesByIdUtilisateur/{id}")
+	public List<Role> chercherParIdUser(@PathVariable("id") int id){
+		List<Role> liste=rService.chercherAllParByIdUser(id); 
+		return liste; 
+	}
 
 }

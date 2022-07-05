@@ -23,4 +23,11 @@ public class RoleService implements IroleService{
 	public List<Role> chercherTt() {
 		return rdao.findAll();
 	}
+
+	@Override
+	public List<Role> chercherAllParByIdUser(int id) {
+		// TODO Auto-generated method stub
+		
+		return rdao.findByUtilisateurs_id(id);
+	}
 }
