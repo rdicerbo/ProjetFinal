@@ -31,4 +31,11 @@ AjouterAdmin()
     )
   }
 
+
+ //Methode afficherAdmins
+ afficherAdmins()
+ {
+   this.route.navigateByUrl('afficherAdmins');
+ }
+
 }

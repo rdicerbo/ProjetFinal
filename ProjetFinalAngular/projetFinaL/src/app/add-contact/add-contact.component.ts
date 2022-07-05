@@ -57,4 +57,11 @@ export class AddContactComponent implements OnInit {
     )
   }
 
+
+ //Methode afficherCommerciaux
+ afficherCommerciaux()
+ {
+   this.router.navigateByUrl('afficherCommerciaux');
+ }
+
 }

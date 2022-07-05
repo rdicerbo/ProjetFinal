@@ -40,4 +40,12 @@ export class ModifFormateursComponent implements OnInit {
     this.router.navigateByUrl('afficherFormateur');
   }
 
+  
+//Methode afficherFormateurs
+afficherFormateurs()
+{
+  this.router.navigateByUrl('afficherFormateur');
+}
+
+
 }

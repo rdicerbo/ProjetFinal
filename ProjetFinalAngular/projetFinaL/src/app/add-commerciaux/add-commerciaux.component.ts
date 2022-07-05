@@ -27,4 +27,12 @@ export class AddCommerciauxComponent implements OnInit {
     )
   }
 
+  
+ //Methode afficherCommerciaux
+ afficherCommerciaux()
+ {
+   this.router.navigateByUrl('afficherCommerciaux');
+ }
+
+
 }

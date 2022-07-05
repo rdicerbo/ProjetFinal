@@ -1,26 +1,40 @@
-<h1> Modifier participant {{participant.id}}</h1>
+<h1> Modifier le participant : {{participant.nom}} {{participant.prenom}}</h1>
 
 
 <form (ngSubmit)="modif()">
 
+    <p>Nom</p>
+    <input type="text" name="nom" [(ngModel)]="participant.nom"/>
+    <br>
+
+    <p>Prenom</p>
+    <input type="text" name="prenom" [(ngModel)]="participant.prenom"/>
+    <br>
+
+    <p>Adresse mail</p>
+    <input type="text" name="mail" [(ngModel)]="participant.mail"/>
+    <br>
+
+    <p>Username</p>
+    <input type="text" name="username" [(ngModel)]="participant.username"/>
+    <br>
+
+    <p>Password</p>
+    <input type="password" name="password" [(ngModel)]="participant.password"/>
+    <br>
     
-    Nom : <input type="text" name="nom" [(ngModel)]="participant.nom"/>
-    <br>
-    Prenom : <input type="text" name="prenom" [(ngModel)]="participant.prenom"/>
-    <br>
-    Mail : <input type="text" name="mail" [(ngModel)]="participant.mail"/>
-    <br>
-    Username : <input type="text" name="username" [(ngModel)]="participant.username"/>
-    <br>
-    Password : <input type="password" name="password" [(ngModel)]="participant.password"/>
-    <br>
-    <br>
-    Formation : <select name="selectedId" [(ngModel)]="selectedId">
+    <p>Formation suivie</p>
+    <select class="class2" name="selectedId" [(ngModel)]="selectedId">
         <option *ngFor="let f of formations" [ngValue]="f.idFormation">
             {{f.libForm}}
         </option>
     </select>
     <br>
-    <button type="submit">Valider</button>
+    <br>
+    <br>
+    <button class="class2" type="submit">Valider</button>
     
 </form>
+
+<br>
+<button (click)="afficherParticipants()">Retour</button>

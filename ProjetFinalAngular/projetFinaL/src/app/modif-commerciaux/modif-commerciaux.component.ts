@@ -39,4 +39,11 @@ export class ModifCommerciauxComponent implements OnInit {
     );
     this.router.navigateByUrl('afficherCommerciaux');
   }
+
+//Methode afficherCommerciaux
+afficherCommerciaux()
+{
+  this.router.navigateByUrl('afficherCommerciaux');
+}
+
 }
