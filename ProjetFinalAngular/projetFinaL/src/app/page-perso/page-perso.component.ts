@@ -17,10 +17,18 @@ export class PagePersoComponent implements OnInit {
   ngOnInit(): void {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     console.log(this.utilisateur.nom)
+
   }
 
   modifierPassword() {
     this.router.navigateByUrl('modifPassword')
   }
+
+//Methode afficherFormations
+afficherFormations()
+{
+  this.router.navigateByUrl('afficherFormation');
+}
+
 
 }
