@@ -84,5 +84,11 @@ public class ParticipantController {
 		p.setFormations(f);
 		pService.ajouter(p);
 	}
+	
+	@GetMapping("/participantsByIdFormation/{id}")
+	public List<Participant> participantsByIdFormation(@PathVariable("id") int id){
+		List<Participant> liste=pService.participantsParIdForm(id); 
+		return liste; 
+	}
 
 }

@@ -11,6 +11,5 @@ public interface IparticipantService {
 	public List<Participant> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Participant a); 
-
-
+	public List<Participant> participantsParIdForm (int id); 
 }

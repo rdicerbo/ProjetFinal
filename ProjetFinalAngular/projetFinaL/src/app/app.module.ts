@@ -45,11 +45,18 @@ import { RelanceAssocieParticipantComponent } from './relance-associe-participan
 import { ListeAdminsComponent } from './liste-admins/liste-admins.component';
 import { PagePersoComponent } from './page-perso/page-perso.component';
 import { ModifPasswordComponent } from './modif-password/modif-password.component';
+import { BodyComponent } from './body/body.component';
+import { PageFormateurComponent } from './page-formateur/page-formateur.component';
+import { PageParticipantComponent } from './page-participant/page-participant.component';
+import { FooterComponent } from './footer/footer.component';
+import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
 
 
 
 @NgModule({
   declarations: [
+    FooterComponent,
+    BodyComponent,
     AppComponent,
     AuthComponent,
     ListeFormationsComponent,
@@ -87,7 +94,10 @@ import { ModifPasswordComponent } from './modif-password/modif-password.componen
     PaiementAssocieParticipantComponent,
     RelanceAssocieParticipantComponent,
     PagePersoComponent,
-    ModifPasswordComponent
+    ModifPasswordComponent,
+    PageFormateurComponent,
+    PageParticipantComponent,
+    ParticipantAssocieFormationComponent
 
 
   ],

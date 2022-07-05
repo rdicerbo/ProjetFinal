@@ -19,6 +19,7 @@ export class PagePersoComponent implements OnInit {
   roleP = 0
   roleAdmin = 0
 
+
   constructor(private service: UtilisateurService, private router: Router) { }
 
   ngOnInit(): void {
@@ -27,7 +28,6 @@ export class PagePersoComponent implements OnInit {
 
     this.recupererRoles();
 
-
   }
 
   modifierPassword() {
@@ -35,12 +35,10 @@ export class PagePersoComponent implements OnInit {
   }
 
 
-//Methode afficherFormations
-afficherFormations()
-{
-  this.router.navigateByUrl('afficherFormation');
-}
-
+  //Methode afficherFormations
+  afficherFormations() {
+    this.router.navigateByUrl('afficherFormation');
+  }
 
   recupererRoles() {
     const id = this.utilisateur.id
@@ -70,6 +68,4 @@ afficherFormations()
       }
     )
   }
-
-
 }

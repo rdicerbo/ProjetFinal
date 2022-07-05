@@ -19,6 +19,11 @@ public interface IformationDao extends JpaRepository<Formation, Integer>{
 	public List<Formation> findByDateFinBeforeAndFormateur_id(LocalDate dateAjd,int id);
 	public List<Formation> findByDateFinAfterAndDateDebutBeforeAndFormateur_id(LocalDate dateAjd,LocalDate dateAjd2,int id);
 	
+	
+	public List<Formation> findByDateDebutAfterAndParticipants_id(LocalDate dateAjd,int id);
+	public List<Formation> findByDateFinBeforeAndParticipants_id(LocalDate dateAjd,int id);
+	public List<Formation> findByDateFinAfterAndDateDebutBeforeAndParticipants_id(LocalDate dateAjd,LocalDate dateAjd2,int id);
+	
 	public List<Formation> findByParticipants_id(int id);
 	public List<Formation> findByPrix(double prix);
 

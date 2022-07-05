@@ -39,8 +39,10 @@ export class AuthComponent implements OnInit {
     this.bc.authentification(this.username, this.password)
       .subscribe(
         data => {
+          console.log("message token")
+          console.log(data.jwt)
           sessionStorage.setItem('token', 'Bearer ' + data.jwt)
-          this.router.navigateByUrl('afficherFormation');
+          this.router.navigateByUrl('');
           this.invalidLogin = false;
           this.service.getByUsername(this.username).subscribe(
             response => {

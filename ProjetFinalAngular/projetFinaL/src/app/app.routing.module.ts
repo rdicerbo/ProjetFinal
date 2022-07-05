@@ -41,6 +41,7 @@ import { ModifFormateursComponent } from './modif-formateurs/modif-formateurs.co
 import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.component';
 import { PagePersoComponent } from './page-perso/page-perso.component';
 import { ModifPasswordComponent } from './modif-password/modif-password.component';
+import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
 
 
 
@@ -86,7 +87,8 @@ const routes: Routes = [
   { path: 'AjouterParticipant', component: AddParticipantsComponent },
   { path: 'afficherFormationAssocieParticipant/:id', component: FormationAssocieParticipantComponent },
   { path: 'afficherRelanceAssocieParticipant/:id', component: RelanceAssocieParticipantComponent },
-  { path: 'afficherPaiementAssocieParticipant/:id', component: PaiementAssocieParticipantComponent }
+  { path: 'afficherPaiementAssocieParticipant/:id', component: PaiementAssocieParticipantComponent },
+  { path: 'participantAssocieForm/:id', component: ParticipantAssocieFormationComponent }
 
 
 
