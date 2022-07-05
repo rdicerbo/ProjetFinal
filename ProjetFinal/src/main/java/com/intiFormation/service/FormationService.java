@@ -1,5 +1,6 @@
 package com.intiFormation.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,6 +77,31 @@ public class FormationService implements IformationService{
 	//Methode findByFormateur
 	public Formation findByFormateur_id(int id) {
 		return fordao.findByFormateur_id(id);
+	}
+
+	@Override
+	public List<Formation> chercherFormationsAVenir(LocalDate dateAjd,int id) {
+		List<Formation> listeF=fordao.findByDateDebutAfterAndFormateur_id(dateAjd,id);
+		return listeF;
+	}
+
+	@Override
+	public List<Formation> chercherFormationsEnCours(LocalDate dateAjd,LocalDate dateAjd2,int id) {
+		List<Formation> listeF=fordao.findByDateFinAfterAndDateDebutBeforeAndFormateur_id(dateAjd,dateAjd2,id);
+		return listeF;
+	}
+
+	@Override
+	public List<Formation> chercherFormationsArchive(LocalDate dateAjd,int id) {
+		List<Formation> listeF=fordao.findByDateFinBeforeAndFormateur_id(dateAjd,id);
+		return listeF;
+	}
+
+	@Override
+	public List<Formation> chercherFormationsGratuite() {
+		double zero=0;
+		List<Formation> listeF=fordao.findByPrix(zero);
+		return listeF;
 	}
 	
 	

@@ -1,5 +1,6 @@
 package com.intiFormation.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +98,33 @@ public class FormationController {
 		@GetMapping("/formationsByIdParticipant/{id}")
 		public List<Formation> chercherParIdPar(@PathVariable("id") int id){
 			List<Formation> liste=forService.chercherAllParByIdPar(id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsAVenir/{id}")
+		public List<Formation> chercherFormAVenir(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsAVenir(todaysDate,id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsEnCours/{id}")
+		public List<Formation> chercherFormEnCours(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsEnCours(todaysDate,todaysDate,id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsArchives/{id}")
+		public List<Formation> chercherFormArchives(@PathVariable("id") int id){
+			 LocalDate todaysDate = LocalDate.now();
+			List<Formation> liste=forService.chercherFormationsArchive(todaysDate,id); 
+			return liste; 
+		}
+		
+		@GetMapping("/formationsGratuites")
+		public List<Formation> chercherFormationsArchives(){
+			List<Formation> liste=forService.chercherFormationsGratuite(); 
 			return liste; 
 		}
 
