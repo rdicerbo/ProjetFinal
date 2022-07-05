@@ -26,4 +26,12 @@ export class ModifPasswordComponent implements OnInit {
     sessionStorage.setItem('utilisateur', JSON.stringify(this.utilisateur));
     this.router.navigateByUrl('espacePerso');
   }
+
+//Methode afficherEspacePerso
+afficherEspacePerso()
+{
+  this.router.navigateByUrl('espacePerso');
+}
+
+
 }
