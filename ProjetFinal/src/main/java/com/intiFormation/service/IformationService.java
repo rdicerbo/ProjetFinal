@@ -24,6 +24,10 @@ public interface IformationService {
 	public List<Formation> chercherFormationsAVenir (LocalDate dateAjd,int id);
 	public List<Formation> chercherFormationsEnCours (LocalDate dateAjd,LocalDate dateAjd2,int id);
 	public List<Formation> chercherFormationsArchive (LocalDate dateAjd,int id);
+	
+	public List<Formation> chercherFormationsAVenirParParticipants (LocalDate dateAjd,int id);
+	public List<Formation> chercherFormationsEnCoursParParticipants (LocalDate dateAjd,LocalDate dateAjd2,int id);
+	public List<Formation> chercherFormationsArchiveParParticipants (LocalDate dateAjd,int id);
 	public List<Formation> chercherFormationsGratuite ();
 	
 	

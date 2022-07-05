@@ -43,5 +43,12 @@ public class ParticipantService implements IparticipantService{
 		pdao.save(p); 
 	}
 
+	@Override
+	public List<Participant> participantsParIdForm(int id) {
+		// TODO Auto-generated method stub
+		
+		return pdao.findByFormations_idFormation(id);
+	}
+
 
 }
