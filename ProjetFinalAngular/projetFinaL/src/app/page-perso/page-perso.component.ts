@@ -19,6 +19,7 @@ export class PagePersoComponent implements OnInit {
   roleP = 0
   roleAdmin = 0
 
+
   constructor(private service: UtilisateurService, private router: Router) { }
 
   ngOnInit(): void {
