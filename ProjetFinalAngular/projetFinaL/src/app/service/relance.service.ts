@@ -19,4 +19,10 @@ export class RelanceService {
     return this.http.put<Relance[]>('http://localhost:4222/relancesByIdParticipantFormation/' + idFormation, p);
   }
 
+  //Methode insererR
+  insererR(r:Relance)
+  {
+    return this.http.post<Relance>('http://localhost:4222/relances', r);
+  }
+
 }
