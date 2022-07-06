@@ -1,3 +1,4 @@
+import { Formation } from "./Formation.model";
 import { Participant } from "./Participant.model";
 
 
@@ -10,5 +11,6 @@ export class Paiement
     montant!: number;
 
     participant!: Participant;
+    formation!: Formation;
 
 }

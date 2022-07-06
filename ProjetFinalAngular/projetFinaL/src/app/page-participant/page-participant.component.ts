@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Formation } from '../models/Formation.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
+import { ParticipantService } from '../service/participant.service';
 
 @Component({
   selector: 'app-page-participant',
@@ -14,10 +15,13 @@ export class PageParticipantComponent implements OnInit {
   formationsAvenir!: Formation[];
   formationsEncours!: Formation[];
   formationsGratuites!: Formation[];
-  utilisateur!: Utilisateur
+  utilisateur!: Utilisateur;
+
+  today= new Date();
 
 
   constructor(private service: ListeFormationsService,
+    private serviceP: ParticipantService,
     private router: Router) { }
 
   //Methode ngOnInit
@@ -38,6 +42,8 @@ export class PageParticipantComponent implements OnInit {
       }
     )
   }
+
+  //Methode chargerFormationsAvenir
   chargerFormationsAvenir() {
     this.service.getformationsAVenirByParticipant(this.utilisateur.id).subscribe(
       response => {
@@ -45,6 +51,8 @@ export class PageParticipantComponent implements OnInit {
       }
     )
   }
+
+  //Methode chargerFormationsEncours
   chargerFormationsEncours() {
     this.service.getformationsEnCoursByParticipant(this.utilisateur.id).subscribe(
       response => {
@@ -53,14 +61,35 @@ export class PageParticipantComponent implements OnInit {
     )
   }
 
+  //Methode chargerFormationsGratuites
   chargerFormationsGratuites() {
     this.service.formationsGratuites().subscribe(
       response => {
         this.formationsGratuites = response;
+
       }
     )
   }
 
 
+//Methode inscriptionGratuit
+inscriptionGratuit(idFormation: number)
+{
+  this.serviceP.participantsAdd(idFormation, this.utilisateur).subscribe(
+    response => {
+      this.chargerFormationsFini();
+      this.chargerFormationsAvenir();
+     this.chargerFormationsEncours();
+      this.chargerFormationsGratuites();
+      this.router.navigateByUrl('');
+    }
+  )
+}
+
+//Methode recupererPaiement
+recupererPaiement(idFormation: number)
+{
+  this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/'+idFormation);
+}
 
 }

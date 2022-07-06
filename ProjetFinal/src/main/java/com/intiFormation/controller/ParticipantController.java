@@ -90,5 +90,18 @@ public class ParticipantController {
 		List<Participant> liste=pService.participantsParIdForm(id); 
 		return liste; 
 	}
+	
+	//Methode addFormation
+	@PutMapping("/participantsAdd/{id}")
+	public void addFormation(@RequestBody Participant p,@PathVariable("id") int idFormateur)
+	{
+		//Ajouter formation au participant
+		List <Formation> f=fService.chercherAllParByIdPar(p.getId());
+		System.out.println(f);
+		f.add(fService.chercherParId(idFormateur).get());
+		p.setFormations(f);
+		pService.ajouter(p);
+		
+	}
 
 }

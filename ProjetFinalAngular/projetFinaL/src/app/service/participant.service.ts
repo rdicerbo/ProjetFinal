@@ -48,4 +48,10 @@ export class ParticipantService {
     return this.http.get<Participant>('http://localhost:4222/participants/'+idParticipant);
   }
 
+  //Methode participantsAdd
+  participantsAdd(id:number, participant:Participant)
+  {
+    return this.http.put<Participant>('http://localhost:4222/participantsAdd/'+id,participant);
+  }
+
 }

@@ -50,6 +50,7 @@ import { PageFormateurComponent } from './page-formateur/page-formateur.componen
 import { PageParticipantComponent } from './page-participant/page-participant.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
+import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-associe-pf.component';
 
 
 
@@ -97,7 +98,8 @@ import { ParticipantAssocieFormationComponent } from './participant-associe-form
     ModifPasswordComponent,
     PageFormateurComponent,
     PageParticipantComponent,
-    ParticipantAssocieFormationComponent
+    ParticipantAssocieFormationComponent,
+    PaiementAssociePFComponent
 
 
   ],

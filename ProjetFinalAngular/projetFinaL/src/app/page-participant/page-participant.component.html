@@ -1,4 +1,4 @@
-<h3>Formations</h3>
+<h2>Liste des formations vous concernant</h2>
 
 <br>
 <table class="center">
@@ -8,68 +8,59 @@
         <td style="background-color: rgb(127, 203, 144)">Description</td>
         <td style="background-color: rgb(127, 203, 144)">Date debut</td>
         <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
+        <td style="background-color: rgb(127, 203, 144)">Paiement</td>
 
     </tr>
+
     <tr>
-        <td></td>
-        <td></td>
-        <td>Liste formations en cours</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td style="background-color: #C4ABFE"  colspan="7">Liste formations en cours</td>
     </tr>
 
     <tr *ngFor="let f of formationsEncours">
-        <td style="background-color: #C4ABFE">{{f.idFormation}}</td>
-        <td style="background-color: #C4ABFE">{{f.libForm}}</td>
-        <td style="background-color: #C4ABFE">{{f.description}}</td>
-        <td style="background-color: #C4ABFE">{{f.dateDebut}}</td>
-        <td style="background-color: #C4ABFE">{{f.dateFin}}</td>
-        <td style="background-color: #C4ABFE">{{f.formateur.nom}}</td>
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libForm}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.formateur.nom}}</td>
+        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
     </tr>
+
     <tr>
-        <td></td>
-        <td></td>
-        <td>Liste formations a venir</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td style="background-color: #E7A9FE"  colspan="7">Liste formations a venir</td>
     </tr>
 
     <tr *ngFor="let f of formationsAvenir">
-        <td style="background-color: #E7A9FE">{{f.idFormation}}</td>
-        <td style="background-color: #E7A9FE">{{f.libForm}}</td>
-        <td style="background-color: #E7A9FE">{{f.description}}</td>
-        <td style="background-color: #E7A9FE">{{f.dateDebut}}</td>
-        <td style="background-color: #E7A9FE">{{f.dateFin}}</td>
-        <td style="background-color: #E7A9FE">{{f.formateur.nom}}</td>
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libForm}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.formateur.nom}}</td>
+        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
     </tr>
+
     <tr>
-        <td></td>
-        <td></td>
-        <td>Liste formations fini</td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td style="background-color: #F4DCFE"  colspan="7" >Liste formations finies</td>
     </tr>
 
     <tr *ngFor="let f of formationsFini">
-        <td style="background-color: #F4DCFE">{{f.idFormation}}</td>
-        <td style="background-color: #F4DCFE">{{f.libForm}}</td>
-        <td style="background-color:#F4DCFE">{{f.description}}</td>
-        <td style="background-color: #F4DCFE">{{f.dateDebut}}</td>
-        <td style="background-color: #F4DCFE">{{f.dateFin}}</td>
-    <td style="background-color: #F4DCFE">{{f.formateur.nom}}</td>
-    
-
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libForm}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.formateur.nom}}</td>
+        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
     </tr>
+
 
 </table>
 
-
-<h3>Formations Gratuites</h3>
+<br>
+<br>
+<h2>Liste des formations gratuites</h2>
 
 <br>
 <table class="center">
@@ -79,19 +70,20 @@
         <td style="background-color: rgb(127, 203, 144)">Description</td>
         <td style="background-color: rgb(127, 203, 144)">Date debut</td>
         <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
+        
+        <td style="background-color: rgb(127, 203, 144)">S'inscrire</td>
 
     </tr>
 
     <tr *ngFor="let f of formationsGratuites">
-        <td style="background-color: #F4DCFE">{{f.idFormation}}</td>
-        <td style="background-color: #F4DCFE">{{f.libForm}}</td>
-        <td style="background-color:#F4DCFE">{{f.description}}</td>
-        <td style="background-color: #F4DCFE">{{f.dateDebut}}</td>
-        <td style="background-color: #F4DCFE">{{f.dateFin}}</td>
-        <td style="background-color: #F4DCFE">{{f.formateur.nom}}</td>
-
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libForm}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.formateur.nom}}</td>
+        <td><button (click)=" inscriptionGratuit(f.idFormation)"> Inscription </button>
     </tr>
 
 </table>

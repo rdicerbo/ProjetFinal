@@ -25,6 +25,9 @@ public class Paiement {
 	private Participant participant;
 	
 	
+	@ManyToOne
+	@JoinColumn(name="idFormation")
+	private Formation formation;
 	
 	public Participant getParticipant() {
 		return participant;
@@ -59,6 +62,12 @@ public class Paiement {
 	public Paiement() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public Formation getFormation() {
+		return formation;
+	}
+	public void setFormation(Formation formation) {
+		this.formation = formation;
 	}
 	
 	
