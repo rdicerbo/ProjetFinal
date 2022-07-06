@@ -15,12 +15,15 @@
         <td>{{p.date}}</td>
         <td>{{p.montant}}</td>
         <td>{{p.reste}}</td>
-        <td *ngIf="roleA==1">
-            <button class="class3" (click)="Relance()">Relance</button>
-        </td>
     </tr>
 
 </table>
 
 <br>
+<br>
+<br>
+<button class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
+<br>
 <button class="class3" (click)="Retour()">Retour</button>
+
+<p *ngIf="testRelance==1">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>

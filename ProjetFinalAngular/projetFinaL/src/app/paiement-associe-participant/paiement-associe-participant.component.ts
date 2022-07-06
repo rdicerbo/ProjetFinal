@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Paiement } from '../models/Paiement.model';
+import { Relance } from '../models/Relance.model';
 import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { PaiementService } from '../service/paiement.service';
+import { RelanceService } from '../service/relance.service';
 import { UtilisateurService } from '../service/utilisateur.service';
 
 @Component({
@@ -23,15 +25,24 @@ export class PaiementAssocieParticipantComponent implements OnInit {
   roleP = 0
   roleAdmin = 0
 
+  relance!: Relance;
+
+  testRelance!: number;
+
   constructor(private router: Router,
     private service: PaiementService,
     private serviceU: UtilisateurService,
+    private serviceR: RelanceService,
     private route: ActivatedRoute) { }
 
   //Methode ngOnInit
   ngOnInit(): void {
-    this.afficher();
+    this.testRelance = 0;
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+    this.relance = new Relance();
     this.recupererRoles();
+    this.afficher();
+
   }
 
 
@@ -83,9 +94,29 @@ export class PaiementAssocieParticipantComponent implements OnInit {
 
   }
 
+  //Methode Relance
   Relance() {
 
+    this.relance.date = new Date();
+    this.relance.participant = this.paiements[0].participant;
+    this.relance.montant = this.paiements[this.paiements.length - 1].reste;
+    this.relance.formationR = this.paiements[0].formation;
+    this.relance.assistant = this.utilisateur;
+
+    this.serviceR.insererR(this.relance).subscribe(
+      response => {
+        console.log("test");
+        this.relance = response;
+        this.testRelance = 1;
+        this.afficher();
+
+
+      }
+    )
+
   }
+
+
 
   Retour() {
     this.router.navigateByUrl('afficherParticipants');
