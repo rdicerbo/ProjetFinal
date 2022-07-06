@@ -13,5 +13,7 @@ public interface IrelanceService {
 	public List<Relance> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Relance r); 
+	public List<Relance> chercherParIdFormIdPar(int idFormation, int idParticipant); 
+	
 
 }

@@ -10,11 +10,12 @@
         <td style="background-color: rgb(127, 203, 144)">Date fin</td>
         <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
         <td style="background-color: rgb(127, 203, 144)">Paiement</td>
+        <td style="background-color: rgb(127, 203, 144)">Relance</td>
 
     </tr>
 
     <tr>
-        <td style="background-color: #C4ABFE"  colspan="7">Liste formations en cours</td>
+        <td style="background-color: #C4ABFE" colspan="7">Liste formations en cours</td>
     </tr>
 
     <tr *ngFor="let f of formationsEncours">
@@ -24,11 +25,12 @@
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
     </tr>
 
     <tr>
-        <td style="background-color: #E7A9FE"  colspan="7">Liste formations a venir</td>
+        <td style="background-color: #E7A9FE" colspan="7">Liste formations a venir</td>
     </tr>
 
     <tr *ngFor="let f of formationsAvenir">
@@ -38,11 +40,12 @@
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
     </tr>
 
     <tr>
-        <td style="background-color: #F4DCFE"  colspan="7" >Liste formations finies</td>
+        <td style="background-color: #F4DCFE" colspan="7">Liste formations finies</td>
     </tr>
 
     <tr *ngFor="let f of formationsFini">
@@ -52,7 +55,8 @@
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" recupererPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
     </tr>
 
 
@@ -71,7 +75,7 @@
         <td style="background-color: rgb(127, 203, 144)">Date debut</td>
         <td style="background-color: rgb(127, 203, 144)">Date fin</td>
         <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
-        
+
         <td style="background-color: rgb(127, 203, 144)">S'inscrire</td>
 
     </tr>

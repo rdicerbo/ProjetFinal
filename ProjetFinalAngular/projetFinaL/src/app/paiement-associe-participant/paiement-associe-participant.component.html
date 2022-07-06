@@ -15,7 +15,9 @@
             <td>{{p.date}}</td>
             <td>{{p.montant}}</td>
             <td>{{p.reste}}</td>
-         
+            <td *ngIf="roleA==1">
+                <button class="class3" (click)="Relance()">Relance</button>
+            </td>
     </tr>
 
 </table>
