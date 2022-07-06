@@ -13,5 +13,6 @@ public interface IpaiementService {
 	public List<Paiement> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Paiement p); 
+	public List<Paiement> chercherParIdForm(int id, int idParticipant);
 
 }

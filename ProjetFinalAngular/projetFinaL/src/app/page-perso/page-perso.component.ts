@@ -37,7 +37,7 @@ export class PagePersoComponent implements OnInit {
 
   //Methode afficherFormations
   afficherFormations() {
-    this.router.navigateByUrl('afficherFormation');
+    this.router.navigateByUrl('');
   }
 
   recupererRoles() {

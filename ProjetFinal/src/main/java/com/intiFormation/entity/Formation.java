@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Formation {
@@ -30,6 +33,11 @@ public class Formation {
 	
 	@ManyToMany(mappedBy = "formations")
 	private List<Participant> participants;
+	
+	
+	@OneToMany(mappedBy="formation")
+	@JsonIgnore
+	private List<Paiement> paiements;
 	
 	
 	public Formateur getFormateur() {
@@ -83,6 +91,12 @@ public class Formation {
 	public Formation() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public List<Paiement> getPaiements() {
+		return paiements;
+	}
+	public void setPaiements(List<Paiement> paiements) {
+		this.paiements = paiements;
 	}
 	
 	

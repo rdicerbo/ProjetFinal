@@ -110,8 +110,9 @@ public class FormationController {
 		
 		@GetMapping("/formationsEnCours/{id}")
 		public List<Formation> chercherFormEnCours(@PathVariable("id") int id){
-			 LocalDate todaysDate = LocalDate.now();
-			List<Formation> liste=forService.chercherFormationsEnCours(todaysDate,todaysDate,id); 
+			LocalDate todaysDate = LocalDate.now().plusDays(1);
+			LocalDate todaysDate2=LocalDate.now().minusDays(1);
+			List<Formation> liste=forService.chercherFormationsEnCours(todaysDate,todaysDate2,id); 
 			return liste; 
 		}
 		
@@ -137,8 +138,9 @@ public class FormationController {
 		
 		@GetMapping("/formationsEnCoursByParticipant/{id}")
 		public List<Formation> chercherFormEnCoursByParticipant(@PathVariable("id") int id){
-			 LocalDate todaysDate = LocalDate.now();
-			List<Formation> liste=forService.chercherFormationsEnCoursParParticipants(todaysDate,todaysDate,id); 
+			 LocalDate todaysDate = LocalDate.now().plusDays(1);
+			 LocalDate todaysDate2=LocalDate.now().minusDays(1);
+			List<Formation> liste=forService.chercherFormationsEnCoursParParticipants(todaysDate,todaysDate2,id); 
 			return liste; 
 		}
 		

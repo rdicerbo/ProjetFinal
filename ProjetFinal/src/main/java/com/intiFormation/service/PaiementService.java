@@ -50,6 +50,16 @@ public class PaiementService implements IpaiementService{
 		// TODO Auto-generated method stub
 		pdao.save(p); 
 	}
+
+
+	@Override
+	public List<Paiement> chercherParIdForm(int id, int idParticipant) 
+	{
+		
+		return pdao.findByFormation_idFormationAndParticipant_id(id, idParticipant);
+
+	}
 	
+
 
 }
