@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Paiement } from '../models/Paiement.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { PaiementService } from '../service/paiement.service';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -13,65 +14,59 @@ import { PaiementService } from '../service/paiement.service';
 })
 export class PaiementAssociePFComponent implements OnInit {
 
-  paiements!:Paiement[];
+  paiements!: Paiement[];
   paiement!: Paiement;
 
-  utilisateur!:Utilisateur;
+  utilisateur!: Utilisateur;
 
-  newPaiement!:Paiement;
+  newPaiement!: Paiement;
 
   nouveaupaiement!: number;
 
-  date1=new Date();
+  date1 = new Date();
 
-  constructor(private router:Router,
-    private service:PaiementService,
+  constructor(private router: Router,
+    private service: PaiementService,
     private route: ActivatedRoute) { }
 
   //Methode ngOnInit
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     this.recupererPaiement();
-    this.newPaiement=new Paiement();
-    
+    this.newPaiement = new Paiement();
+
   }
 
   //Methode paiement
-  recupererPaiement()
-  {
-    const id=+this.route.snapshot.params['idFormation'];
+  recupererPaiement() {
+    const id = +this.route.snapshot.params['idFormation'];
     this.service.paiementByIdFormation(id, this.utilisateur).subscribe(
-      response =>
-      {
-        this.paiement=response;
+      response => {
+        this.paiement = response;
       }
     )
   }
 
- //Methode Retour
- Retour()
- {
-   this.router.navigateByUrl('');
- }
+  //Methode Retour
+  Retour() {
+    this.router.navigateByUrl('');
+  }
 
- //Methode Payer
- Payer()
- {
-    this.newPaiement.date=new Date();
-    this.newPaiement.reste=this.paiement.reste-this.nouveaupaiement;
-    this.newPaiement.montant=this.nouveaupaiement;
-    this.newPaiement.participant=this.paiement.participant;
-    this.newPaiement.formation=this.paiement.formation;
+  //Methode Payer
+  Payer() {
+    this.newPaiement.date = new Date();
+    this.newPaiement.reste = this.paiement.reste - this.nouveaupaiement;
+    this.newPaiement.montant = this.nouveaupaiement;
+    this.newPaiement.participant = this.paiement.participant;
+    this.newPaiement.formation = this.paiement.formation;
 
     this.service.insererP(this.newPaiement).subscribe(
-      response =>
-      {
+      response => {
         this.recupererPaiement;
-        this.newPaiement=response;
-        this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/'+this.newPaiement.formation.idFormation);
+        this.newPaiement = response;
+        this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/' + this.newPaiement.formation.idFormation);
       }
     );
 
- }
+  }
 }

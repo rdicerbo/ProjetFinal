@@ -51,6 +51,8 @@ import { PageParticipantComponent } from './page-participant/page-participant.co
 import { FooterComponent } from './footer/footer.component';
 import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
 import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-associe-pf.component';
+import { RelanceAssociePFComponent } from './relance-associe-pf/relance-associe-pf.component';
+import { PageAssistantComponent } from './page-assistant/page-assistant.component';
 
 
 
@@ -99,7 +101,9 @@ import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-assoc
     PageFormateurComponent,
     PageParticipantComponent,
     ParticipantAssocieFormationComponent,
-    PaiementAssociePFComponent
+    PaiementAssociePFComponent,
+    RelanceAssociePFComponent,
+    PageAssistantComponent
 
 
   ],

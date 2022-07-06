@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formation } from '../models/Formation.model';
+import { Paiement } from '../models/Paiement.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
+import { PaiementService } from '../service/paiement.service';
 import { ParticipantService } from '../service/participant.service';
 
 @Component({
@@ -16,12 +18,14 @@ export class PageParticipantComponent implements OnInit {
   formationsEncours!: Formation[];
   formationsGratuites!: Formation[];
   utilisateur!: Utilisateur;
+  paiement!: Paiement;
 
-  today= new Date();
+  today = new Date();
 
 
   constructor(private service: ListeFormationsService,
     private serviceP: ParticipantService,
+    private servicePaiement: PaiementService,
     private router: Router) { }
 
   //Methode ngOnInit
@@ -72,24 +76,29 @@ export class PageParticipantComponent implements OnInit {
   }
 
 
-//Methode inscriptionGratuit
-inscriptionGratuit(idFormation: number)
-{
-  this.serviceP.participantsAdd(idFormation, this.utilisateur).subscribe(
-    response => {
-      this.chargerFormationsFini();
-      this.chargerFormationsAvenir();
-     this.chargerFormationsEncours();
-      this.chargerFormationsGratuites();
-      this.router.navigateByUrl('');
-    }
-  )
-}
+  //Methode inscriptionGratuit
+  inscriptionGratuit(idFormation: number) {
+    this.serviceP.participantsAdd(idFormation, this.utilisateur).subscribe(
+      response => {
+        this.chargerFormationsFini();
+        this.chargerFormationsAvenir();
+        this.chargerFormationsEncours();
+        this.chargerFormationsGratuites();
+        this.router.navigateByUrl('');
+      }
+    )
+  }
 
-//Methode recupererPaiement
-recupererPaiement(idFormation: number)
-{
-  this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/'+idFormation);
-}
+  //Methode recupererPaiement
+  afficherPaiement(idFormation: number) {
+    this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/' + idFormation);
+  }
+  //Methode recupererRelances
+  afficherRelances(idFormation: number) {
+    this.router.navigateByUrl('afficherRelanceAssocieParticipantEtFormation/' + idFormation);
+  }
+
+
+
 
 }
