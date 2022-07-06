@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Paiement;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IpaiementService;
 
 @RestController
@@ -56,6 +57,18 @@ public class PaiementController {
 	public void modifier(@RequestBody Paiement p) {
 		pService.ajouter(p); 
 	}
+	
+	
+	//Methode recupLastPaiement 
+	@PutMapping("/dernierPaiement/{idFormation}")
+	public Paiement recupLastPaiement(@PathVariable("idFormation") int id,
+			@RequestBody Participant p)
+	{
+		List<Paiement> listeP=pService.chercherParIdForm(id,p.getId());
+		return listeP.get(listeP.size()-1);
+
+	}
+
 
 
 }

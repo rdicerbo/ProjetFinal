@@ -8,5 +8,7 @@ import com.intiFormation.entity.Paiement;
 
 public interface IpaiementDao extends JpaRepository<Paiement, Integer>{
 	public List<Paiement> findByParticipant_id(int id);
+	
+	public List<Paiement> findByFormation_idFormationAndParticipant_id(int idFormation, int idParticipant);
 
 }

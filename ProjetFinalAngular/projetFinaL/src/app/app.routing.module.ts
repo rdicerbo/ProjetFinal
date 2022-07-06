@@ -42,6 +42,7 @@ import { ListeFormateursComponent } from './liste-formateurs/liste-formateurs.co
 import { PagePersoComponent } from './page-perso/page-perso.component';
 import { ModifPasswordComponent } from './modif-password/modif-password.component';
 import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
+import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-associe-pf.component';
 
 
 
@@ -88,8 +89,10 @@ const routes: Routes = [
   { path: 'afficherFormationAssocieParticipant/:id', component: FormationAssocieParticipantComponent },
   { path: 'afficherRelanceAssocieParticipant/:id', component: RelanceAssocieParticipantComponent },
   { path: 'afficherPaiementAssocieParticipant/:id', component: PaiementAssocieParticipantComponent },
-  { path: 'participantAssocieForm/:id', component: ParticipantAssocieFormationComponent }
+  { path: 'participantAssocieForm/:id', component: ParticipantAssocieFormationComponent },
 
+
+  { path: 'afficherPaiementAssocieParticipantEtFormation/:idFormation', component: PaiementAssociePFComponent }
 
 
 ];

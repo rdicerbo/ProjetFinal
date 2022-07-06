@@ -1,0 +1,32 @@
+
+<h1> Liste des paiements associes</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
+        <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
+        <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
+
+    </tr>
+
+    <tr>
+            <td>{{paiement.date}}</td>
+            <td>{{paiement.montant}}</td>
+            <td>{{paiement.reste}}</td> 
+            <td>
+              
+                <form class="hidden">
+                    <input type="number" placeholder="0" value="0" min="0" max="{{paiement.reste}}"  [(ngModel)]="nouveaupaiement" name="nouveaupaiement">
+                    <input type="submit" value="Payer">
+                </form>
+                
+            </td>       
+    </tr>
+</table>
+<br>
+
+<br>
+<br>
+<button class="class3"  (click)="Retour()">Retour</button>
+
