@@ -42,4 +42,12 @@
 </table>
 
 <br>
+
+<div *ngIf="roleP==1">
+    <app-relance-associe-participant [utilisateur]="utilisateur"></app-relance-associe-participant>
+    <app-paiement-associe-participant [utilisateur]="utilisateur"></app-paiement-associe-participant>
+
+</div>
+
+<br>
 <button class="deconnexion" (click)="afficherFormations()">Retour</button>

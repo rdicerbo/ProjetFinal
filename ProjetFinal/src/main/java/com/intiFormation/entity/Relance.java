@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Relance {
 	@Id
@@ -25,6 +27,10 @@ public class Relance {
 	@ManyToOne
 	@JoinColumn(name="idAssistant")
 	private Assistant assistant;
+	
+	@ManyToOne
+	@JoinColumn(name="idFormation")
+	private Formation formationR;
 
 	
 	
@@ -71,6 +77,14 @@ public class Relance {
 	public Relance() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Formation getFormationR() {
+		return formationR;
+	}
+
+	public void setFormationR(Formation formation) {
+		this.formationR = formation;
 	}
 	
 	
