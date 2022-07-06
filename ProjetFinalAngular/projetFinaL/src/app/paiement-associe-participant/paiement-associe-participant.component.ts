@@ -83,6 +83,9 @@ export class PaiementAssocieParticipantComponent implements OnInit {
 
   }
 
+  Relance() {
+
+  }
 
   Retour() {
     this.router.navigateByUrl('afficherParticipants');

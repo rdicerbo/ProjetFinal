@@ -11,16 +11,16 @@
     </tr>
 
     <tr *ngFor="let p of paiements">
-            <td>{{p.idPaiement}}</td>
-            <td>{{p.date}}</td>
-            <td>{{p.montant}}</td>
-            <td>{{p.reste}}</td>
-            <td *ngIf="roleA==1">
-                <button class="class3" (click)="Relance()">Relance</button>
-            </td>
+        <td>{{p.idPaiement}}</td>
+        <td>{{p.date}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
+        <td *ngIf="roleA==1">
+            <button class="class3" (click)="Relance()">Relance</button>
+        </td>
     </tr>
 
 </table>
 
 <br>
-<button class="class3"  (click)="Retour()">Retour</button>
+<button class="class3" (click)="Retour()">Retour</button>
