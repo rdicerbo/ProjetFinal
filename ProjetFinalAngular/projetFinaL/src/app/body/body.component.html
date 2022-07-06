@@ -19,16 +19,17 @@
 </div>
 
 <div *ngIf="roleA==1">
-    <p> 
+    <p>
         En tant que <span class="el">assistant</span>
     </p>
+    <app-page-assistant></app-page-assistant>
 
 </div>
 
 <div *ngIf="roleF==1">
-    <p> 
-        En tant que <span class="el">formateur</span>, vous pouvez consultez a tout moment vos formations en cours, 
-        a venir ou encore finies. 
+    <p>
+        En tant que <span class="el">formateur</span>, vous pouvez consultez a tout moment vos formations en cours,
+        a venir ou encore finies.
         <br>Vous pouvez egalement consulter la liste des participants
         de vos formations ainsi qu'acceder a votre espace personnel.
     </p>
@@ -40,12 +41,12 @@
 </div>
 
 <div *ngIf="roleP==1">
-    <p> 
-        En tant que <span class="el">participant</span>, vous pouvez consultez a 
-        tout moment vos formations en cours, 
+    <p>
+        En tant que <span class="el">participant</span>, vous pouvez consultez a
+        tout moment vos formations en cours,
         <br>
-        a venir ou encore finies avec le formateur assurant la formation. 
-        Vous pouvez egalement 
+        a venir ou encore finies avec le formateur assurant la formation.
+        Vous pouvez egalement
         <br>consulter la liste des formations gratuites
         proposees par eFormation. Votre espace <br>personnel avec vos informations
         de connexion sont aussi disponibles sur la page.

@@ -1,4 +1,3 @@
-
 <h1> Liste des paiements associes</h1>
 
 
@@ -11,22 +10,27 @@
     </tr>
 
     <tr>
-            <td>{{paiement.date}}</td>
-            <td>{{paiement.montant}}</td>
-            <td>{{paiement.reste}}</td> 
-            <td>
-              
-                <form class="hidden">
-                    <input type="number" placeholder="0" value="0" min="0" max="{{paiement.reste}}"  [(ngModel)]="nouveaupaiement" name="nouveaupaiement">
-                    <input type="submit" value="Payer">
-                </form>
-                
-            </td>       
+        <td>{{paiement.date}}</td>
+        <td>{{paiement.montant}}</td>
+        <td>{{paiement.reste}}</td>
+        <td *ngIf="paiement.reste!=0">
+
+            <form class="hidden">
+                <input type="number" placeholder="0" value="0" min="0" max="{{paiement.reste}}"
+                    [(ngModel)]="nouveaupaiement" name="nouveaupaiement">
+
+                <button *ngIf="nouveaupaiement<=paiement.reste" class="class3" (click)="Payer()">Payer</button>
+
+            </form>
+
+        </td>
+        <td *ngIf="paiement.reste==0">
+            Formation paye
+        </td>
     </tr>
 </table>
 <br>
 
 <br>
 <br>
-<button class="class3"  (click)="Retour()">Retour</button>
-
+<button class="class3" (click)="Retour()">Retour</button>

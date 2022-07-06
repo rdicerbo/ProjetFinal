@@ -51,6 +51,14 @@ public class RelanceService implements IrelanceService{
 		// TODO Auto-generated method stub
 		rdao.save(r); 
 	}
+
+
+	@Override
+	public List<Relance> chercherParIdFormIdPar(int idFormation, int idParticipant) {
+		// TODO Auto-generated method stub
+		
+		return rdao.findByFormationR_idFormationAndParticipant_id(idFormation,idParticipant);
+	}
 	
 	
 }

@@ -32,12 +32,17 @@ public class Formation {
 	private Formateur formateur;
 	
 	@ManyToMany(mappedBy = "formations")
+	@JsonIgnore
 	private List<Participant> participants;
 	
 	
 	@OneToMany(mappedBy="formation")
 	@JsonIgnore
 	private List<Paiement> paiements;
+	
+	@OneToMany(mappedBy="formationR")
+	@JsonIgnore
+	private List<Relance> relances;
 	
 	
 	public Formateur getFormateur() {
@@ -97,6 +102,12 @@ public class Formation {
 	}
 	public void setPaiements(List<Paiement> paiements) {
 		this.paiements = paiements;
+	}
+	public List<Relance> getRelances() {
+		return relances;
+	}
+	public void setRelances(List<Relance> relances) {
+		this.relances = relances;
 	}
 	
 	
