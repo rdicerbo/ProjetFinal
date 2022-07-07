@@ -45,7 +45,7 @@ export class ListeProspectsComponent implements OnInit {
     this.router.navigateByUrl('afficherContactAssocie/' + id);
   }
 
-  retour() {
+  /*retour() {
     this.router.navigateByUrl('afficherFormation')
-  }
+  }*/
 }

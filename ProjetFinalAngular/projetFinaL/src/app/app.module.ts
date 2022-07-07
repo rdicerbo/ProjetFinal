@@ -53,6 +53,7 @@ import { ParticipantAssocieFormationComponent } from './participant-associe-form
 import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-associe-pf.component';
 import { RelanceAssociePFComponent } from './relance-associe-pf/relance-associe-pf.component';
 import { PageAssistantComponent } from './page-assistant/page-assistant.component';
+import { PageCommercialeComponent } from './page-commerciale/page-commerciale.component';
 
 
 
@@ -103,7 +104,8 @@ import { PageAssistantComponent } from './page-assistant/page-assistant.componen
     ParticipantAssocieFormationComponent,
     PaiementAssociePFComponent,
     RelanceAssociePFComponent,
-    PageAssistantComponent
+    PageAssistantComponent,
+    PageCommercialeComponent
 
 
   ],
