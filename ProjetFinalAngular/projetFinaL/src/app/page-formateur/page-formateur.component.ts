@@ -59,5 +59,4 @@ export class PageFormateurComponent implements OnInit {
     this.router.navigateByUrl('participantAssocieForm/'+id);
   }
 
-
 }
