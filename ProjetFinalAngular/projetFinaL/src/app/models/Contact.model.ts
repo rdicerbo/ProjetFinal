@@ -6,4 +6,8 @@ export class Contact {
     idContact!: number
     commercial!: Commercial
     prospect!: Prospect
+
+    commentaire!: string
+    date!: Date
+    appOuRdv!: boolean
 }

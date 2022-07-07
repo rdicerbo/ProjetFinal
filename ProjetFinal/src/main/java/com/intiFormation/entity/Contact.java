@@ -1,5 +1,8 @@
 package com.intiFormation.entity;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +25,38 @@ public class Contact {
 	@JoinColumn(name="idProspect")
 	private Prospect prospect;
 	
+	private String commentaire;
+	private LocalDateTime date;
 	
+	private boolean appOuRdv;
+	
+
+	public boolean isAppOuRdv() {
+		return appOuRdv;
+	}
+
+	public void setAppOuRdv(boolean appOuRdv) {
+		this.appOuRdv = appOuRdv;
+	}
+
+	
+	public String getCommentaire() {
+		return commentaire;
+	}
+
+	public void setCommentaire(String commentaire) {
+		this.commentaire = commentaire;
+	}
+
+	
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
 
 	public int getIdContact() {
 		return idContact;

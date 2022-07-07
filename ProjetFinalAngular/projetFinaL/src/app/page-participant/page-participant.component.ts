@@ -22,6 +22,8 @@ export class PageParticipantComponent implements OnInit {
 
   today = new Date();
 
+  blob!: any;
+
 
   constructor(private service: ListeFormationsService,
     private serviceP: ParticipantService,
@@ -99,6 +101,21 @@ export class PageParticipantComponent implements OnInit {
   }
 
 
+  // Methode Pdf
+
+  Pdf(id: number) {
+
+    this.serviceP.getPdf(id, this.utilisateur).subscribe((data) => {
+
+      this.blob = new Blob([data], { type: 'application/pdf' });
+
+      var downloadURL = window.URL.createObjectURL(data);
+      var link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = "Diplome.pdf";
+      link.click();
+    });
+  }
 
 
 }

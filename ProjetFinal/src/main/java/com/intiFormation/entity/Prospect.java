@@ -10,16 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.opencsv.bean.CsvBindByName;
 
 @Entity
 public class Prospect {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@CsvBindByName
 	private int idProspect;
 	
+	@CsvBindByName
 	private String nomProspect;
+	@CsvBindByName
 	private String prenomProspect;
+	@CsvBindByName
 	private String numTel;
+	@CsvBindByName
 	private String emailProspect;
 	
 	@OneToMany(mappedBy="prospect", cascade = CascadeType.PERSIST)
@@ -65,6 +71,13 @@ public class Prospect {
 		return emailProspect;
 	}
 	public void setEmailProspect(String emailProspect) {
+		this.emailProspect = emailProspect;
+	}
+	public Prospect(String nomProspect, String prenomProspect, String numTel, String emailProspect) {
+		super();
+		this.nomProspect = nomProspect;
+		this.prenomProspect = prenomProspect;
+		this.numTel = numTel;
 		this.emailProspect = emailProspect;
 	} 
 	
