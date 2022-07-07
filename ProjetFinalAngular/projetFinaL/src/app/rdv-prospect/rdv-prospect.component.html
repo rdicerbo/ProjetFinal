@@ -1,1 +1,13 @@
-<p>rdv-prospect works!</p>
+<h1>Fixer un Rdv</h1>
+
+<form (ngSubmit)="RdvContact()">
+
+    <p>Commentaire</p>
+    <input type="text" [(ngModel)]="contact.commentaire" name="commentaire">
+    <br>
+    <p>Date</p>
+    <input type="datetime-local" [(ngModel)]="contact.date" name="date" min="09:00" max="18:00">
+    <br>
+    <button class="class1" type="submit">Ajouter</button>
+
+</form>

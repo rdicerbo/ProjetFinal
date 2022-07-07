@@ -56,6 +56,7 @@ import { PageAssistantComponent } from './page-assistant/page-assistant.componen
 import { PageCommercialeComponent } from './page-commerciale/page-commerciale.component';
 import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
 import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
+import { ConvertirProspectComponent } from './convertir-prospect/convertir-prospect.component';
 
 
 
@@ -109,7 +110,8 @@ import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
     PageAssistantComponent,
     PageCommercialeComponent,
     AppelProspectComponent,
-    RdvProspectComponent
+    RdvProspectComponent,
+    ConvertirProspectComponent
 
 
   ],

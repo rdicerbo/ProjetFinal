@@ -1,6 +1,7 @@
 package com.intiFormation.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Contact {
 	private Prospect prospect;
 	
 	private String commentaire;
-	private LocalDate date;
+	private LocalDateTime date;
 	
 	private boolean appOuRdv;
 	
@@ -49,11 +50,11 @@ public class Contact {
 
 	
 
-	public LocalDate getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 

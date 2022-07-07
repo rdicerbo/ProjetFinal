@@ -10,7 +10,7 @@
     </select>
 
     <p>Prospect associe</p>
-    <select class="class2"  name="selectedP" [(ngModel)]="selectedP">
+    <select class="class2" name="selectedP" [(ngModel)]="selectedP">
         <option *ngFor="let p of prospects" [ngValue]="p">
             {{p.nomProspect}}
         </option>

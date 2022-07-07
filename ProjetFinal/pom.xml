@@ -75,6 +75,27 @@
 	<artifactId>commons-csv</artifactId>
 	<version>1.8</version>
 </dependency>
+
+
+<!-- dependence mail -->
+		<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-mail</artifactId>
+	</dependency>
+	
+	
+	<!-- dependence pdf -->
+	        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+	<dependency>
+	    <groupId>com.github.librepdf</groupId>
+	    <artifactId>openpdf</artifactId>
+	    <version>1.3.8</version>
+	</dependency>
+	
 	</dependencies>
 
 	<build>

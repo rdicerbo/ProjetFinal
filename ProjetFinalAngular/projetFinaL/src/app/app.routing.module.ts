@@ -44,8 +44,9 @@ import { ModifPasswordComponent } from './modif-password/modif-password.componen
 import { ParticipantAssocieFormationComponent } from './participant-associe-formation/participant-associe-formation.component';
 import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-associe-pf.component';
 import { RelanceAssociePFComponent } from './relance-associe-pf/relance-associe-pf.component';
-import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
 import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
+import { ConvertirProspectComponent } from './convertir-prospect/convertir-prospect.component';
+import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
 
 
 
@@ -99,7 +100,8 @@ const routes: Routes = [
   { path: 'afficherPaiementAssocieParticipantEtFormation/:idFormation', component: PaiementAssociePFComponent },
 
   { path: 'appelProspect/:idProspect', component: AppelProspectComponent },
-  { path: 'rdvProspect/:idProspect', component: RdvProspectComponent }
+  { path: 'rdvProspect/:idProspect', component: RdvProspectComponent },
+  { path: 'convertirProspect', component: ConvertirProspectComponent }
 
 
 ];
