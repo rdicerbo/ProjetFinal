@@ -54,6 +54,8 @@ import { PaiementAssociePFComponent } from './paiement-associe-pf/paiement-assoc
 import { RelanceAssociePFComponent } from './relance-associe-pf/relance-associe-pf.component';
 import { PageAssistantComponent } from './page-assistant/page-assistant.component';
 import { PageCommercialeComponent } from './page-commerciale/page-commerciale.component';
+import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
+import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
 
 
 
@@ -105,7 +107,9 @@ import { PageCommercialeComponent } from './page-commerciale/page-commerciale.co
     PaiementAssociePFComponent,
     RelanceAssociePFComponent,
     PageAssistantComponent,
-    PageCommercialeComponent
+    PageCommercialeComponent,
+    AppelProspectComponent,
+    RdvProspectComponent
 
 
   ],
