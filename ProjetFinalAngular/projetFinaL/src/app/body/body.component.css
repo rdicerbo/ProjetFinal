@@ -6,6 +6,7 @@ h1 {
     margin-left: -12px;
     margin-right: -11px;
     margin-top: -10px;
+    font-size: 380%;
 }
 
 h3 {
@@ -58,9 +59,6 @@ button {
     border-color: rgb(127, 203, 144);
 }
 
-.deconnexion {
-    margin-left: 1500px;
-}
 
 .chercher {
     margin-left: 800px;
@@ -82,20 +80,16 @@ button {
 
 
 .class4 {
-    margin-left: 1400px;
     background-color: rgb(209, 9, 245, 0.5);
-    ;
     border-color: rgb(209, 9, 245);
     border-radius: 50px;
 }
 
 
 .class5 {
-    margin-left: 1400px;
     color: rgb(209, 9, 245);
 }
 
-.el
-{
+.el {
     color: rgb(209, 9, 245);
 }

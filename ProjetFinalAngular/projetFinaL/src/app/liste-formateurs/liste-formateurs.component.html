@@ -1,47 +1,73 @@
-<h1> Liste formateurs</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formateur</td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom Formateur</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom Formateur</td>
+<body>
 
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
-        <td style="background-color: rgb(127, 203, 144)">Action3</td>
+    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: rgb(209, 9, 245, 0.2);">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Menu</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/AjouterFormateur">Ajouter un formateur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/afficherFormateur">Liste formateur</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <h1> Liste des formateurs </h1>
+    <br>
+    <br>
+
+    <table class="center">
+        <tr>
+            <td style="background-color: rgb(127, 203, 144)">Id Formateur</td>
+            <td style="background-color: rgb(127, 203, 144)">Mail</td>
+            <td style="background-color: rgb(127, 203, 144)">Nom Formateur</td>
+            <td style="background-color: rgb(127, 203, 144)">Prenom Formateur</td>
+
+            <td style="background-color: rgb(127, 203, 144)">Action1</td>
+            <td style="background-color: rgb(127, 203, 144)">Action2</td>
+            <td style="background-color: rgb(127, 203, 144)">Action3</td>
 
 
-    </tr>
+        </tr>
 
-    <tr *ngFor="let f of formateurs">
-        <td>{{f.id}}</td>
-        <td>{{f.mail}}</td>
-        <td>{{f.nom}}</td>
-        <td>{{f.prenom}}</td>
+        <tr *ngFor="let f of formateurs">
+            <td>{{f.id}}</td>
+            <td>{{f.mail}}</td>
+            <td>{{f.nom}}</td>
+            <td>{{f.prenom}}</td>
 
-        <td><button (click)="supprimer(f.id)">Supprimer</button></td>
-        <td><button (click)="modifier(f.id)">Modifier</button></td>
-        <td><button (click)=" afficher(f.id)"> Afficher </button></td>
+            <td><button (click)="supprimer(f.id)">Supprimer</button></td>
+            <td><button (click)="modifier(f.id)">Modifier</button></td>
+            <td><button (click)=" afficher(f.id)"> Afficher </button></td>
 
 
 
-    </tr>
+        </tr>
 
-</table>
+    </table>
 
-<br>
-<hr>
-<h3>Ajouter un formateur
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-      </svg>
-</h3>
-<hr>
-<br>
-<button class="chercher2" (click)="AjouterFormateur()">Ajouter un formateur</button>
-<br>
+    <button class="chercher3" (click)="retour()">Retour</button>
+    <br>
 
-<button class="chercher3"(click)="retour()">Retour</button>
-<br>
+</body>
