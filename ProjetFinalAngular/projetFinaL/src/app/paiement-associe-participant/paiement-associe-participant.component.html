@@ -1,5 +1,3 @@
-<h1> Liste des paiements associes</h1>
-
 
 <table class="center">
     <tr>
@@ -24,6 +22,6 @@
 <br>
 <button class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
 <br>
-<button class="class3" (click)="Retour()">Retour</button>
+<button class="class3" *ngIf="roleA==1" (click)="Retour()">Retour</button>
 
 <p *ngIf="testRelance==1">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>

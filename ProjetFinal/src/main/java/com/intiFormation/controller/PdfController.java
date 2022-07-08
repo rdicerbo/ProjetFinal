@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.intiFormation.GeneratePdfReport;
 import com.intiFormation.entity.Formation;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IformationService;

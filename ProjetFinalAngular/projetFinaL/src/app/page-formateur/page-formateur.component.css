@@ -32,8 +32,12 @@ hr {
 
 
 .center {
-    margin-left: 500px;
-    margin-right: 500px;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 1000px;
 }
 
 th,
@@ -42,7 +46,7 @@ td {
     width: 10%;
     text-align: center;
     border-radius: 3px;
-    
+
 }
 
 h4 {
@@ -85,5 +89,3 @@ h2 {
     text-align: center;
     color: black
 }
-
-  

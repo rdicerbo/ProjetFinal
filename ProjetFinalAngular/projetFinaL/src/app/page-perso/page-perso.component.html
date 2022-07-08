@@ -12,13 +12,21 @@
 <br>
 <table class="center">
     <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id </td>
-        <td>{{utilisateur.id}}</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom </td>
+        <td>{{utilisateur.nom}}</td>
+    </tr>
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
+        <td>{{utilisateur.prenom}}</td>
     </tr>
 
     <tr>
         <td style="background-color: rgb(127, 203, 144)">Mail</td>
         <td>{{utilisateur.mail}}</td>
+    </tr>
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Username </td>
+        <td>{{utilisateur.username}}</td>
     </tr>
 
     <div *ngIf="roleC==1">
@@ -30,8 +38,8 @@
     </div>
 
     <tr>
-        <td style="background-color: rgb(127, 203, 144)">Action 1 </td>
-        <td><button (click)="modifierPassword()">Modifier password</button></td>
+        <td style="background-color: rgb(127, 203, 144)">Modifier password</td>
+        <td><button (click)="modifierPassword()">Modifier</button></td>
     </tr>
 
 
@@ -42,8 +50,20 @@
 <br>
 
 <div *ngIf="roleP==1">
-    <app-relance-associe-participant [utilisateur]="utilisateur"></app-relance-associe-participant>
+    <br>
+    <br>
+    <h2 class="titre"> Historique de vos paiements</h2>
+    <br>
+    <br>
+    <br>
     <app-paiement-associe-participant [utilisateur]="utilisateur"></app-paiement-associe-participant>
+
+    <h2 class="titre"> Historique de vos relances </h2>
+    <br>
+    <br>
+    <br>
+    <app-relance-associe-participant [utilisateur]="utilisateur"></app-relance-associe-participant>
+
 
 </div>
 

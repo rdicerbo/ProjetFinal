@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Formation } from '../models/Formation.model';
 import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
+import { ListeFormationsService } from '../service/liste-formations.service';
 import { UtilisateurService } from '../service/utilisateur.service';
 
 @Component({
@@ -24,8 +26,6 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
-    console.log(this.utilisateur.nom)
-
     this.recupererRoles();
 
   }
@@ -59,8 +59,9 @@ export class BodyComponent implements OnInit {
     )
   }
 
-    // Espace perso de l'utilisateur
-    EspacePerso() {
-      this.router.navigateByUrl('espacePerso');
-    }
+
+  // Espace perso de l'utilisateur
+  EspacePerso() {
+    this.router.navigateByUrl('espacePerso');
+  }
 }

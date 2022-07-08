@@ -15,7 +15,7 @@
     </tr>
 
     <tr>
-        <td style="background-color: #C4ABFE" colspan="7">Liste formations en cours</td>
+        <td style="background-color: #C4ABFE" colspan="8">Liste formations en cours</td>
     </tr>
 
     <tr *ngFor="let f of formationsEncours">
@@ -30,7 +30,7 @@
     </tr>
 
     <tr>
-        <td style="background-color: #E7A9FE" colspan="7">Liste formations a venir</td>
+        <td style="background-color: #E7A9FE" colspan="8">Liste formations a venir</td>
     </tr>
 
     <tr *ngFor="let f of formationsAvenir">
@@ -45,7 +45,7 @@
     </tr>
 
     <tr>
-        <td style="background-color: #F4DCFE" colspan="7">Liste formations finies</td>
+        <td style="background-color: #F4DCFE" colspan="8">Liste formations finies</td>
     </tr>
 
     <tr *ngFor="let f of formationsFini">
@@ -77,7 +77,7 @@
         <td style="background-color: rgb(127, 203, 144)">Date fin</td>
         <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
 
-        <td style="background-color: rgb(127, 203, 144)">S'inscrire</td>
+        <td style="background-color: rgb(127, 203, 144)">Telecharger formation</td>
 
     </tr>
 
@@ -88,7 +88,8 @@
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" inscriptionGratuit(f.idFormation)"> Inscription </button>
+
+        <td><a href="http://localhost:4222{{f.pdf}}"> Telechargement </a>
     </tr>
 
 </table>
