@@ -2,6 +2,8 @@ package com.intiFormation.controller;
 
 
 import com.intiFormation.entity.Formation;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -28,10 +30,11 @@ public class GeneratePdfReport {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         try {
-
+        	
         	 PdfPTable table = new PdfPTable(4);
              table.setWidthPercentage(80);
              table.setWidths(new int[]{1, 3, 3, 3 });
+             
 
             Font headFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
 
@@ -90,6 +93,11 @@ public class GeneratePdfReport {
             
             PdfWriter.getInstance(document, out);
             document.open();
+            
+            //Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
+            //Chunk chunk = new Chunk("Hello World", font);
+            //document.add(chunk);
+            
             document.add(table);
 
             document.close();
