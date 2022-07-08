@@ -59,6 +59,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.antMatchers("/authentification/**").permitAll()
 		.antMatchers("/admins/**").permitAll()
 		.antMatchers("/participants/**").permitAll()
+		.antMatchers("/upload-csv-file/**").permitAll()
 
 		.antMatchers("/**").permitAll()
 		.anyRequest().authenticated()

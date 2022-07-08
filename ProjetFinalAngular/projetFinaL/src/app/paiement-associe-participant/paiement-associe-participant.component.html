@@ -11,10 +11,10 @@
     </tr>
 
     <tr *ngFor="let p of paiements">
-            <td>{{p.idPaiement}}</td>
-            <td>{{p.date}}</td>
-            <td>{{p.montant}}</td>
-            <td>{{p.reste}}</td>
+        <td>{{p.idPaiement}}</td>
+        <td>{{p.date}}</td>
+        <td>{{p.montant}}</td>
+        <td>{{p.reste}}</td>
     </tr>
 
 </table>
@@ -22,8 +22,8 @@
 <br>
 <br>
 <br>
-<button  class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
+<button class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
 <br>
-<button class="class3"  (click)="Retour()">Retour</button>
+<button class="class3" (click)="Retour()">Retour</button>
 
-<p *ngIf ="testRelance==1">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>
+<p *ngIf="testRelance==1">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>

@@ -27,7 +27,7 @@ export class PaiementAssocieParticipantComponent implements OnInit {
 
   relance!: Relance;
 
-  testRelance!:number;
+  testRelance!: number;
 
   constructor(private router: Router,
     private service: PaiementService,
@@ -37,12 +37,12 @@ export class PaiementAssocieParticipantComponent implements OnInit {
 
   //Methode ngOnInit
   ngOnInit(): void {
-    this.testRelance=0;
+    this.testRelance = 0;
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
-    this.relance=new Relance();
+    this.relance = new Relance();
     this.recupererRoles();
     this.afficher();
-    
+
   }
 
 
@@ -95,22 +95,21 @@ export class PaiementAssocieParticipantComponent implements OnInit {
   }
 
   //Methode Relance
-  Relance()
-  {
-    
-    this.relance.date=new Date();
-    this.relance.participant=this.paiements[0].participant;
-    this.relance.montant=this.paiements[this.paiements.length-1].reste;
-    this.relance.formationR=this.paiements[0].formation;
-    this.relance.assistant=this.utilisateur;
+  Relance() {
+
+    this.relance.date = new Date();
+    this.relance.participant = this.paiements[0].participant;
+    this.relance.montant = this.paiements[this.paiements.length - 1].reste;
+    this.relance.formationR = this.paiements[0].formation;
+    this.relance.assistant = this.utilisateur;
 
     this.serviceR.insererR(this.relance).subscribe(
       response => {
         console.log("test");
-        this.relance=response;
-        this.testRelance=1;
+        this.relance = response;
+        this.testRelance = 1;
         this.afficher();
-        
+
 
       }
     )
