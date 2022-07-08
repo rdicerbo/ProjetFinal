@@ -9,11 +9,12 @@ import { Utilisateur } from '../models/Utilisateur.model';
 })
 export class PageAssistantComponent implements OnInit {
 
-
+  utilisateur!: Utilisateur
   constructor(private router: Router) { }
 
   //Methode ngOnInit
   ngOnInit(): void {
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
   }
 
 

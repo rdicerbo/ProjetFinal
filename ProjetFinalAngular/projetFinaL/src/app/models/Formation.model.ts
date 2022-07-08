@@ -1,8 +1,7 @@
 import { Formateur } from "./Formateur.model";
 
 
-export class Formation
-{
+export class Formation {
 
     idFormation!: number;
     libForm!: string;
@@ -10,6 +9,7 @@ export class Formation
     dateDebut!: Date;
     dateFin!: Date;
     prix!: number;
+    pdf!: string;
 
     formateur!: Formateur;
 
