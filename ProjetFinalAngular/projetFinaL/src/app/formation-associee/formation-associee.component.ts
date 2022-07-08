@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formation } from '../models/Formation.model';
+import { Utilisateur } from '../models/Utilisateur.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
 
 @Component({
@@ -10,21 +11,23 @@ import { ListeFormationsService } from '../service/liste-formations.service';
 })
 export class FormationAssocieeComponent implements OnInit {
 
-  formation!: Formation
+  formations!: Formation[]
 
   constructor(private service: ListeFormationsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.formation = new Formation
-    this.FormationAssociee()
+
+
+    this.FormationAssociee();
   }
 
   //Methode FormationAssociee
   FormationAssociee() {
+
     const id = +this.route.snapshot.params['id'];
     this.service.getByIdFormateur(id).subscribe(
       response => {
-        this.formation = response
+        this.formations = response
       }
     )
   }

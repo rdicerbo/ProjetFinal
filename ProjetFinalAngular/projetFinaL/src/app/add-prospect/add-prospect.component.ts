@@ -21,16 +21,15 @@ export class AddProspectComponent implements OnInit {
   AjouterProspect() {
     this.service.ajouterP(this.prospect).subscribe(
       response => {
-        this.router.navigateByUrl('afficherCommerciaux');
+        this.router.navigateByUrl('');
       }
     )
   }
 
 
   //Methode afficherCommerciaux
-  afficherProspects()
- {
-   this.router.navigateByUrl('afficherProspects');
- }
+  Retour() {
+    this.router.navigateByUrl('');
+  }
 
 }

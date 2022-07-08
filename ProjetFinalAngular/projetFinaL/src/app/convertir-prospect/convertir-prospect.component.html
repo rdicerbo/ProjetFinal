@@ -1,34 +1,76 @@
-<h1> Convertir un prospect</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: rgb(209, 9, 245, 0.2);">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Menu</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/afficherFormateur">Gestion des formateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherFormation">Gestion des formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherParticipants">Gestion des participants</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <h1> Convertir un prospect</h1>
 
 
-<form (ngSubmit)="Convertir()">
+    <form (ngSubmit)="Convertir()">
 
 
-    <p>Prospect</p>
-    <select class="class2" name="selectedProspect" [(ngModel)]="selectedProspect">
-        <option *ngFor="let p of prospects" [ngValue]="p">
-            {{p.nomProspect}} {{p.prenomProspect}}
-        </option>
-    </select>
-    <br>
+        <p>Prospect</p>
+        <select class="class2" name="selectedProspect" [(ngModel)]="selectedProspect">
+            <option *ngFor="let p of prospects" [ngValue]="p">
+                {{p.nomProspect}} {{p.prenomProspect}}
+            </option>
+        </select>
+        <br>
 
-    <p>Username</p>
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="participant.username" />
-    <br>
+        <p>Username</p>
+        <input type="text" name="username" placeholder="Username" [(ngModel)]="participant.username" />
+        <br>
 
-    <p>Password</p>
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="participant.password" />
-    <br>
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Password" [(ngModel)]="participant.password" />
+        <br>
 
-    <p>Formation suivie</p>
-    <select class="class2" name="selectedFormation" [(ngModel)]="selectedFormation">
-        <option *ngFor="let f of formations" [ngValue]="f">
-            {{f.libForm}}
-        </option>
-    </select>
-    <br>
-    <br>
-    <br>
-    <button class="class1" type="submit">Valider</button>
+        <p>Formation suivie</p>
+        <select class="class2" name="selectedFormation" [(ngModel)]="selectedFormation">
+            <option *ngFor="let f of formations" [ngValue]="f">
+                {{f.libForm}}
+            </option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <button class="class1" type="submit">Valider</button>
 
-</form>
+    </form>
+
+</body>

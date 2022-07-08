@@ -26,7 +26,7 @@ export class ModifProspectsComponent implements OnInit {
 
       }
     );
-    this.router.navigateByUrl('afficherProspects');
+    this.router.navigateByUrl('');
   }
 
   //Methode chargerProspect
@@ -38,11 +38,10 @@ export class ModifProspectsComponent implements OnInit {
     )
   }
 
-  
+
   //Methode afficherCommerciaux
-  afficherProspects()
- {
-   this.router.navigateByUrl('afficherProspects');
- }
+  Retour() {
+    this.router.navigateByUrl('');
+  }
 
 }

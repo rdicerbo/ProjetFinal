@@ -9,5 +9,6 @@ import com.intiFormation.entity.Prospect;
 public interface IprospectDao extends JpaRepository<Prospect, Integer>{
 	
 	public List<Prospect> findByContactsIsNull();
+	public List<Prospect> findByContacts_commercial_id(int id);
 
 }

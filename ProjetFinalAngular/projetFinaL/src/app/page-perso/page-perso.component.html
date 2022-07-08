@@ -29,14 +29,6 @@
         <td>{{utilisateur.username}}</td>
     </tr>
 
-    <div *ngIf="roleC==1">
-        <app-liste-prospects></app-liste-prospects>
-    </div>
-
-    <div *ngIf="roleA==1">
-
-    </div>
-
     <tr>
         <td style="background-color: rgb(127, 203, 144)">Modifier password</td>
         <td><button (click)="modifierPassword()">Modifier</button></td>

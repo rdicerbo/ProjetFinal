@@ -1,57 +1,97 @@
-<h1> Liste participants</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: rgb(209, 9, 245, 0.2);">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Menu</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/afficherFormateur">Gestion des formateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherFormation">Gestion des formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherParticipants">Gestion des participants</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <h1> Liste participants</h1>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id</td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
-        <td style="background-color: rgb(127, 203, 144)">Username</td>
-        <td style="background-color: rgb(127, 203, 144)">Password</td>
+    <table class="center">
+        <tr>
+            <td style="background-color: rgb(127, 203, 144)">Id</td>
+            <td style="background-color: rgb(127, 203, 144)">Mail</td>
+            <td style="background-color: rgb(127, 203, 144)">Nom</td>
+            <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+            <td style="background-color: rgb(127, 203, 144)">Username</td>
+            <td style="background-color: rgb(127, 203, 144)">Password</td>
 
 
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
+            <td style="background-color: rgb(127, 203, 144)">Supprimer</td>
+            <td style="background-color: rgb(127, 203, 144)">Modifier</td>
 
-        <td style="background-color: rgb(127, 203, 144)">Action3</td>
-        <td style="background-color: rgb(127, 203, 144)">Action4</td>
-        <td style="background-color: rgb(127, 203, 144)">Action5</td>
+            <td style="background-color: rgb(127, 203, 144)">Formations</td>
+            <td style="background-color: rgb(127, 203, 144)">Relances</td>
+            <td style="background-color: rgb(127, 203, 144)">Paiements</td>
 
-    </tr>
-    <tr *ngFor="let p of participants">
-        <td>{{p.id}}</td>
-        <td>{{p.mail}}</td>
-        <td>{{p.nom}}</td>
-        <td>{{p.prenom}}</td>
-        <td>{{p.username}}</td>
-        <td>{{p.password}}</td>
-        <td><button (click)="supprimer(p.id)">Supprimer</button></td>
-        <td><button (click)="modifier(p.id)">Modifier</button></td>
+        </tr>
+        <tr *ngFor="let p of participants">
+            <td>{{p.id}}</td>
+            <td>{{p.mail}}</td>
+            <td>{{p.nom}}</td>
+            <td>{{p.prenom}}</td>
+            <td>{{p.username}}</td>
+            <td>{{p.password}}</td>
+            <td><button (click)="supprimer(p.id)">Supprimer</button></td>
+            <td><button (click)="modifier(p.id)">Modifier</button></td>
 
-        <td><button (click)="formationAssocie(p.id)">Formations</button></td>
-        <td><button (click)="RelanceAssocie(p.id)">Relances</button></td>
-        <td><button (click)="PaiementAssocie(p.id)">Paiements</button></td>
-    </tr>
+            <td><button (click)="formationAssocie(p.id)">Formations</button></td>
+            <td><button (click)="RelanceAssocie(p.id)">Relances</button></td>
+            <td><button (click)="PaiementAssocie(p.id)">Paiements</button></td>
+        </tr>
 
-</table>
+    </table>
 
-<br>
-<br>
-<br>
-<hr>
-<h3>Ajouter un participant
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
-        viewBox="0 0 16 16">
-        <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-    </svg>
-</h3>
-<hr>
-<br>
-<button class="chercher3" (click)="AjouterParticipant()">Ajouter un participant</button>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h3>Ajouter un participant
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
+            viewBox="0 0 16 16">
+            <path
+                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+        </svg>
+    </h3>
+    <hr>
+    <br>
+    <button class="chercher3" (click)="AjouterParticipant()">Ajouter un participant</button>
 
-<button class="chercher3" (click)="ConvertirProspect()">Convertir un Prospect</button>
+    <button class="chercher3" (click)="ConvertirProspect()">Convertir un Prospect</button>
 
-<br>
-<button class="chercher2" (click)="Retour()">Retour</button>
+    <br>
+    <button class="chercher2" (click)="Retour()">Retour</button>
+</body>

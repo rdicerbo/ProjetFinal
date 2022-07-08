@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="Formateur")
 public class Formateur extends Utilisateur{
 
-	@OneToMany(mappedBy="formateur", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="formateur", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Formation> formations;
 

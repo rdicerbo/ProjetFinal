@@ -56,9 +56,6 @@ export class ListeFormateursComponent implements OnInit {
     this.router.navigateByUrl('afficherFormationAssociee/' + id)
   }
 
-  // Bouton retour
-  retour() {
-    this.router.navigateByUrl('afficherFormation')
-  }
+
 
 }

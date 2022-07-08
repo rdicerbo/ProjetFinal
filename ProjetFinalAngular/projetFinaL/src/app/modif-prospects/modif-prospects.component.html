@@ -2,25 +2,25 @@
 
 <form (ngSubmit)="modif()">
 
-    <p>Nom</p>  
+    <p>Nom</p>
     <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
     <br>
 
-    <p>Prenom</p>  
+    <p>Prenom</p>
     <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
     <br>
 
-    <p>Adresse mail</p>  
+    <p>Adresse mail</p>
     <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
     <br>
 
-    <p>Numero de telephone</p>  
+    <p>Numero de telephone</p>
     <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
     <br>
-    <br>  
+    <br>
     <button class="class2" type="submit">Modifier</button>
 
 </form>
 
 <br>
-<button (click)="afficherProspects()">Retour</button>
+<button (click)="Retour()">Retour</button>

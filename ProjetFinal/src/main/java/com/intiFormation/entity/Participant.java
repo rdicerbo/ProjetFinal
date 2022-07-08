@@ -16,16 +16,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="Participant")
 public class Participant extends Utilisateur{
 	
-	@ManyToMany(cascade = CascadeType.PERSIST)
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	@JoinTable(name="T_Formation_Participants",joinColumns = @JoinColumn(name="idParticipant"),inverseJoinColumns = @JoinColumn(name="idFormation"))
 	private List<Formation> formations;
 	
-	@OneToMany(mappedBy="participant", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="participant", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Paiement> paiements;
 	
-	@OneToMany(mappedBy="participant", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="participant", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Relance> relances;
 

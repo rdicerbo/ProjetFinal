@@ -45,7 +45,7 @@ public class EmailController {
 	        
 	        message.setTo(p.getEmailProspect());
 	        message.setSubject("Votre Formation");
-	       // message.setText(commandeService.findByUtilsateur(u).toString());
+	       message.setText("BlaBla");
 	        message.setText(p.toString());
 
 	        // Send Message!

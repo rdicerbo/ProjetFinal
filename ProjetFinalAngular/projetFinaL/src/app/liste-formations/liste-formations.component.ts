@@ -28,6 +28,8 @@ export class ListeFormationsComponent implements OnInit {
 
   utilisateur!: Utilisateur
 
+  pdfselected!: File
+
   @Output() newItemEvent = new EventEmitter<number>();
 
   constructor(private service: ListeFormationsService,
@@ -103,13 +105,6 @@ export class ListeFormationsComponent implements OnInit {
     this.router.navigateByUrl('afficherProspects')
   }
 
-  //Methode deconnexion
-  deconnexion() {
-    sessionStorage.removeItem("token");
-    this.router.navigateByUrl("authentification");
-    console.log("ko");
-  }
-
 
   //Methode afficher2
   afficher2() {
@@ -148,6 +143,17 @@ export class ListeFormationsComponent implements OnInit {
     this.router.navigateByUrl('afficherAssistants');
   }
 
+  selectEvent(event: any): void {
+    this.pdfselected = event.target.files[0];
+  }
+
+  savePdf(idFormation: number) {
+    let formData = new FormData();
+    formData.append('file', this.pdfselected)
+    this.service.ajouterPdf(idFormation, formData).subscribe(
+      response => this.chargerFormations()
+    )
+  }
   // Espace perso de l'utilisateur
   EspacePerso() {
     this.router.navigateByUrl('espacePerso');

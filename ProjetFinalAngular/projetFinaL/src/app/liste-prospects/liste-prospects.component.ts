@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contact } from '../models/Contact.model';
 import { Prospect } from '../models/Prospect.model';
+import { Utilisateur } from '../models/Utilisateur.model';
 import { ProspectService } from '../service/prospect.service';
 
 @Component({
@@ -12,36 +13,48 @@ import { ProspectService } from '../service/prospect.service';
 export class ListeProspectsComponent implements OnInit {
 
   prospects!: Prospect[]
+  prospectsSansContact!: Prospect[]
   fileInput!: File
   myFiles: string[] = [];
 
   contact!: Contact
 
+  utilisateur!: Utilisateur
+
+  @Output() newItemEvent = new EventEmitter<number>()
+
   constructor(private service: ProspectService, private router: Router) { }
 
   ngOnInit(): void {
     this.contact = new Contact();
-    this.getAll()
+    this.getByIdCommercial();
+    this.getAllSansContact();
   }
 
-  getAll() {
-    this.service.getAll().subscribe(
+  getByIdCommercial() {
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+    this.service.getByIdCommercial(this.utilisateur.id).subscribe(
       response => this.prospects = response
     )
   }
 
+  getAllSansContact() {
+    this.service.getAllSansContact().subscribe(
+      response => this.prospectsSansContact = response
+    )
+  }
 
   AjouterProspect() {
-    this.router.navigateByUrl('AjouterProspect')
+    this.router.navigateByUrl('')
   }
 
   supprimer(id: number) {
     this.service.supprimer(id).subscribe(
       response => {
-        this.getAll()
+        this.getByIdCommercial()
       }
     )
-    this.router.navigateByUrl('afficherProspects');
+    this.router.navigateByUrl('');
   }
 
   modifier(id: number) {
@@ -83,7 +96,9 @@ export class ListeProspectsComponent implements OnInit {
         console.log(res);
 
         alert('Uploaded Successfully.');
-
+        this.newItemEvent.emit(1);
+        this.getByIdCommercial()
+        this.router.navigateByUrl('');
       })
 
   }

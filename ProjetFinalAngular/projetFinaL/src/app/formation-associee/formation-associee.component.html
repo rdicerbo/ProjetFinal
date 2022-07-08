@@ -1,30 +1,73 @@
-<h1>Formation associee</h1>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Prix</td>
+<body>
+
+    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: rgb(209, 9, 245, 0.2);">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Menu</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/afficherFormateur">Gestion des formateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherFormation">Gestion des formations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="/afficherParticipants">Gestion des participants</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-    </tr>
+    <h1>Formation associee</h1>
+
+    <table class="center">
+        <tr>
+            <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+            <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+            <td style="background-color: rgb(127, 203, 144)">Description</td>
+            <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+            <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+            <td style="background-color: rgb(127, 203, 144)">Prix</td>
 
 
-    <tr>
-        <td>{{formation.idFormation}}</td>
-        <td>{{formation.libForm}}</td>
-        <td>{{formation.description}}</td>
-        <td>{{formation.dateDebut}}</td>
-        <td>{{formation.dateFin}}</td>
-        <td>{{formation.prix}}</td>
+        </tr>
 
 
-    </tr>
-</table>
+        <tr *ngFor="let formation of formations">
+            <td>{{formation.idFormation}}</td>
+            <td>{{formation.libForm}}</td>
+            <td>{{formation.description}}</td>
+            <td>{{formation.dateDebut}}</td>
+            <td>{{formation.dateFin}}</td>
+            <td>{{formation.prix}}</td>
 
-<br>
 
-<button class="class3" (click)="retour()">Retour</button>
+        </tr>
+    </table>
+
+    <br>
+
+    <button class="class3" (click)="retour()">Retour</button>
+
+</body>
