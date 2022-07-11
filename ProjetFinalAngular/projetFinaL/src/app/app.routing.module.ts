@@ -47,6 +47,7 @@ import { RelanceAssociePFComponent } from './relance-associe-pf/relance-associe-
 import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
 import { ConvertirProspectComponent } from './convertir-prospect/convertir-prospect.component';
 import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
+import { PageAdminComponent } from './page-admin/page-admin.component';
 
 
 
@@ -101,7 +102,9 @@ const routes: Routes = [
 
   { path: 'appelProspect/:idProspect', component: AppelProspectComponent },
   { path: 'rdvProspect/:idProspect', component: RdvProspectComponent },
-  { path: 'convertirProspect', component: ConvertirProspectComponent }
+  { path: 'convertirProspect', component: ConvertirProspectComponent },
+
+  { path: 'pageAdmin', component: PageAdminComponent }
 
 
 ];

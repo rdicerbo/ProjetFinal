@@ -8,29 +8,29 @@
 <br>
 
 <table class="center">
-	<tr>
-		<td style="background-color: rgb(127, 203, 144)">Id</td>
-        <td style="background-color: rgb(127, 203, 144)">Adresse mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
-        
-</tr>
-		
-		
-    <tr *ngFor="let a of assistants| filter: filterTerm">
-            <td>{{a.id}}</td>
-            <td>{{a.mail}}</td>
-            <td>{{a.nom}}</td>
-            <td>{{a.prenom}}</td>
+  <tr>
+    <td style="background-color: rgb(127, 203, 144)">Id</td>
+    <td style="background-color: rgb(127, 203, 144)">Adresse mail</td>
+    <td style="background-color: rgb(127, 203, 144)">Nom</td>
+    <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+    <td style="background-color: rgb(127, 203, 144)">Action1</td>
+    <td style="background-color: rgb(127, 203, 144)">Action2</td>
 
-            <td><button (click)="supprimer(a.id)">Supprimer</button></td>
-            <td><button (click)="modifier(a.id)">Modifier</button></td>
-    
+  </tr>
 
 
-    </tr>
+  <tr *ngFor="let a of assistants| filter: filterTerm">
+    <td>{{a.id}}</td>
+    <td>{{a.mail}}</td>
+    <td>{{a.nom}}</td>
+    <td>{{a.prenom}}</td>
+
+    <td><button (click)="supprimer(a.id)">Supprimer</button></td>
+    <td><button (click)="modifier(a.id)">Modifier</button></td>
+
+
+
+  </tr>
 </table>
 
 <br>
@@ -38,13 +38,15 @@
 <br>
 <hr>
 <h3>Ajouter un assistant
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
+    viewBox="0 0 16 16">
+    <path
+      d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
   </svg>
 </h3>
 <hr>
 <br>
-<button class="chercher2"  (click)="AjouterAssistant()">Ajouter un assistant</button>
+<button class="chercher2" (click)="AjouterAssistant()">Ajouter un assistant</button>
 <br>
 <br>
 <br>
@@ -55,25 +57,10 @@
 <br>
 
 <!--Trouver une formation par nom-->
-<h4>Rechercher un assistant par <span class="el">nom</span></h4>
-  <form class="form-search form-inline" (ngSubmit)="afficher2()">
-    <input type="text" class="chercher4" placeholder="Formation par nom/prenom" name="selectedA"
-    [(ngModel)]="selectedA" [(ngModel)]="filterTerm"/>
-    <button type="submit">Valider</button>
-  </form>
-  <br>
-  <br>
-
-  <h4>Rechercher un assistant par <span class="el">id</span></h4>
-   <!--Trouver une formation par id-->
-  <form class="form-search form-inline" (ngSubmit)="afficherById()">
-    <input type="text"class="chercher4" placeholder="Assistant par id" name="selectedId"
-    [(ngModel)]="selectedId" [(ngModel)]="filterTerm"/>
-    <button type="submit">Valider</button>
-  </form>
-
-  <br>
-  <br>
-  <br>
-  <button class="chercher3" (click)="afficherFormations()">Retour</button>
-  
+<h4>Rechercher un assistant par <span class="el">nom, id </span></h4>
+<form class="form-search form-inline" (ngSubmit)="afficher2()">
+  <input type="text" class="chercher4" placeholder="Formation par nom/prenom" name="selectedA" [(ngModel)]="selectedA"
+    [(ngModel)]="filterTerm" />
+  <button type="submit">Valider</button>
+</form>
+<br>

@@ -13,9 +13,10 @@
         <td style="background-color: rgb(127, 203, 144)">Supprimer</td>
         <td style="background-color: rgb(127, 203, 144)">Modifier</td>
         <td style="background-color: rgb(127, 203, 144)">Contact</td>
-        <td style="background-color: rgb(127, 203, 144)">Appeler</td>
-        <td style="background-color: rgb(127, 203, 144)">Rdv</td>
-
+        <div *ngIf="roleAdmin!=1">
+            <td style="background-color: rgb(127, 203, 144)">Appeler</td>
+            <td style="background-color: rgb(127, 203, 144)">Rdv</td>
+        </div>
 
     </tr>
     <tr>
@@ -32,8 +33,10 @@
         <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
         <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
         <td><button (click)=" afficher(p.idProspect)"> Afficher </button></td>
-        <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
-        <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+        <div *ngIf="roleAdmin!=1">
+            <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
+            <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+        </div>
 
     </tr>
     <tr>
@@ -50,8 +53,10 @@
         <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
         <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
         <td> X </td>
-        <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
-        <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+        <div *ngIf="roleAdmin!=1">
+            <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
+            <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+        </div>
 
     </tr>
 

@@ -21,7 +21,7 @@ export class AddProspectComponent implements OnInit {
   AjouterProspect() {
     this.service.ajouterP(this.prospect).subscribe(
       response => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('afficherProspects');
       }
     )
   }

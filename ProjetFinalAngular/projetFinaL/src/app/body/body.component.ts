@@ -28,6 +28,12 @@ export class BodyComponent implements OnInit {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     this.recupererRoles();
 
+    if (this.roleAdmin = 1) {
+      this.router.navigateByUrl('pageAdmin');
+
+    }
+
+
   }
 
   recupererRoles() {
