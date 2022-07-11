@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddAssistantComponent } from './add-assistant/add-assistant.component';
@@ -48,6 +48,8 @@ import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
 import { ConvertirProspectComponent } from './convertir-prospect/convertir-prospect.component';
 import { AppelProspectComponent } from './appel-prospect/appel-prospect.component';
 import { PageAdminComponent } from './page-admin/page-admin.component';
+import { HeaderComponent } from './header/header.component';
+import { PageAssistantComponent } from './page-assistant/page-assistant.component';
 
 
 
@@ -104,7 +106,9 @@ const routes: Routes = [
   { path: 'rdvProspect/:idProspect', component: RdvProspectComponent },
   { path: 'convertirProspect', component: ConvertirProspectComponent },
 
-  { path: 'pageAdmin', component: PageAdminComponent }
+  { path: 'pageAdmin', component: PageAdminComponent },
+  { path: 'pageAssistant', component: PageAssistantComponent },
+  { path: 'header', component: HeaderComponent }
 
 
 ];

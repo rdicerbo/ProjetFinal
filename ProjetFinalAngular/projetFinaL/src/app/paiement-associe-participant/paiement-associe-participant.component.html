@@ -1,26 +1,47 @@
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
+<!DOCTYPE html>
+<html>
 
-    </tr>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <tr *ngFor="let p of paiements">
-        <td>{{p.idPaiement}}</td>
-        <td>{{p.date}}</td>
-        <td>{{p.montant}}</td>
-        <td>{{p.reste}}</td>
-    </tr>
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
 
-</table>
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
 
-<br>
-<br>
-<br>
-<button class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
-<br>
-<button class="class3" *ngIf="roleA==1" (click)="Retour()">Retour</button>
+            </tr>
 
-<p *ngIf="testRelance==1" class="p">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>
+            <tr *ngFor="let p of paiements">
+                <td>{{p.idPaiement}}</td>
+                <td>{{p.date}}</td>
+                <td>{{p.montant}}</td>
+                <td>{{p.reste}}</td>
+            </tr>
+
+        </table>
+
+        <br>
+        <br>
+        <br>
+        <button class="class3" *ngIf="roleA==1" (click)="Relance()">Relance</button>
+
+        <p *ngIf="testRelance==1" class="p">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,35 +1,65 @@
-h1 {
-    color: black;
-    text-align: center;
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
     background-color: rgb(209, 9, 245, 0.2);
     border: 1px solid rgb(209, 9, 245, 0.5);
-    margin-left: -12px;
-    margin-right: -11px;
-    margin-top: -10px;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
-button {
-    background-color: rgb(127, 203, 144, 0.5);
-    border-radius: 10px;
-    border-color: rgb(127, 203, 144);
-    margin-left: 1400px;
+.sidenav a {
+    padding: 10px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
 }
 
-input {
-    border-radius: 10px;
-    text-align: center;
-    margin-left: 755px;
+.sidenav a:hover {
+    color: #818181;
 }
 
-p {
-    text-align: center;
-    color: rgb(127, 203, 144);
+.main {
+    margin-left: 200px;
+    /* Same as the width of the sidenav */
 }
 
-.class1 {
-    margin-left: 800px;
+.sidenav a.SousMenu {
+    padding: 6px 6px 6px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+
 }
 
-.class2 {
-    margin-left: 815px;
+.sidenav a.SousMenu:hover {
+    color: #818181;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+    .sidenav p {
+        font-size: 5px;
+    }
+
+    .sidenav .aPetit {
+        font-size: 5px;
+    }
+
 }

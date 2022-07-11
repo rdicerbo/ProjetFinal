@@ -1,33 +1,53 @@
-<h1> Liste formations</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+        <h1> Liste formations</h1>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Prix</td>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Description</td>
+                <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+                <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+                <td style="background-color: rgb(127, 203, 144)">Prix</td>
 
-        <td style="background-color: rgb(127, 203, 144)">Formateur</td>
+                <td style="background-color: rgb(127, 203, 144)">Formateur</td>
 
 
-    </tr>
+            </tr>
 
-    <tr *ngFor="let f of formations">
-            <td>{{f.idFormation}}</td>
-            <td>{{f.libForm}}</td>
-            <td>{{f.description}}</td>
-            <td>{{f.dateDebut}}</td>
-            <td>{{f.dateFin}}</td>
-            <td>{{f.prix}}</td>
+            <tr *ngFor="let f of formations">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.prix}}</td>
 
-            <td>{{f.formateur.nom}} {{f.formateur.prenom}}</td>
+                <td>{{f.formateur.nom}} {{f.formateur.prenom}}</td>
 
-    </tr>
+            </tr>
 
-</table>
-<br>
-<button class="class3"  (click)="Retour()">Retour</button>
+        </table>
+        <br>
 
+    </div>
+
+</body>
+
+</html>

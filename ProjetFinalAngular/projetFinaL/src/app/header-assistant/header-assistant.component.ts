@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-header-assistant',
+  templateUrl: './header-assistant.component.html',
+  styleUrls: ['./header-assistant.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderAssistantComponent implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
   //Methode deconnexion
   deconnexion() {
+
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("utilisateur");
     sessionStorage.removeItem("roleF");
@@ -32,5 +33,6 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl("authentification");
     console.log("ko");
   }
+
 
 }

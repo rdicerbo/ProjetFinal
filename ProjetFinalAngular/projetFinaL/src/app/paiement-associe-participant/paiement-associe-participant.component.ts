@@ -37,43 +37,19 @@ export class PaiementAssocieParticipantComponent implements OnInit {
 
   //Methode ngOnInit
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.testRelance = 0;
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     this.relance = new Relance();
-    this.recupererRoles();
     this.afficher();
 
   }
 
 
-  recupererRoles() {
-    const id = this.utilisateur.id
-    this.serviceU.rolesByIdUser(id).subscribe(
-      response => {
-        this.roles = response
-        //console.log(this.roles.length)
-        for (let i = 0; i < 5; i++) {
-
-          if (this.roles[i].idRole == 2) {
-            this.roleC = 1
-          }
-          if (this.roles[i].idRole == 5) {
-            this.roleF = 1
-          }
-          if (this.roles[i].idRole == 3) {
-            this.roleA = 1
-          }
-          if (this.roles[i].idRole == 4) {
-            this.roleP = 1
-          }
-          if (this.roles[i].idRole == 1) {
-            this.roleAdmin = 1
-
-          }
-        }
-      }
-    )
-  }
 
   //Methode FormateurAssocie
   afficher() {

@@ -58,11 +58,13 @@ import { AppelProspectComponent } from './appel-prospect/appel-prospect.componen
 import { RdvProspectComponent } from './rdv-prospect/rdv-prospect.component';
 import { ConvertirProspectComponent } from './convertir-prospect/convertir-prospect.component';
 import { PageAdminComponent } from './page-admin/page-admin.component';
-
-
+import { HeaderComponent } from './header/header.component';
+import { HeaderAssistantComponent } from './header-assistant/header-assistant.component';
+import { HeaderCommerciauxComponent } from './header-commerciaux/header-commerciaux.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     FooterComponent,
     BodyComponent,
     AppComponent,
@@ -113,7 +115,9 @@ import { PageAdminComponent } from './page-admin/page-admin.component';
     AppelProspectComponent,
     RdvProspectComponent,
     ConvertirProspectComponent,
-    PageAdminComponent
+    PageAdminComponent,
+    HeaderAssistantComponent,
+    HeaderCommerciauxComponent
 
 
   ],

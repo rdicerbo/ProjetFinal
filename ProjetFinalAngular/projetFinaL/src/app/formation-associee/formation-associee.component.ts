@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Role } from '../models/Role.model';
 import { Formation } from '../models/Formation.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
@@ -12,12 +13,22 @@ import { ListeFormationsService } from '../service/liste-formations.service';
 export class FormationAssocieeComponent implements OnInit {
 
   formations!: Formation[]
+  roles!: Role[]
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
   constructor(private service: ListeFormationsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
-
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.FormationAssociee();
   }
 

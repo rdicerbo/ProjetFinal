@@ -1,31 +1,45 @@
-<h1>Ajouter un assistant</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <app-header></app-header>
+    <div class="main">
+        <h1>Ajouter un assistant</h1>
 
 
-<form (ngSubmit)="AjouterAssistant()">
-    
-    <p>Nom</p>
-    <input type="text" name="nom" placeholder="Nom" [(ngModel)]="assistant.nom">
-    <br>
+        <form (ngSubmit)="AjouterAssistant()">
 
-    <p>Prenom</p>
-    <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="assistant.prenom">
-    <br>
+            <p>Nom</p>
+            <input type="text" name="nom" placeholder="Nom" [(ngModel)]="assistant.nom">
+            <br>
 
-    <p>Adresse mail</p>
-    <input type="text" name="mail" placeholder="Mail" [(ngModel)]="assistant.mail">
-    <br>
+            <p>Prenom</p>
+            <input type="text" name="prenom" placeholder="Prenom" [(ngModel)]="assistant.prenom">
+            <br>
 
-    <p>Username</p>
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="assistant.username">
-    <br>
+            <p>Adresse mail</p>
+            <input type="text" name="mail" placeholder="Mail" [(ngModel)]="assistant.mail">
+            <br>
 
-    <p>Password</p>
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="assistant.password">
-    <br>
-    <br>
-    <br>
-    <button class="class1" type="submit">Ajouter</button>
-</form>
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Username" [(ngModel)]="assistant.username">
+            <br>
 
-<br>
-<button (click)="afficherAssistants()">Retour</button>
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="assistant.password">
+            <br>
+            <br>
+            <br>
+            <button class="class1" type="submit">Ajouter</button>
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>
