@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="Participant")
 public class Participant extends Utilisateur{
 	
-	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@ManyToMany(cascade = {CascadeType.PERSIST})
 	@JsonIgnore
 	@JoinTable(name="T_Formation_Participants",joinColumns = @JoinColumn(name="idParticipant"),inverseJoinColumns = @JoinColumn(name="idFormation"))
 	private List<Formation> formations;
