@@ -1,35 +1,49 @@
-<h1> Liste contacts</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <app-header-commerciaux></app-header-commerciaux>
+    <div class="main">
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id </td>
-
-        <td style="background-color: rgb(127, 203, 144)">Nom </td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Numero de telephone</td>
-        <td style="background-color: rgb(127, 203, 144)">Commentaire</td>
-        <td style="background-color: rgb(127, 203, 144)">Date</td>
-        <td style="background-color: rgb(127, 203, 144)">Appel/Rdv</td>
+        <h1> Liste contacts</h1>
 
 
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id </td>
 
-    </tr>
-    <tr *ngFor="let c of contacts">
-        <td>{{c.idContact}}</td>
-        <td>{{c.prospect.nomProspect}}</td>
-        <td>{{c.prospect.prenomProspect}}</td>
-        <td>{{c.prospect.emailProspect}}</td>
-        <td>{{c.prospect.numTel}}</td>
-        <td>{{c.commentaire}}</td>
-        <td>{{c.date}}</td>
-        <td *ngIf="c.appOuRdv==true"> Appel</td>
-        <td *ngIf="c.appOuRdv==false">Rdv</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom </td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom </td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Numero de telephone</td>
+                <td style="background-color: rgb(127, 203, 144)">Commentaire</td>
+                <td style="background-color: rgb(127, 203, 144)">Date</td>
+                <td style="background-color: rgb(127, 203, 144)">Appel/Rdv</td>
 
 
 
-    </tr>
+            </tr>
+            <tr *ngFor="let c of contacts">
+                <td>{{c.idContact}}</td>
+                <td>{{c.prospect.nomProspect}}</td>
+                <td>{{c.prospect.prenomProspect}}</td>
+                <td>{{c.prospect.emailProspect}}</td>
+                <td>{{c.prospect.numTel}}</td>
+                <td>{{c.commentaire}}</td>
+                <td>{{c.date}}</td>
+                <td *ngIf="c.appOuRdv==true"> Appel</td>
+                <td *ngIf="c.appOuRdv==false">Rdv</td>
 
 
-</table>
+
+            </tr>
+
+
+        </table>
+    </div>
+</body>

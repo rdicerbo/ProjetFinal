@@ -48,31 +48,59 @@ export class AuthComponent implements OnInit {
 
           if (this.roles[i].idRole == 2) {
             this.roleC = 1
+
+            let tampon = true;
+            for (let i = 0; i < this.roles.length; i++) {
+              if (this.roles[i].idRole == 1) {
+                tampon = false;
+              }
+            }
+            if (tampon) {
+              this.router.navigateByUrl('pageCommercial');
+            }
+
           }
           if (this.roles[i].idRole == 5) {
             this.roleF = 1
+
           }
+
+
+
           if (this.roles[i].idRole == 3) {
             this.roleA = 1
-            if (this.roles[i].idRole != 1) {
+
+            let tampon = true;
+            for (let i = 0; i < this.roles.length; i++) {
+              if (this.roles[i].idRole == 1) {
+                tampon = false;
+              }
+            }
+            if (tampon) {
               this.router.navigateByUrl('pageAssistant');
             }
           }
+
+
+
           if (this.roles[i].idRole == 4) {
             this.roleP = 1
+
           }
           if (this.roles[i].idRole == 1) {
             this.roleAdmin = 1
+
+
             this.router.navigateByUrl('pageAdmin');
 
           }
         }
-        sessionStorage.setItem('roleC', JSON.stringify(this.roleC));
-        sessionStorage.setItem('roleF', JSON.stringify(this.roleF));
-        sessionStorage.setItem('roleA', JSON.stringify(this.roleA));
-        sessionStorage.setItem('roleP', JSON.stringify(this.roleP));
-        sessionStorage.setItem('roleAdmin', JSON.stringify(this.roleAdmin));
 
+        sessionStorage.setItem('roleAdmin', JSON.stringify(this.roleAdmin));
+        sessionStorage.setItem('roleP', JSON.stringify(this.roleP));
+        sessionStorage.setItem('roleA', JSON.stringify(this.roleA));
+        sessionStorage.setItem('roleF', JSON.stringify(this.roleF));
+        sessionStorage.setItem('roleC', JSON.stringify(this.roleC));
       }
     )
   }

@@ -50,6 +50,8 @@ import { AppelProspectComponent } from './appel-prospect/appel-prospect.componen
 import { PageAdminComponent } from './page-admin/page-admin.component';
 import { HeaderComponent } from './header/header.component';
 import { PageAssistantComponent } from './page-assistant/page-assistant.component';
+import { PageCommercialeComponent } from './page-commerciale/page-commerciale.component';
+import { ListeContactsComponent } from './liste-contacts/liste-contacts.component';
 
 
 
@@ -108,7 +110,9 @@ const routes: Routes = [
 
   { path: 'pageAdmin', component: PageAdminComponent },
   { path: 'pageAssistant', component: PageAssistantComponent },
-  { path: 'header', component: HeaderComponent }
+  { path: 'header', component: HeaderComponent },
+  { path: 'pageCommercial', component: PageCommercialeComponent },
+  { path: 'listeContacts', component: ListeContactsComponent }
 
 
 ];

@@ -63,6 +63,7 @@ public class ProspectController {
 		List<Prospect> liste=pService.findByContactsIsNull(); 
 		return liste; 
 	}
+	
 	@GetMapping("/prospectsContactCommercial/{id}")
 	public List<Prospect> chercherContactCommercial(@PathVariable("id") int idCommercial){
 		List<Prospect> liste=pService.findByContacts_commercial_id(idCommercial); 

@@ -30,6 +30,7 @@ export class BodyComponent implements OnInit {
     this.roleP = JSON.parse(sessionStorage['roleP']);
     this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+
   }
 
   // Espace perso de l'utilisateur

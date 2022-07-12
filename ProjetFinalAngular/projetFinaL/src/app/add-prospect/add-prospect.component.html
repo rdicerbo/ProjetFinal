@@ -6,7 +6,13 @@
 </head>
 
 <body>
-    <app-header></app-header>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleC==1">
+        <app-header-commerciaux></app-header-commerciaux>
+    </div>
     <div class="main">
 
         <h1>Ajouter un prospect</h1>

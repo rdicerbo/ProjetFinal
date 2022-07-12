@@ -20,11 +20,21 @@ export class AddContactComponent implements OnInit {
 
   selectedP!: Prospect
   selectedC!: Commercial
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
   constructor(private serviceComm: CommercialService, private serviceP: ProspectService,
     private service: ContactService, private router: Router) { }
 
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.contact = new Contact
     this.selectedC = new Commercial
     this.selectedP = new Prospect
