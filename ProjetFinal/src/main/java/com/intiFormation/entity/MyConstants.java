@@ -3,10 +3,10 @@ package com.intiFormation.entity;
 public class MyConstants {
 	
 
-    public static final String MY_EMAIL = "celia.lefeuvre@laposte.net";
+    public static final String MY_EMAIL = "myriam.romane.tpe@gmail.com";
 
     
-    public static final String MY_PASSWORD = "!2LpbGoy8!";
+    public static final String MY_PASSWORD = "eishgecolndorzmj";
 	
 
 
