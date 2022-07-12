@@ -54,6 +54,7 @@ import { PageCommercialeComponent } from './page-commerciale/page-commerciale.co
 import { ListeContactsComponent } from './liste-contacts/liste-contacts.component';
 import { PageFormateurComponent } from './page-formateur/page-formateur.component';
 import { PageParticipantComponent } from './page-participant/page-participant.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -116,7 +117,8 @@ const routes: Routes = [
   { path: 'pageCommercial', component: PageCommercialeComponent },
   { path: 'listeContacts', component: ListeContactsComponent },
   { path: 'pageFormateur', component: PageFormateurComponent },
-  { path: 'pageParticipant', component: PageParticipantComponent }
+  { path: 'pageParticipant', component: PageParticipantComponent },
+  { path: 'about', component: AboutComponent }
 
 
 ];

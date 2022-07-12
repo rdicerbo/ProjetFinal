@@ -63,6 +63,7 @@ import { HeaderAssistantComponent } from './header-assistant/header-assistant.co
 import { HeaderCommerciauxComponent } from './header-commerciaux/header-commerciaux.component';
 import { HeaderFormateurComponent } from './header-formateur/header-formateur.component';
 import { HeaderParticipantComponent } from './header-participant/header-participant.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ import { HeaderParticipantComponent } from './header-participant/header-particip
     HeaderAssistantComponent,
     HeaderCommerciauxComponent,
     HeaderFormateurComponent,
-    HeaderParticipantComponent
+    HeaderParticipantComponent,
+    AboutComponent
 
 
   ],
