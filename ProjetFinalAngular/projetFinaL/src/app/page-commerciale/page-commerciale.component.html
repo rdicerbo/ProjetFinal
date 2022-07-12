@@ -1,7 +1,7 @@
-<app-liste-prospects></app-liste-prospects>
+<app-liste-prospects (newItemEvent)="recupererApres($event)"></app-liste-prospects>
 <br>
 <hr>
-<h3>Creer un contact
+<!--<h3>Creer un contact
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
         viewBox="0 0 16 16">
         <path
@@ -10,5 +10,7 @@
 </h3>
 <hr>
 <br>
-<button class="chercher2" (click)="CreerContact()"> Creer un contact</button>
+<button class="chercher2" (click)="CreerContact()"> Creer un contact</button>-->
+<app-liste-contacts></app-liste-contacts>
+
 <br>

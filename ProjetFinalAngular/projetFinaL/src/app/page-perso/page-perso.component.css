@@ -3,8 +3,6 @@ h1 {
     text-align: center;
     background-color: rgb(209, 9, 245, 0.2);
     border: 1px solid rgb(209, 9, 245, 0.5);
-    margin-left: -12px;
-    margin-right: -11px;
     margin-top: -10px;
 }
 
@@ -32,9 +30,14 @@ hr {
 
 
 .center {
-    margin-left: 500px;
-    margin-right: 550px;
+    text-align: center;
 }
+
+table {
+    margin: auto;
+    width: 500px;
+}
+
 
 th,
 td {
@@ -42,6 +45,7 @@ td {
     width: 10%;
     text-align: center;
     border-radius: 3px;
+
 }
 
 h4 {
@@ -82,5 +86,79 @@ button {
 
 h2 {
     text-align: center;
-    color: rgb(127, 203, 144);
+    color: black
+}
+
+.titre {
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgba(217, 0, 255, 0.192);
+    margin-top: -10px;
+    margin: auto;
+    width: 800px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgb(209, 9, 245, 0.5);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #818181;
+}
+
+.main {
+    margin-left: 200px;
+    /* Same as the width of the sidenav */
+}
+
+.sidenav a.SousMenu {
+    padding: 6px 6px 6px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+
+}
+
+.sidenav a.SousMenu:hover {
+    color: #818181;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+    .sidenav p {
+        font-size: 5px;
+    }
+
+    .sidenav .aPetit {
+        font-size: 5px;
+    }
+
 }

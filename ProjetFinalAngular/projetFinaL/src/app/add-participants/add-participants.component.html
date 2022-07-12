@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+
+
 <h1> Ajouter un participant</h1>
 
 
@@ -36,5 +54,8 @@
     
 </form>
 
-<br>
-<button (click)="afficherParticipants()">Retour</button>
+</div>
+
+</body>
+
+</html>

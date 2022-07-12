@@ -7,11 +7,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.MyConstants;
+import com.intiFormation.entity.Prospect;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IcontactService;
 
@@ -25,12 +27,12 @@ public class EmailController {
 	 @Autowired
 	 IcontactService commandeService;
 	 
-	 @ResponseBody
-	    @RequestMapping("/sendSimpleEmail")
-	    public String sendSimpleEmail(HttpSession s) {
+	
+	    @GetMapping("/sendSimpleEmail")
+	    public String sendSimpleEmail(Prospect p) {
 		 
-		 Utilisateur u =(Utilisateur)s.getAttribute("u");
-		 Contact contact = (Contact)s.getAttribute("contact");
+		 /*Utilisateur u =(Utilisateur)s.getAttribute("u");
+		 Contact contact = (Contact)s.getAttribute("contact");*/
 		 
 		 //Récupération des ligneCommandes de la commande
 		/* Optional<Commande> oc = commandeService.selectByIdCommande(commande.getIdCommande());
@@ -41,15 +43,15 @@ public class EmailController {
 	        // Create a Simple MailMessage.
 	        SimpleMailMessage message = new SimpleMailMessage();
 	        
-	        message.setTo(u.getMail());
-	        message.setSubject("Votre Commande");
-	       // message.setText(commandeService.findByUtilsateur(u).toString());
-	        message.setText(contact.toString());
+	        message.setTo(p.getEmailProspect());
+	        message.setSubject("Votre Formation");
+	       message.setText("BlaBla");
+	        message.setText(p.toString());
 
 	        // Send Message!
 	        this.emailSender.send(message);
 
-	        return "redirect:/AfficherCommande";
+	        return "message envoye";
 	    }
 	 
 }

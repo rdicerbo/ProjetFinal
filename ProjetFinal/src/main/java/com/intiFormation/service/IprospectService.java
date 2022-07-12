@@ -13,5 +13,6 @@ public interface IprospectService {
 	public void supprimer(int id); 
 	public void modifier(Prospect p); 
 	public List<Prospect> findByContactsIsNull();
+	public List<Prospect> findByContacts_commercial_id(int id);
 
 }

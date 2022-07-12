@@ -1,10 +1,13 @@
 <h1> Liste de relances associes</h1>
 
-
+<br>
+<br>
+<br>
 <table class="center">
     <tr>
         <td style="background-color: rgb(127, 203, 144)">Id relance</td>
         <td style="background-color: rgb(127, 203, 144)">Date de la relance</td>
+        <td style="background-color: rgb(127, 203, 144)">Personne à contacter</td>
         <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
 
     </tr>
@@ -12,6 +15,7 @@
     <tr *ngFor="let r of relances">
         <td>{{r.idRelance}}</td>
         <td>{{r.date}}</td>
+        <td>{{r.assistant.nom}} : {{r.assistant.mail}}</td>
         <td>{{r.montant}}</td>
     </tr>
 

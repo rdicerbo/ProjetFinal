@@ -14,7 +14,6 @@ import { DatePipe } from '@angular/common';
 })
 export class PaiementAssociePFComponent implements OnInit {
 
-  paiements!: Paiement[];
   paiement!: Paiement;
 
   utilisateur!: Utilisateur;

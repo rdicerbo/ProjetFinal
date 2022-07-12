@@ -2,6 +2,7 @@ package com.intiFormation.controller;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -61,5 +62,11 @@ public class ProspectController {
 	public List<Prospect> chercherContactNull(){
 		List<Prospect> liste=pService.findByContactsIsNull(); 
 		return liste; 
+	}
+	@GetMapping("/prospectsContactCommercial/{id}")
+	public List<Prospect> chercherContactCommercial(@PathVariable("id") int idCommercial){
+		List<Prospect> liste=pService.findByContacts_commercial_id(idCommercial); 
+		List<Prospect> l2 = liste.stream().distinct().collect(Collectors.toList());
+		return l2; 
 	}
 }

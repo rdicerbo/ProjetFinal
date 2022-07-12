@@ -1,4 +1,4 @@
-package com.intiFormation.controller;
+package com.intiFormation;
 
 
 import com.intiFormation.entity.Formation;
@@ -109,5 +109,7 @@ public class GeneratePdfReport {
 
         return new ByteArrayInputStream(out.toByteArray());
     }
+    
+    
 
 }

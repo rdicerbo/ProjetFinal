@@ -1,131 +1,98 @@
-<h1>Site d'eFormation</h1>
-<br>
+<!DOCTYPE html>
+<html>
 
-<p>La liste des formations est disponible et mise a jour regulierement.</p>
-<br>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<hr>
-<h3>Liste formations</h3>
-<hr>
-<br>
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Prix en euros</td>
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
 
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
-        <td style="background-color: rgb(127, 203, 144)">Action3</td>
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
 
 
-    </tr>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <h1>Site d'eFormation</h1>
+        <br>
 
-    <tr *ngFor="let f of formations| filter: filterTerm">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.prix}}</td>
-        <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
-        <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+        <p>La liste des formations est disponible et mise a jour regulierement.</p>
+        <br>
 
-        <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
-        </td>
+        <hr>
+        <h3>Liste formations</h3>
+        <hr>
+        <br>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Description</td>
+                <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+                <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+                <td style="background-color: rgb(127, 203, 144)">Prix en euros</td>
 
-    </tr>
-
-</table>
-
-
-<br>
-<br>
-<br>
-<hr>
-<h3>Ajouter une formation
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
-        viewBox="0 0 16 16">
-        <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-    </svg>
-</h3>
-<hr>
-<br>
-<button class="chercher3" (click)="AjouterFormation()">Ajouter une formation</button>
-<br>
-<br>
-<br>
-
-<hr>
-<h3>Rechercher une formation
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
-        viewBox="0 0 16 16">
-        <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-    </svg>
-</h3>
-<hr>
-<br>
-
-<!--Trouver une formation par nom-->
-<h4>Rechercher une formation par <span class="el">nom</span></h4>
-<form class="form-search form-inline" (ngSubmit)="afficher2()">
-    <input type="text" class="chercher2" placeholder="Formation par nom" name="selectedF" [(ngModel)]="selectedF"
-        [(ngModel)]="filterTerm" />
-    <button class="chercher" type="submit">Valider</button>
-</form>
-<br>
-<br>
-
-<!--Trouver une formation par id-->
-<h4>Rechercher une formation par <span class="el">id</span></h4>
-<form class="form-search form-inline" (ngSubmit)="afficherById()">
-    <input type="text" class="chercher2" placeholder="Formation par id" name="selectedId" [(ngModel)]="selectedId"
-        [(ngModel)]="filterTerm" />
-    <button class="chercher" type="submit">Valider</button>
-</form>
-<br>
-<br>
-
-<!--Trouver une formation par prix-->
-<h4>Rechercher une formation par <span class="el">prix</span></h4>
-<form class="form-search form-inline" (ngSubmit)="afficherById()">
-    <input class="chercher2" type="text" placeholder="Formation par prix" name="selectedPrice"
-        [(ngModel)]="selectedPrice" [(ngModel)]="filterTerm" />
-    <button class="chercher" type="submit">Valider</button>
-</form>
-<br>
-<br>
-<br>
+                <td style="background-color: rgb(127, 203, 144)">Supprimer</td>
+                <td style="background-color: rgb(127, 203, 144)">Modifier</td>
+                <td style="background-color: rgb(127, 203, 144)">Afficher</td>
+                <td style="background-color: rgb(127, 203, 144)">Ajouter Pdf</td>
 
 
-<hr>
-<h3>
-    Redirections
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-signpost-2"
-        viewBox="0 0 16 16">
-        <path
-            d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z" />
-    </svg>
-</h3>
-<hr>
+            </tr>
 
-<br>
-<button class="chercher4" (click)="afficherAssistants()">Gestion des assistants</button>
-<br>
-<button class="chercher4" (click)="GestionFormateurs()">Gestion des formateurs</button>
-<br>
-<button class="chercher4" (click)="GestionsCommerciaux()">Gestion des commerciaux</button>
-<br>
-<button class="chercher4" (click)="GestionsProspects()">Gestion des prospects</button>
-<br>
-<button class="chercher4" (click)="Admin()">Gestion des administrateurs</button>
-<br>
-<button class="chercher4" (click)="Participant()">Gestion des participants</button>
+            <tr *ngFor="let f of formations| filter: filterTerm">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.prix}}</td>
+                <td><button (click)="supprimer(f.idFormation)">Supprimer</button></td>
+                <td><button (click)="modifier(f.idFormation)">Modifier</button></td>
+                <td><button (click)=" afficher(f.formateur.id)"> Afficher </button>
+                <td *ngIf=" f.prix == 0 ">
+                    <form (ngSubmit)="savePdf(f.idFormation)">
+                        Pdf <input type="file" name="pdfselected" (change)="selectEvent($event)">
+                        <button> Valider </button>
+                    </form>
+                </td>
 
-<br>
-<br>
+            </tr>
+
+        </table>
+
+
+
+
+        <hr>
+        <h3>Rechercher une formation
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg>
+        </h3>
+        <hr>
+        <br>
+
+        <!--Trouver une formation par nom-->
+        <h4>Rechercher une formation par <span class="el">nom, id ou prix</span></h4>
+        <form class="form-search form-inline" (ngSubmit)="afficher2()">
+            <input type="text" class="chercher2" placeholder="Formation par nom" name="selectedF"
+                [(ngModel)]="selectedF" [(ngModel)]="filterTerm" />
+            <button class="chercher" type="submit">Valider</button>
+        </form>
+        <br>
+        <br>
+
+    </div>
+
+</body>
+
+</html>

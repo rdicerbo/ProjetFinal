@@ -28,7 +28,7 @@ public class Prospect {
 	@CsvBindByName
 	private String emailProspect;
 	
-	@OneToMany(mappedBy="prospect", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="prospect", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Contact> contacts;
 	

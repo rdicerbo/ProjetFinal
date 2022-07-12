@@ -1,29 +1,47 @@
-<h1> Liste des paiements associes</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
+
+            </tr>
+
+            <tr *ngFor="let p of paiements">
+                <td>{{p.idPaiement}}</td>
+                <td>{{p.date}}</td>
+                <td>{{p.montant}}</td>
+                <td>{{p.reste}}</td>
+            </tr>
+
+        </table>
+
+        <br>
+        <br>
+        <br>
+        <button class="class3" *ngIf="roleA==1" (click)="Relance()">Relance</button>
+
+        <p *ngIf="testRelance==1" class="p">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
+    </div>
 
-    </tr>
+</body>
 
-    <tr *ngFor="let p of paiements">
-        <td>{{p.idPaiement}}</td>
-        <td>{{p.date}}</td>
-        <td>{{p.montant}}</td>
-        <td>{{p.reste}}</td>
-    </tr>
-
-</table>
-
-<br>
-<br>
-<br>
-<button class="class4" *ngIf="roleA==1" (click)="Relance()">Relance</button>
-<br>
-<button class="class3" (click)="Retour()">Retour</button>
-
-<p *ngIf="testRelance==1">La relance a bien ete envoyee a {{paiements[0].participant.nom}}</p>
+</html>

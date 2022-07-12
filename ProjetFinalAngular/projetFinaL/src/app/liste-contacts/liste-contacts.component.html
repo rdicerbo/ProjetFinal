@@ -1,1 +1,35 @@
-<p>liste-contacts works!</p>
+<h1> Liste contacts</h1>
+
+
+<table class="center">
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Id </td>
+
+        <td style="background-color: rgb(127, 203, 144)">Nom </td>
+        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
+        <td style="background-color: rgb(127, 203, 144)">Mail</td>
+        <td style="background-color: rgb(127, 203, 144)">Numero de telephone</td>
+        <td style="background-color: rgb(127, 203, 144)">Commentaire</td>
+        <td style="background-color: rgb(127, 203, 144)">Date</td>
+        <td style="background-color: rgb(127, 203, 144)">Appel/Rdv</td>
+
+
+
+    </tr>
+    <tr *ngFor="let c of contacts">
+        <td>{{c.idContact}}</td>
+        <td>{{c.prospect.nomProspect}}</td>
+        <td>{{c.prospect.prenomProspect}}</td>
+        <td>{{c.prospect.emailProspect}}</td>
+        <td>{{c.prospect.numTel}}</td>
+        <td>{{c.commentaire}}</td>
+        <td>{{c.date}}</td>
+        <td *ngIf="c.appOuRdv==true"> Appel</td>
+        <td *ngIf="c.appOuRdv==false">Rdv</td>
+
+
+
+    </tr>
+
+
+</table>

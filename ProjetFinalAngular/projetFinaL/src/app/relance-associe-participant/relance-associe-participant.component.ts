@@ -15,6 +15,11 @@ export class RelanceAssocieParticipantComponent implements OnInit {
 
   relances!: Relance[];
   id!: number;
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
   constructor(private router: Router,
     private service: RelanceService,
@@ -22,7 +27,11 @@ export class RelanceAssocieParticipantComponent implements OnInit {
 
   //Methode ngOnInit
   ngOnInit(): void {
-
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.afficher();
   }
 

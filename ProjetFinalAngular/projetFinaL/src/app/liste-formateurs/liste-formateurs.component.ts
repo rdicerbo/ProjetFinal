@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formateur } from '../models/Formateur.model';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { FormateurService } from '../service/formateur.service';
 
@@ -13,10 +14,22 @@ export class ListeFormateursComponent implements OnInit {
 
   formateurs!: Formateur[];
 
+  roles!: Role[]
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
+
   constructor(private service: FormateurService, private router: Router) { }
 
   ngOnInit(): void {
     this.chargerFormateurs()
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
   }
 
   chargerFormateurs() {
@@ -56,9 +69,6 @@ export class ListeFormateursComponent implements OnInit {
     this.router.navigateByUrl('afficherFormationAssociee/' + id)
   }
 
-  // Bouton retour
-  retour() {
-    this.router.navigateByUrl('afficherFormation')
-  }
+
 
 }

@@ -24,8 +24,9 @@ export class FooterComponent implements OnInit {
   //Methode deconnexion
   deconnexion() {
     sessionStorage.removeItem("token");
-    this.router.navigateByUrl("authentification");
     sessionStorage.removeItem("utilisateur");
+    sessionStorage.clear();
+    this.router.navigateByUrl("authentification");
     console.log("ko");
   }
 

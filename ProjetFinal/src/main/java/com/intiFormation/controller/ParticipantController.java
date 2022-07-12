@@ -1,5 +1,6 @@
 package com.intiFormation.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Role;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IformationService;
+import com.intiFormation.service.IpaiementService;
 import com.intiFormation.service.IparticipantService;
 import com.intiFormation.service.IroleService;
 import com.intiFormation.service.IutilisateurService;
@@ -39,6 +42,9 @@ public class ParticipantController {
 	IformationService fService; 
 	
 	@Autowired
+	IpaiementService paieService;
+	
+	@Autowired
 	BCryptPasswordEncoder bc; 
 	
 
@@ -57,6 +63,17 @@ public class ParticipantController {
 		f.add(fService.chercherParId(idFormateur).get());
 		p.setFormations(f);
 		pService.ajouter(p);
+		
+		//Ajouter paiement (prix formation)
+		
+		Paiement p1 = new Paiement();
+		LocalDate today = LocalDate.now();
+		p1.setDate(today);
+		p1.setFormation(fService.chercherParId(idFormateur).get());
+		p1.setParticipant(p);
+		p1.setMontant(0);
+		p1.setReste(fService.chercherParId(idFormateur).get().getPrix());
+		paieService.ajouter(p1);
 	}
 	
 	

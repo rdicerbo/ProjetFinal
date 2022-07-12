@@ -26,7 +26,7 @@ export class ContactAssocieComponent implements OnInit {
   }
   // Bouton retour
   retour() {
-    this.router.navigateByUrl('afficherProspects')
+    this.router.navigateByUrl('')
   }
 
 }

@@ -26,6 +26,7 @@ public class Formation {
 	private LocalDate dateDebut; 
 	private LocalDate dateFin;
 	private double prix;
+	private String pdf; 
 	
 	@ManyToOne
 	@JoinColumn(name="idFormateur")
@@ -45,6 +46,12 @@ public class Formation {
 	private List<Relance> relances;
 	
 	
+	public String getPdf() {
+		return pdf;
+	}
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
+	}
 	public Formateur getFormateur() {
 		return formateur;
 	}

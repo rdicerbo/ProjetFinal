@@ -48,4 +48,10 @@ public class ProspectService implements IprospectService {
 		return pdao.findByContactsIsNull();
 	}
 
+	@Override
+	public List<Prospect> findByContacts_commercial_id(int id) {
+	
+		return pdao.findByContacts_commercial_id(id);
+	}
+
 }

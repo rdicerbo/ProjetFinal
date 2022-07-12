@@ -44,4 +44,9 @@ export class ProspectService {
   importerCsv(data: FormData) {
     return this.http.post<Prospect[]>('http://localhost:4222/upload-csv-file', data);
   }
+
+  //Methode getByIdCommerciale
+  getByIdCommercial(idCommercial: number) {
+    return this.http.get<Prospect[]>('http://localhost:4222/prospectsContactCommercial/' + idCommercial);
+  }
 }

@@ -1,7 +1,12 @@
 package com.intiFormation.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.intiFormation.entity.Formation;
 import com.intiFormation.service.IformateurService;
@@ -55,8 +62,8 @@ public class FormationController {
 		
 		//Methode chercherun par formateur
 		@GetMapping("/formationsParFormateur/{id}")
-		public Formation chercherParIdFormateur(@PathVariable("id") int id) {
-			Formation f=forService.findByFormateur_id(id); 
+		public List<Formation> chercherParIdFormateur(@PathVariable("id") int id) {
+			List<Formation> f=forService.findByFormateur_id(id); 
 			return f; 
 		}
 		
@@ -149,6 +156,31 @@ public class FormationController {
 			 LocalDate todaysDate = LocalDate.now();
 			List<Formation> liste=forService.chercherFormationsArchiveParParticipants(todaysDate,id); 
 			return liste; 
+		}
+		
+		
+		@PutMapping("/formationsPdf/{id}")
+		public void modifier(@PathVariable("id") int id, @RequestParam("file") MultipartFile file, HttpSession session) {
+			String filename= file.getOriginalFilename(); 
+			String path=session.getServletContext().getRealPath("/")+"\\formationpdf\\"+filename;
+			
+			Formation f=new Formation(); 
+			f=forService.chercherParId(id).get();
+			f.setPdf("formationpdf\\"+filename);
+			forService.ajouter(f);
+			
+			
+			try{  
+		        byte barr[]=file.getBytes();  
+		          
+		        BufferedOutputStream bout=new BufferedOutputStream(  
+		                 new FileOutputStream(path));  
+		        bout.write(barr);  
+		        bout.flush();  
+		        bout.close();  
+		          
+		        }catch(Exception e){System.out.println(e);} 
+			
 		}
 
 }

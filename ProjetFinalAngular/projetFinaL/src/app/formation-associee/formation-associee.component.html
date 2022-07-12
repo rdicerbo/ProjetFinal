@@ -1,30 +1,51 @@
-<h1>Formation associee</h1>
+<!DOCTYPE html>
+<html>
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Prix</td>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+
+        <h1>Formation associee</h1>
+
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Description</td>
+                <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+                <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+                <td style="background-color: rgb(127, 203, 144)">Prix</td>
 
 
-    </tr>
+            </tr>
 
 
-    <tr>
-        <td>{{formation.idFormation}}</td>
-        <td>{{formation.libForm}}</td>
-        <td>{{formation.description}}</td>
-        <td>{{formation.dateDebut}}</td>
-        <td>{{formation.dateFin}}</td>
-        <td>{{formation.prix}}</td>
+            <tr *ngFor="let formation of formations">
+                <td>{{formation.idFormation}}</td>
+                <td>{{formation.libForm}}</td>
+                <td>{{formation.description}}</td>
+                <td>{{formation.dateDebut}}</td>
+                <td>{{formation.dateFin}}</td>
+                <td>{{formation.prix}}</td>
 
 
-    </tr>
-</table>
+            </tr>
+        </table>
 
-<br>
+        <br>
 
-<button class="class3" (click)="retour()">Retour</button>
+    </div>
+
+</body>
+
+</html>

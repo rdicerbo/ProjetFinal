@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { BasicAuthentificationService } from '../service/basic-authentification.service';
 import { UtilisateurService } from '../service/utilisateur.service';
@@ -19,6 +20,12 @@ export class AuthComponent implements OnInit {
   invalidLogin = false;
   utilisateur!: Utilisateur
 
+  roles!: Role[]
+  roleF = 0
+  roleC = 0
+  roleA = 0
+  roleP = 0
+  roleAdmin = 0
 
 
 
@@ -31,6 +38,44 @@ export class AuthComponent implements OnInit {
 
   }
 
+  recupererRoles() {
+    const id = this.utilisateur.id
+    this.service.rolesByIdUser(id).subscribe(
+      response => {
+        this.roles = response
+        //console.log(this.roles.length)
+        for (let i = 0; i < this.roles.length; i++) {
+
+          if (this.roles[i].idRole == 2) {
+            this.roleC = 1
+          }
+          if (this.roles[i].idRole == 5) {
+            this.roleF = 1
+          }
+          if (this.roles[i].idRole == 3) {
+            this.roleA = 1
+            if (this.roles[i].idRole != 1) {
+              this.router.navigateByUrl('pageAssistant');
+            }
+          }
+          if (this.roles[i].idRole == 4) {
+            this.roleP = 1
+          }
+          if (this.roles[i].idRole == 1) {
+            this.roleAdmin = 1
+            this.router.navigateByUrl('pageAdmin');
+
+          }
+        }
+        sessionStorage.setItem('roleC', JSON.stringify(this.roleC));
+        sessionStorage.setItem('roleF', JSON.stringify(this.roleF));
+        sessionStorage.setItem('roleA', JSON.stringify(this.roleA));
+        sessionStorage.setItem('roleP', JSON.stringify(this.roleP));
+        sessionStorage.setItem('roleAdmin', JSON.stringify(this.roleAdmin));
+
+      }
+    )
+  }
 
   //Methode authentification
   authentification() {
@@ -50,6 +95,7 @@ export class AuthComponent implements OnInit {
               sessionStorage.setItem('utilisateur', JSON.stringify(this.utilisateur));
               console.log(this.utilisateur.nom)
               console.log(this.utilisateur.prenom)
+              this.recupererRoles();
             }
           )
 

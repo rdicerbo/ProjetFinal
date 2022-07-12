@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Participant } from '../models/Participant.model';
+import { Role } from '../models/Role.model';
 import { ParticipantService } from '../service/participant.service';
 
 @Component({
@@ -12,6 +13,13 @@ export class ListeParticipantsComponent implements OnInit {
 
   participants!: Participant[];
 
+  roles!: Role[]
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
+
 
   @Output() newItemEvent = new EventEmitter<number>();
 
@@ -22,6 +30,12 @@ export class ListeParticipantsComponent implements OnInit {
   //Methode ngOnInit
   ngOnInit(): void {
     this.chargerParticipants();
+
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
 
   }
 
