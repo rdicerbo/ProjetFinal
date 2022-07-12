@@ -4,6 +4,7 @@ import { Formation } from '../models/Formation.model';
 import { Participant } from '../models/Participant.model';
 import { Prospect } from '../models/Prospect.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
+import { MailService } from '../service/mail.service';
 import { ParticipantService } from '../service/participant.service';
 import { ProspectService } from '../service/prospect.service';
 
@@ -29,7 +30,8 @@ export class ConvertirProspectComponent implements OnInit {
   constructor(private serviceP: ProspectService,
     private serviceF: ListeFormationsService,
     private servicePart: ParticipantService,
-    private router: Router) { }
+    private router: Router,
+    private serviceM: MailService) { }
 
   ngOnInit(): void {
     this.roleF = JSON.parse(sessionStorage['roleF']);
@@ -62,8 +64,18 @@ export class ConvertirProspectComponent implements OnInit {
     this.participant.nom = this.selectedProspect.nomProspect;
     this.participant.prenom = this.selectedProspect.prenomProspect;
     this.servicePart.ajouterP(this.selectedFormation.idFormation, this.participant).subscribe(
-      response => this.participant = response
+      response => {
+        this.participant = response
+        console.log(this.participant.id)
+
+
+      }
     )
+
+    console.log(this.participant.id)
+    console.log(this.selectedProspect.idProspect)
+    // envoie mail info connexion
+    this.serviceM.mailInfo(this.selectedProspect.idProspect).subscribe();
 
     // suppression du prospect
     this.serviceP.supprimer(this.selectedProspect.idProspect).subscribe()

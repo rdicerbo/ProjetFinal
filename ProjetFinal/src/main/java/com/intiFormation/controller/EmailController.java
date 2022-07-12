@@ -22,6 +22,7 @@ import com.intiFormation.entity.Contact;
 import com.intiFormation.entity.MyConstants;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Prospect;
+import com.intiFormation.entity.Relance;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IcommercialService;
 import com.intiFormation.service.IcontactService;
@@ -39,12 +40,15 @@ public class EmailController {
 	 @Autowired
 	 IprospectService pService;
 	 @Autowired
+	 IparticipantService partService;
+	 @Autowired
 	 IcommercialService cService;
 	
 	    @GetMapping("/sendEmailInfoProspect/{id}")
 	    public String sendSimpleEmail(@PathVariable("id") int id) {
 		 
 	    	Prospect p = pService.chercherParId(id).get();
+
 	        SimpleMailMessage message = new SimpleMailMessage();
 	        
 	        message.setTo(p.getEmailProspect());
@@ -78,8 +82,30 @@ public class EmailController {
 	        // Send Message!
 	        this.emailSender.send(message);
 
-	        Timer t = new Timer();
-	        t.schedule(null, null);
+
+	        //Timer t = new Timer();
+	       // t.schedule(null, null);
+
+	        return "message envoye";
+	    }
+	    
+	    @PutMapping("/sendEmailRelance/{id}")
+	    public String sendEmailRelance(@PathVariable("id") int id, @RequestBody Relance r) {
+		 
+	    	Participant p = partService.chercherParId(id).get();
+
+	        SimpleMailMessage message = new SimpleMailMessage();
+	        
+	        message.setTo(p.getMail());
+	        message.setSubject("Votre Relance");
+	        message.setText("Bonjour,\n"+
+	       "Nous vous relancons suit à l'impayé de votre formation.\n"+
+	       "Votre relance est de " + r.getMontant());
+	        
+
+	        // Send Message!
+	        this.emailSender.send(message);
+
 	        return "message envoye";
 	    }
 	    

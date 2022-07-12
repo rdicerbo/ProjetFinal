@@ -4,6 +4,7 @@ import { Paiement } from '../models/Paiement.model';
 import { Relance } from '../models/Relance.model';
 import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
+import { MailService } from '../service/mail.service';
 import { PaiementService } from '../service/paiement.service';
 import { RelanceService } from '../service/relance.service';
 import { UtilisateurService } from '../service/utilisateur.service';
@@ -33,7 +34,8 @@ export class PaiementAssocieParticipantComponent implements OnInit {
     private service: PaiementService,
     private serviceU: UtilisateurService,
     private serviceR: RelanceService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private serviceM: MailService) { }
 
   //Methode ngOnInit
   ngOnInit(): void {
@@ -83,6 +85,7 @@ export class PaiementAssocieParticipantComponent implements OnInit {
       response => {
         console.log("test");
         this.relance = response;
+        this.serviceM.mailRelance(this.paiements[0].participant.id, this.relance).subscribe();
         this.testRelance = 1;
         this.afficher();
 

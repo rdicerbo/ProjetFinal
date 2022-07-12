@@ -4,6 +4,7 @@ import { Contact } from '../models/Contact.model';
 import { Prospect } from '../models/Prospect.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ContactService } from '../service/contact.service';
+import { MailService } from '../service/mail.service';
 import { ProspectService } from '../service/prospect.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class RdvProspectComponent implements OnInit {
   contact!: Contact;
 
   constructor(private route: ActivatedRoute, private serviceP: ProspectService, private serviceC: ContactService,
-    private router: Router) { }
+    private router: Router,
+    private serviceM: MailService) { }
 
   ngOnInit(): void {
     this.contact = new Contact();
@@ -37,8 +39,12 @@ export class RdvProspectComponent implements OnInit {
     this.contact.prospect = this.prospect;
     this.contact.commercial = this.utilisateur;
     this.serviceC.ajouterC(this.contact).subscribe(
-      response => this.contact = response
+      response => {
+        this.contact = response
+
+      }
     )
+    this.serviceM.mailRdv(this.utilisateur.id, this.contact).subscribe();
     this.router.navigateByUrl('')
   }
 
