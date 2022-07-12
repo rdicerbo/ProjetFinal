@@ -1,3 +1,39 @@
+h1 {
+    color: black;
+    text-align: center;
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgb(209, 9, 245, 0.5);
+    margin-left: -12px;
+    margin-right: -11px;
+    margin-top: -10px;
+}
+
+button {
+    background-color: rgb(127, 203, 144, 0.5);
+    border-radius: 10px;
+    border-color: rgb(127, 203, 144);
+    margin-left: 1400px;
+}
+
+input {
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 755px;
+}
+
+p {
+    text-align: center;
+    color: rgb(127, 203, 144);
+}
+
+.class1 {
+    margin-left: 800px;
+}
+
+.class2 {
+    margin-left: 815px;
+}
+
 body {
     font-family: "Lato", sans-serif;
 }
