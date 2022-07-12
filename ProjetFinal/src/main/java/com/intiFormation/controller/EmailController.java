@@ -1,5 +1,11 @@
 package com.intiFormation.controller;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Optional;
 import java.util.Timer;
 
@@ -76,8 +82,19 @@ public class EmailController {
 	        message.setSubject("Votre Rdv");
 	        message.setText("Vous avez Rendez-vous \n"+
 	       " à "+ c.getDate() +
-	       "\n avec " + c.getProspect().getNomProspect()+ c.getProspect().getPrenomProspect());
+	       "\n avec " + c.getProspect().getNomProspect()+" "+ c.getProspect().getPrenomProspect());
 	        
+	       
+	    	Instant instant = c.getDate().minusMinutes(30).atZone(ZoneId.systemDefault()).toInstant();
+	    	Date date = Date.from(instant);
+	    	System.out.println("----------------");
+	    	System.out.println(date);
+	    	System.out.println("----------------");
+
+	    	//message.setSentDate(Date.from(Instant.now().plusSeconds(120)));
+
+	        message.setSentDate(date);
+
 
 	        // Send Message!
 	        this.emailSender.send(message);
