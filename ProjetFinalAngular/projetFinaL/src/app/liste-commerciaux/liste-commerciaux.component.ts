@@ -54,10 +54,6 @@ export class ListeCommerciauxComponent implements OnInit {
     this.router.navigateByUrl('afficherContactsAssocies/' + idCommercial);
   }
 
-  //Methode creer Contact
-  CreerContact() {
-    this.router.navigateByUrl('AjouterContact');
-  }
 
   // Methode creer Prospect
   CreerProspect() {

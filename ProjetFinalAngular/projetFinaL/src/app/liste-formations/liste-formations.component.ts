@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formateur } from '../models/Formateur.model';
 import { Formation } from '../models/Formation.model';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
 
@@ -30,6 +31,13 @@ export class ListeFormationsComponent implements OnInit {
 
   pdfselected!: File
 
+  roles!: Role[]
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
+
   @Output() newItemEvent = new EventEmitter<number>();
 
   constructor(private service: ListeFormationsService,
@@ -39,6 +47,12 @@ export class ListeFormationsComponent implements OnInit {
   ngOnInit(): void {
     //this.utilisateur = new Utilisateur
     this.chargerFormations();
+
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
 
     this.formation = new Formation;
 

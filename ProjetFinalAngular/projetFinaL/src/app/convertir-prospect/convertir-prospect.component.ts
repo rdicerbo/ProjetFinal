@@ -20,6 +20,11 @@ export class ConvertirProspectComponent implements OnInit {
   participant!: Participant;
   selectedProspect!: Prospect;
   selectedFormation!: Formation;
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
 
   constructor(private serviceP: ProspectService,
@@ -29,6 +34,11 @@ export class ConvertirProspectComponent implements OnInit {
     private serviceM: MailService) { }
 
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.getAllProspects();
     this.getAllForm();
     this.selectedFormation = new Formation();

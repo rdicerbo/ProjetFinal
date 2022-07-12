@@ -26,7 +26,7 @@ export class ModifProspectsComponent implements OnInit {
 
       }
     );
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('afficherProspects');
   }
 
   //Methode chargerProspect

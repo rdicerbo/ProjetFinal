@@ -1,4 +1,21 @@
-<table class="center">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+    <table class="center">
     <tr>
         <td style="background-color: rgb(127, 203, 144)">Id relance</td>
         <td style="background-color: rgb(127, 203, 144)">Date de la relance</td>
@@ -15,5 +32,8 @@
 
 </table>
 
-<br>
-<button class="chercher2" (click)="Retour()">Retour</button>
+</div>
+
+</body>
+
+</html>

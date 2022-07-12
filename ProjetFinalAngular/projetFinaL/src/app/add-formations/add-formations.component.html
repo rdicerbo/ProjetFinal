@@ -1,42 +1,59 @@
+<!DOCTYPE html>
+<html>
 
-<h1> Ajouter une formation sur le site eFormation</h1>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
 
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
 
-<form (ngSubmit)="AjouterFormation()">
-
-    <p>Nom de la formation</p>
-    <input type="text" name="libForm" placeholder="Nom" [(ngModel)]="formation.libForm">
-    <br>
-
-    <p>Description de la formation</p>
-    <input type="text" name="description" placeholder="Description" [(ngModel)]="formation.description">
-    <br>
-
-    <p>Date de debut de la formation</p>
-    <input class="class1"  type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateDebut">
-    <br>
-
-    <p>Date de fin de la formation</p>
-    <input class="class1" type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateFin">
-    <br>
-
-    <p>Prix de la formation</p>
-    <input type="text" name="prix" placeholder="Prix" [(ngModel)]="formation.prix">
-    <br>
-
-    <p>Formateur a assigne a la formation</p>
-    <select  class="class2" name="selectedId" [(ngModel)]="selectedId">
-        <option *ngFor="let f of formateurs" [ngValue]="f.id">
-            {{f.nom}}
-        </option>
-    </select>
-    <br>
-    <br>
-    <br>
-    <button class="class2" type="submit">Ajouter</button>
-</form>
+        <h1> Ajouter une formation sur le site eFormation</h1>
 
 
-<br>
-<button (click)="afficherFormations()">Retour</button>
+
+        <form (ngSubmit)="AjouterFormation()">
+
+            <p>Nom de la formation</p>
+            <input type="text" name="libForm" placeholder="Nom" [(ngModel)]="formation.libForm">
+            <br>
+
+            <p>Description de la formation</p>
+            <input type="text" name="description" placeholder="Description" [(ngModel)]="formation.description">
+            <br>
+
+            <p>Date de debut de la formation</p>
+            <input class="class1" type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateDebut">
+            <br>
+
+            <p>Date de fin de la formation</p>
+            <input class="class1" type="date" name="Date" placeholder="Date" [(ngModel)]="formation.dateFin">
+            <br>
+
+            <p>Prix de la formation</p>
+            <input type="text" name="prix" placeholder="Prix" [(ngModel)]="formation.prix">
+            <br>
+
+            <p>Formateur a assigne a la formation</p>
+            <select class="class2" name="selectedId" [(ngModel)]="selectedId">
+                <option *ngFor="let f of formateurs" [ngValue]="f.id">
+                    {{f.nom}}
+                </option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <button class="class2" type="submit">Ajouter</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

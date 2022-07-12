@@ -2,8 +2,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contact } from '../models/Contact.model';
 import { Prospect } from '../models/Prospect.model';
+import { Role } from '../models/Role.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 import { ProspectService } from '../service/prospect.service';
+import { UtilisateurService } from '../service/utilisateur.service';
 
 @Component({
   selector: 'app-liste-prospects',
@@ -20,20 +22,74 @@ export class ListeProspectsComponent implements OnInit {
   contact!: Contact
 
   utilisateur!: Utilisateur
+  roles!: Role[]
+  roleF = 0
+  roleC = 0
+  roleA = 0
+  roleP = 0
+  roleAdmin = 0
+
 
   @Output() newItemEvent = new EventEmitter<number>()
 
-  constructor(private service: ProspectService, private router: Router) { }
+  constructor(private service: ProspectService, private serviceU: UtilisateurService, private router: Router) { }
 
   ngOnInit(): void {
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+    this.recupererRoles();
+
+
     this.contact = new Contact();
-    this.getByIdCommercial();
+
+    if (this.roleAdmin = 1) {
+      this.getAll();
+
+    } else {
+      this.getByIdCommercial();
+    }
+
     this.getAllSansContact();
+  }
+
+
+  recupererRoles() {
+    const id = this.utilisateur.id
+    this.serviceU.rolesByIdUser(id).subscribe(
+      response => {
+        this.roles = response
+        //console.log(this.roles.length)
+        for (let i = 0; i < 5; i++) {
+
+          if (this.roles[i].idRole == 2) {
+            this.roleC = 1
+          }
+          if (this.roles[i].idRole == 5) {
+            this.roleF = 1
+          }
+          if (this.roles[i].idRole == 3) {
+            this.roleA = 1
+          }
+          if (this.roles[i].idRole == 4) {
+            this.roleP = 1
+          }
+          if (this.roles[i].idRole == 1) {
+            this.roleAdmin = 1
+
+          }
+        }
+      }
+    )
   }
 
   getByIdCommercial() {
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     this.service.getByIdCommercial(this.utilisateur.id).subscribe(
+      response => this.prospects = response
+    )
+  }
+
+  getAll() {
+    this.service.getAll().subscribe(
       response => this.prospects = response
     )
   }
@@ -45,7 +101,7 @@ export class ListeProspectsComponent implements OnInit {
   }
 
   AjouterProspect() {
-    this.router.navigateByUrl('')
+    this.router.navigateByUrl('AjouterProspect')
   }
 
   supprimer(id: number) {
@@ -54,7 +110,7 @@ export class ListeProspectsComponent implements OnInit {
         this.getByIdCommercial()
       }
     )
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('afficherProspects');
   }
 
   modifier(id: number) {
@@ -98,7 +154,7 @@ export class ListeProspectsComponent implements OnInit {
         alert('Uploaded Successfully.');
         this.newItemEvent.emit(1);
         this.getByIdCommercial()
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('afficherProspects');
       })
 
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formation } from '../models/Formation.model';
 import { Participant } from '../models/Participant.model';
+import { Role } from '../models/Role.model';
 import { ListeFormationsService } from '../service/liste-formations.service';
 import { ParticipantService } from '../service/participant.service';
 
@@ -13,6 +14,11 @@ import { ParticipantService } from '../service/participant.service';
 export class FormationAssocieParticipantComponent implements OnInit {
 
   formations!:Formation[];
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
   constructor(private router:Router,
     private service:ListeFormationsService,
@@ -21,6 +27,11 @@ export class FormationAssocieParticipantComponent implements OnInit {
   //Methode ngOnInit
   ngOnInit(): void 
   {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.afficher();
   }
 
