@@ -44,7 +44,7 @@ export class RdvProspectComponent implements OnInit {
 
       }
     )
-    this.serviceM.mailRdv(this.prospect.idProspect, this.contact).subscribe();
+    this.serviceM.mailRdv(this.contact.commercial.id, this.contact).subscribe();
     this.router.navigateByUrl('')
   }
 
