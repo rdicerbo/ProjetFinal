@@ -58,6 +58,7 @@ export class PaiementAssociePFComponent implements OnInit {
       response => {
         this.recupererPaiement;
         this.newPaiement = response;
+        this.recupererPaiement();
         this.router.navigateByUrl('afficherPaiementAssocieParticipantEtFormation/' + this.newPaiement.formation.idFormation);
       }
     );

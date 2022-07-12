@@ -25,7 +25,6 @@ export class ModifFormationsComponent implements OnInit {
   roleAdmin !: number
 
 
-  @Output() newItemEvent = new EventEmitter<number>();
 
   constructor(private service: ListeFormationsService,
     private route: ActivatedRoute,
