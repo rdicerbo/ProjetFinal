@@ -17,11 +17,23 @@ export class AddProspectComponent implements OnInit {
   prospects!: Prospect[]
 
   utilisateur!: Utilisateur
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
 
   @Output() newItemEvent = new EventEmitter<number>()
   constructor(private service: ProspectService, private router: Router) { }
 
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+
     this.prospect = new Prospect
   }
 

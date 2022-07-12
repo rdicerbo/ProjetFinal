@@ -1,6 +1,7 @@
 package com.intiFormation.controller;
 
 import java.util.Optional;
+import java.util.Timer;
 
 import javax.servlet.http.HttpSession;
 
@@ -44,8 +45,7 @@ public class EmailController {
 	    public String sendSimpleEmail(@PathVariable("id") int id) {
 		 
 	    	Prospect p = pService.chercherParId(id).get();
-	    	//Participant p = pService.chercherParId(id).get();
-	        // Create a Simple MailMessage.
+
 	        SimpleMailMessage message = new SimpleMailMessage();
 	        
 	        message.setTo(p.getEmailProspect());
@@ -78,6 +78,10 @@ public class EmailController {
 
 	        // Send Message!
 	        this.emailSender.send(message);
+
+
+	        //Timer t = new Timer();
+	       // t.schedule(null, null);
 
 	        return "message envoye";
 	    }

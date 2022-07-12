@@ -15,7 +15,9 @@ import { UtilisateurService } from '../service/utilisateur.service';
 export class ListeProspectsComponent implements OnInit {
 
   prospects!: Prospect[]
+  prospectsCommercial!: Prospect[]
   prospectsSansContact!: Prospect[]
+
   fileInput!: File
   myFiles: string[] = [];
 
@@ -23,11 +25,12 @@ export class ListeProspectsComponent implements OnInit {
 
   utilisateur!: Utilisateur
   roles!: Role[]
-  roleF = 0
-  roleC = 0
-  roleA = 0
-  roleP = 0
-  roleAdmin = 0
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
+
 
 
   @Output() newItemEvent = new EventEmitter<number>()
@@ -35,56 +38,30 @@ export class ListeProspectsComponent implements OnInit {
   constructor(private service: ProspectService, private serviceU: UtilisateurService, private router: Router) { }
 
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
-    this.recupererRoles();
 
 
     this.contact = new Contact();
 
-    if (this.roleAdmin = 1) {
-      this.getAll();
-
-    } else {
-      this.getByIdCommercial();
-    }
-
+    this.getAll();
+    this.getByIdCommercial();
     this.getAllSansContact();
   }
 
 
-  recupererRoles() {
-    const id = this.utilisateur.id
-    this.serviceU.rolesByIdUser(id).subscribe(
-      response => {
-        this.roles = response
-        //console.log(this.roles.length)
-        for (let i = 0; i < 5; i++) {
 
-          if (this.roles[i].idRole == 2) {
-            this.roleC = 1
-          }
-          if (this.roles[i].idRole == 5) {
-            this.roleF = 1
-          }
-          if (this.roles[i].idRole == 3) {
-            this.roleA = 1
-          }
-          if (this.roles[i].idRole == 4) {
-            this.roleP = 1
-          }
-          if (this.roles[i].idRole == 1) {
-            this.roleAdmin = 1
 
-          }
-        }
-      }
-    )
-  }
+
 
   getByIdCommercial() {
-    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
     this.service.getByIdCommercial(this.utilisateur.id).subscribe(
-      response => this.prospects = response
+      response => this.prospectsCommercial = response
+
     )
   }
 
@@ -112,6 +89,8 @@ export class ListeProspectsComponent implements OnInit {
     )
     this.router.navigateByUrl('afficherProspects');
   }
+
+
 
   modifier(id: number) {
     this.router.navigateByUrl('modifierProspect/' + id);

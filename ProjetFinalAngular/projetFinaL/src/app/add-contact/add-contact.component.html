@@ -7,33 +7,40 @@
 </head>
 
 <body>
-    <app-header></app-header>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleC==1">
+        <app-header-commerciaux></app-header-commerciaux>
+    </div>
     <div class="main">
+
         <h1>Ajouter un contact</h1>
 
-<form (ngSubmit)="AjouterContact()">
+        <form (ngSubmit)="AjouterContact()">
 
-    <p>Commercial associe</p>
-    <select class="class2" name="selectedC" [(ngModel)]="selectedC">
-        <option *ngFor="let c of commerciaux" [ngValue]="c">
-            {{c.nom}}
-        </option>
-    </select>
+            <p>Commercial associe</p>
+            <select class="class2" name="selectedC" [(ngModel)]="selectedC">
+                <option *ngFor="let c of commerciaux" [ngValue]="c">
+                    {{c.nom}}
+                </option>
+            </select>
 
-    <p>Prospect associe</p>
-    <select class="class2" name="selectedP" [(ngModel)]="selectedP">
-        <option *ngFor="let p of prospects" [ngValue]="p">
-            {{p.nomProspect}}
-        </option>
-    </select>
-    <br>
-    <br>
-    <br>
-    <button class="class1" type="submit">Ajouter</button>
+            <p>Prospect associe</p>
+            <select class="class2" name="selectedP" [(ngModel)]="selectedP">
+                <option *ngFor="let p of prospects" [ngValue]="p">
+                    {{p.nomProspect}}
+                </option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <button class="class1" type="submit">Ajouter</button>
 
-</form>
+        </form>
 
-</div>
+    </div>
 
 </body>
 
