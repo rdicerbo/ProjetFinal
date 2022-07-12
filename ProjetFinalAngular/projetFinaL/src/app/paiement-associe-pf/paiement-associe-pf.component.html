@@ -1,38 +1,51 @@
-<h1> Paiement de la formation {{paiement.formation.libForm}} </h1>
-<br>
-<br>
-<br>
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
-        <td style="background-color: rgb(127, 203, 144)">Paiement</td>
+<!DOCTYPE html>
+<html>
 
-    </tr>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <tr>
-        <td>{{paiement.date}}</td>
-        <td>{{paiement.montant}}</td>
-        <td>{{paiement.reste}}</td>
-        <td *ngIf="paiement.reste!=0">
+</head>
 
-            <form class="hidden">
-                <input type="number" placeholder="0" value="0" min="0" max="{{paiement.reste}}"
-                    [(ngModel)]="nouveaupaiement" name="nouveaupaiement">
+<body>
+    <app-header-participant></app-header-participant>
+    <div class="main">
 
-                <button *ngIf="nouveaupaiement<=paiement.reste" class="class3" (click)="Payer()">Payer</button>
 
-            </form>
+        <h1> Paiement de la formation {{paiement.formation.libForm}} </h1>
+        <br>
+        <br>
+        <br>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Date paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Montant du paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Reste a payer</td>
+                <td style="background-color: rgb(127, 203, 144)">Paiement</td>
 
-        </td>
-        <td *ngIf="paiement.reste==0">
-            Formation paye
-        </td>
-    </tr>
-</table>
-<br>
+            </tr>
 
-<br>
-<br>
-<button class="class3" (click)="Retour()">Retour</button>
+            <tr>
+                <td>{{paiement.date}}</td>
+                <td>{{paiement.montant}}</td>
+                <td>{{paiement.reste}}</td>
+                <td *ngIf="paiement.reste!=0">
+
+                    <form class="hidden">
+                        <input type="number" placeholder="0" value="0" min="0" max="{{paiement.reste}}"
+                            [(ngModel)]="nouveaupaiement" name="nouveaupaiement">
+
+                        <button *ngIf="nouveaupaiement<=paiement.reste" class="class3" (click)="Payer()">Payer</button>
+
+                    </form>
+
+                </td>
+                <td *ngIf="paiement.reste==0">
+                    Formation paye
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

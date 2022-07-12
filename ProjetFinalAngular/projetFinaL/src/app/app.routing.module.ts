@@ -52,6 +52,8 @@ import { HeaderComponent } from './header/header.component';
 import { PageAssistantComponent } from './page-assistant/page-assistant.component';
 import { PageCommercialeComponent } from './page-commerciale/page-commerciale.component';
 import { ListeContactsComponent } from './liste-contacts/liste-contacts.component';
+import { PageFormateurComponent } from './page-formateur/page-formateur.component';
+import { PageParticipantComponent } from './page-participant/page-participant.component';
 
 
 
@@ -112,7 +114,9 @@ const routes: Routes = [
   { path: 'pageAssistant', component: PageAssistantComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'pageCommercial', component: PageCommercialeComponent },
-  { path: 'listeContacts', component: ListeContactsComponent }
+  { path: 'listeContacts', component: ListeContactsComponent },
+  { path: 'pageFormateur', component: PageFormateurComponent },
+  { path: 'pageParticipant', component: PageParticipantComponent }
 
 
 ];

@@ -11,9 +11,20 @@ import { ContactService } from '../service/contact.service';
 export class ContactAssocieComponent implements OnInit {
 
   contact!: Contact
+  roleF !: number
+  roleC !: number
+  roleA !: number
+  roleP !: number
+  roleAdmin !: number
+
   constructor(private service: ContactService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.roleF = JSON.parse(sessionStorage['roleF']);
+    this.roleC = JSON.parse(sessionStorage['roleC']);
+    this.roleA = JSON.parse(sessionStorage['roleA']);
+    this.roleP = JSON.parse(sessionStorage['roleP']);
+    this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
     this.getContact()
   }
   getContact() {

@@ -44,7 +44,4 @@ export class AppelProspectComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
-  Retour() {
-    this.router.navigateByUrl('');
-  }
 }

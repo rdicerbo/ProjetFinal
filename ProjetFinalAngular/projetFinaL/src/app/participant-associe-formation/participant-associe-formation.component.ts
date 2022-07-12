@@ -33,9 +33,4 @@ export class ParticipantAssocieFormationComponent implements OnInit {
     )
   }
 
-
-  Retour() {
-    this.router.navigateByUrl('');
-  }
-
 }

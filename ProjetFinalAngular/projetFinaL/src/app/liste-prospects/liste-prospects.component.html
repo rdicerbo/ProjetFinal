@@ -31,10 +31,9 @@
                 <td style="background-color: rgb(127, 203, 144)">Modifier</td>
                 <td style="background-color: rgb(127, 203, 144)">Contact</td>
 
-                <div *ngIf="roleAdmin!=1 && roleC==1">
-                    <td style="background-color: rgb(127, 203, 144)">Appeler</td>
-                    <td style="background-color: rgb(127, 203, 144)">Rdv</td>
-                </div>
+                <td style="background-color: rgb(127, 203, 144)" *ngIf="roleAdmin!=1 && roleC==1">Appeler</td>
+                <td style="background-color: rgb(127, 203, 144)" *ngIf="roleAdmin!=1 && roleC==1">Rdv</td>
+
 
             </tr>
 
