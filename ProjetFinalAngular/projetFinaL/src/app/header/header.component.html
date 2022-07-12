@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <button class="class4" (click)="EspacePerso()" width="50" height="50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill"
+                viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </svg>
+
+        </button>
+
+        <a href="">Menu</a>
+        <a href="/afficherFormation">Formations</a>
+        <a class="SousMenu" href="/AjouterFormation">
+            Ajouter une formations
+        </a>
+        <a href="/afficherFormateur">Formateurs</a>
+        <a class="SousMenu" href="/AjouterFormateur">
+            Ajouter une formateurs
+        </a>
+        <a href="/afficherParticipants">Participants</a>
+        <a class="SousMenu" href="/AjouterParticipant">
+            Ajouter un participant
+        </a>
+        <a class="SousMenu" href="/convertirProspect">
+            Convertir un prospect
+        </a>
+        <a href="/afficherAdmins">Administrateurs</a>
+        <a class="SousMenu" href="/AjouterAdmin">
+            Ajouter un administrateur
+        </a>
+        <a href="/afficherCommerciaux">Commerciaux</a>
+        <a class="SousMenu" href="/AjouterCommercial">
+            Ajouter un commercial
+        </a>
+        <a class="SousMenu" href="/AjouterContact">
+            Creer un contact
+        </a>
+        <a href="/afficherProspects">Prospects</a>
+        <a class="SousMenu" href="/AjouterProspect">
+            Ajouter un prospect
+        </a>
+        <a href="/afficherAssistants">Assistants</a>
+
+        <a class="deco" (click)="deconnexion()">Deconnexion</a>
+
+
+    </div>
+
+    <div class="main">
+    </div>
+
+</body>
+
+</html>

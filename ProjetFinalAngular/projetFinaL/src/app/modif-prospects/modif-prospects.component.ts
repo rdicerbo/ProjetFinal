@@ -38,11 +38,10 @@ export class ModifProspectsComponent implements OnInit {
     )
   }
 
-  
+
   //Methode afficherCommerciaux
-  afficherProspects()
- {
-   this.router.navigateByUrl('afficherProspects');
- }
+  Retour() {
+    this.router.navigateByUrl('');
+  }
 
 }

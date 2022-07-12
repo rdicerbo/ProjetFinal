@@ -41,6 +41,10 @@ export class AppelProspectComponent implements OnInit {
     this.serviceC.ajouterC(this.contact).subscribe(
       response => this.contact = response
     )
-    this.router.navigateByUrl('afficherProspects')
+    this.router.navigateByUrl('');
+  }
+
+  Retour() {
+    this.router.navigateByUrl('');
   }
 }

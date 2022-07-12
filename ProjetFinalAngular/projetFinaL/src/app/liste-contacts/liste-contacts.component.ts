@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '../models/Contact.model';
+import { Utilisateur } from '../models/Utilisateur.model';
+import { ContactService } from '../service/contact.service';
 
 @Component({
   selector: 'app-liste-contacts',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeContactsComponent implements OnInit {
 
-  constructor() { }
+  contacts!: Contact[];
+  utilisateur!: Utilisateur;
+
+  constructor(private service: ContactService) { }
 
   ngOnInit(): void {
+    this.utilisateur = JSON.parse(sessionStorage['utilisateur']);
+    this.getAllByIdComm();
   }
 
+  getAllByIdComm() {
+    this.service.getByIdCommercial(this.utilisateur.id).subscribe(
+      response => {
+        this.contacts = response
+        console.log(this.utilisateur.id);
+      }
+    )
+  }
 }

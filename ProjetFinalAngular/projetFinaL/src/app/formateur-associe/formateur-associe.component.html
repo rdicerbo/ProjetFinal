@@ -1,32 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+
+        <h1>Formateur assurant cette formation</h1>
 
 
-<h1>Formateur assurant cette formation</h1>
+        <br>
+        <br>
+        <table class="center">
+
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id</td>
+                <td style="background-color: rgb(127, 203, 144)">Adresse mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom</td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+
+            </tr>
 
 
-<br>
-<br>
-<table class="center">
+            <tr>
+                <td>{{utilisateur.id}}</td>
+                <td>{{utilisateur.mail}}</td>
+                <td>{{utilisateur.nom}}</td>
+                <td>{{utilisateur.prenom}}</td>
 
-	<tr>
-		<td style="background-color: rgb(127, 203, 144)">Id</td>
-        <td style="background-color: rgb(127, 203, 144)">Adresse mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
-        
-</tr>
-		
-		
-<tr>
-            <td>{{utilisateur.id}}</td>
-            <td>{{utilisateur.mail}}</td>
-            <td>{{utilisateur.nom}}</td>
-            <td>{{utilisateur.prenom}}</td>
-
-    </tr>
-</table>
+            </tr>
+        </table>
 
 
+    </div>
 
-<br>
-<button (click)="afficherFormations()">Retour</button>
+</body>
 
+</html>

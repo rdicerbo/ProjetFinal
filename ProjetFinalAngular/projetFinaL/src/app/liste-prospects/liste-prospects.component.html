@@ -1,77 +1,80 @@
-<h1> Liste prospect</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <app-header></app-header>
+    <div class="main">
+
+        <h1> Liste prospect</h1>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id </td>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id </td>
 
-        <td style="background-color: rgb(127, 203, 144)">Nom </td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Numero de telephone</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom </td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom </td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Numero de telephone</td>
 
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
-        <td style="background-color: rgb(127, 203, 144)">Contact</td>
-        <td style="background-color: rgb(127, 203, 144)">Action4</td>
-        <td style="background-color: rgb(127, 203, 144)">Action5</td>
+                <td style="background-color: rgb(127, 203, 144)">Supprimer</td>
+                <td style="background-color: rgb(127, 203, 144)">Modifier</td>
+                <td style="background-color: rgb(127, 203, 144)">Contact</td>
+                <div *ngIf="roleAdmin!=1">
+                    <td style="background-color: rgb(127, 203, 144)">Appeler</td>
+                    <td style="background-color: rgb(127, 203, 144)">Rdv</td>
+                </div>
 
+            </tr>
+            <tr>
+                <td style="background-color: #F4DCFE" colspan="10">Vos Prospects</td>
+            </tr>
+            <tr *ngFor="let p of prospects">
+                <td>{{p.idProspect}}</td>
 
-    </tr>
+                <td>{{p.nomProspect}}</td>
+                <td>{{p.prenomProspect}}</td>
+                <td>{{p.emailProspect}}</td>
+                <td>{{p.numTel}}</td>
 
-    <tr *ngFor="let p of prospects">
-        <td>{{p.idProspect}}</td>
+                <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
+                <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
+                <td><button (click)=" afficher(p.idProspect)"> Afficher </button></td>
+                <div *ngIf="roleAdmin!=1">
+                    <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
+                    <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+                </div>
 
-        <td>{{p.nomProspect}}</td>
-        <td>{{p.prenomProspect}}</td>
-        <td>{{p.emailProspect}}</td>
-        <td>{{p.numTel}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: #F4DCFE" colspan="10">Prospects Sans Contact</td>
+            </tr>
+            <tr *ngFor="let p of prospectsSansContact">
+                <td>{{p.idProspect}}</td>
 
-        <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
-        <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
-        <td><button (click)=" afficher(p.idProspect)"> Afficher </button></td>
-        <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
-        <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+                <td>{{p.nomProspect}}</td>
+                <td>{{p.prenomProspect}}</td>
+                <td>{{p.emailProspect}}</td>
+                <td>{{p.numTel}}</td>
 
+                <td><button (click)="supprimer(p.idProspect)">Supprimer</button></td>
+                <td><button (click)="modifier(p.idProspect)">Modifier</button></td>
+                <td> X </td>
+                <div *ngIf="roleAdmin!=1">
+                    <td><button (click)=" appeler(p.idProspect)"> Appeler </button></td>
+                    <td><button (click)=" rdv(p.idProspect)"> Rdv </button></td>
+                </div>
 
+            </tr>
 
-    </tr>
+        </table>
 
-</table>
-<br>
-<br>
-<br>
-<hr>
-<h3>Ajouter un prospect
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
-        viewBox="0 0 16 16">
-        <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-    </svg>
-</h3>
-<hr>
-<br>
-<button class="chercher2" (click)="AjouterProspect()">Ajouter un prospect</button>
-<br>
-
-
-<h3>Ajouter un prospect par CSV
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil"
-        viewBox="0 0 16 16">
-        <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-    </svg>
-</h3>
-<form method="POST" (ngSubmit)="importerCsv()" enctype="multipart/form-data">
-    <div class="form-group mt-3">
-        <input type="file" name="fileInput" id="fileInput" class="form-control-file" accept=".csv"
-            (change)="onFileChange($event)">
     </div>
-    <button type="submit" class="btn btn-primary">Importer Prospects</button>
-</form>
 
-<br>
-<br>
-<br>
-<!--<button class="chercher3" (click)="retour()">Retour</button>-->
-<br>
+</body>
+
+</html>

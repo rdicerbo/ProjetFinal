@@ -1,73 +1,60 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
 <body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
 
-    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: rgb(209, 9, 245, 0.2);">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">Menu</a>
-
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-item nav-link active" href="/AjouterFormateur">Ajouter un formateur</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link active" href="/afficherFormateur">Liste formateur</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <br>
-    <br>
-    <h1> Liste des formateurs </h1>
-    <br>
-    <br>
-
-    <table class="center">
-        <tr>
-            <td style="background-color: rgb(127, 203, 144)">Id Formateur</td>
-            <td style="background-color: rgb(127, 203, 144)">Mail</td>
-            <td style="background-color: rgb(127, 203, 144)">Nom Formateur</td>
-            <td style="background-color: rgb(127, 203, 144)">Prenom Formateur</td>
-
-            <td style="background-color: rgb(127, 203, 144)">Action1</td>
-            <td style="background-color: rgb(127, 203, 144)">Action2</td>
-            <td style="background-color: rgb(127, 203, 144)">Action3</td>
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
 
 
-        </tr>
+        <h1> Liste des formateurs </h1>
 
-        <tr *ngFor="let f of formateurs">
-            <td>{{f.id}}</td>
-            <td>{{f.mail}}</td>
-            <td>{{f.nom}}</td>
-            <td>{{f.prenom}}</td>
+        <br>
+        <br>
 
-            <td><button (click)="supprimer(f.id)">Supprimer</button></td>
-            <td><button (click)="modifier(f.id)">Modifier</button></td>
-            <td><button (click)=" afficher(f.id)"> Afficher </button></td>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formateur</td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom Formateur</td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom Formateur</td>
+
+                <td style="background-color: rgb(127, 203, 144)">Action1</td>
+                <td style="background-color: rgb(127, 203, 144)">Action2</td>
+                <td style="background-color: rgb(127, 203, 144)">Action3</td>
+
+
+            </tr>
+
+            <tr *ngFor="let f of formateurs">
+                <td>{{f.id}}</td>
+                <td>{{f.mail}}</td>
+                <td>{{f.nom}}</td>
+                <td>{{f.prenom}}</td>
+
+                <td><button (click)="supprimer(f.id)">Supprimer</button></td>
+                <td><button (click)="modifier(f.id)">Modifier</button></td>
+                <td><button (click)=" afficher(f.id)"> Afficher </button></td>
 
 
 
-        </tr>
+            </tr>
 
-    </table>
+        </table>
 
-    <button class="chercher3" (click)="retour()">Retour</button>
-    <br>
+
+
+    </div>
 
 </body>
+
+</html>

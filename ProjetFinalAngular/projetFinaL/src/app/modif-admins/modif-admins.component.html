@@ -1,4 +1,15 @@
-<h1> Modifier l'admin :  {{admin.nom}} {{admin.prenom}}</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <app-header></app-header>
+    <div class="main">
+    <h1> Modifier l'admin :  {{admin.nom}} {{admin.prenom}}</h1>
 
 
 <form (ngSubmit)="modif()">
@@ -27,5 +38,8 @@
     
 </form>
 
-<br>
-<button (click)="afficherAdmins()">Retour</button>
+</div>
+
+</body>
+
+</html>

@@ -1,34 +1,57 @@
-<h1> Convertir un prospect</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+
+    <h1> Convertir un prospect</h1>
 
 
-<form (ngSubmit)="Convertir()">
+    <form (ngSubmit)="Convertir()">
 
 
-    <p>Prospect</p>
-    <select class="class2" name="selectedProspect" [(ngModel)]="selectedProspect">
-        <option *ngFor="let p of prospects" [ngValue]="p">
-            {{p.nomProspect}} {{p.prenomProspect}}
-        </option>
-    </select>
-    <br>
+        <p>Prospect</p>
+        <select class="class2" name="selectedProspect" [(ngModel)]="selectedProspect">
+            <option *ngFor="let p of prospects" [ngValue]="p">
+                {{p.nomProspect}} {{p.prenomProspect}}
+            </option>
+        </select>
+        <br>
 
-    <p>Username</p>
-    <input type="text" name="username" placeholder="Username" [(ngModel)]="participant.username" />
-    <br>
+        <p>Username</p>
+        <input type="text" name="username" placeholder="Username" [(ngModel)]="participant.username" />
+        <br>
 
-    <p>Password</p>
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="participant.password" />
-    <br>
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Password" [(ngModel)]="participant.password" />
+        <br>
 
-    <p>Formation suivie</p>
-    <select class="class2" name="selectedFormation" [(ngModel)]="selectedFormation">
-        <option *ngFor="let f of formations" [ngValue]="f">
-            {{f.libForm}}
-        </option>
-    </select>
-    <br>
-    <br>
-    <br>
-    <button class="class1" type="submit">Valider</button>
+        <p>Formation suivie</p>
+        <select class="class2" name="selectedFormation" [(ngModel)]="selectedFormation">
+            <option *ngFor="let f of formations" [ngValue]="f">
+                {{f.libForm}}
+            </option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <button class="class1" type="submit">Valider</button>
 
-</form>
+    </form>
+
+</div>
+
+</body>
+
+</html>

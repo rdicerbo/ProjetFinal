@@ -62,8 +62,8 @@ public class FormationController {
 		
 		//Methode chercherun par formateur
 		@GetMapping("/formationsParFormateur/{id}")
-		public Formation chercherParIdFormateur(@PathVariable("id") int id) {
-			Formation f=forService.findByFormateur_id(id); 
+		public List<Formation> chercherParIdFormateur(@PathVariable("id") int id) {
+			List<Formation> f=forService.findByFormateur_id(id); 
 			return f; 
 		}
 		

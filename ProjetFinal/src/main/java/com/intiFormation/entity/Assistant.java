@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="Assistant")
 public class Assistant extends Utilisateur {
 	
-	@OneToMany(mappedBy="assistant", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="assistant", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Relance> relances;
 

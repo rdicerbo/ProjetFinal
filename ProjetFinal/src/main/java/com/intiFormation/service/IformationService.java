@@ -17,7 +17,7 @@ public interface IformationService {
 
 	public Formation getByPrice (double prix);
 
-	public Formation findByFormateur_id(int id);
+	public List<Formation> findByFormateur_id(int id);
 
 	public List<Formation> chercherAllParByIdPar (int id);
 	

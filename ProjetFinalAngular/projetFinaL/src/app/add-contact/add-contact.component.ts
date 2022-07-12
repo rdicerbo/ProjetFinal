@@ -52,16 +52,15 @@ export class AddContactComponent implements OnInit {
     this.contact.commercial = this.selectedC
     this.service.ajouterC(this.contact).subscribe(
       response => {
-        this.router.navigateByUrl('afficherCommerciaux');
+        this.router.navigateByUrl('');
       }
     )
   }
 
 
- //Methode afficherCommerciaux
- afficherCommerciaux()
- {
-   this.router.navigateByUrl('afficherCommerciaux');
- }
+
+  Retour() {
+    this.router.navigateByUrl('');
+  }
 
 }

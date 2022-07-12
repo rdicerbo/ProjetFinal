@@ -1,71 +1,83 @@
-<h1>Mon espace personnel</h1>
-<br>
-<h2>Mes informations personnelles
-    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle"
-        viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-        <path fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-    </svg>
-</h2>
+<!DOCTYPE html>
+<html>
 
-<br>
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Nom </td>
-        <td>{{utilisateur.nom}}</td>
-    </tr>
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Prenom </td>
-        <td>{{utilisateur.prenom}}</td>
-    </tr>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td>{{utilisateur.mail}}</td>
-    </tr>
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Username </td>
-        <td>{{utilisateur.username}}</td>
-    </tr>
-
-    <div *ngIf="roleC==1">
-        <app-liste-prospects></app-liste-prospects>
+<body>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
     </div>
 
-    <div *ngIf="roleA==1">
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+    <div class="main">
+
+        <h1>Mon espace personnel</h1>
+        <br>
+        <h2>Mes informations personnelles
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+        </h2>
+
+        <br>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Nom </td>
+                <td>{{utilisateur.nom}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Prenom </td>
+                <td>{{utilisateur.prenom}}</td>
+            </tr>
+
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td>{{utilisateur.mail}}</td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Username </td>
+                <td>{{utilisateur.username}}</td>
+            </tr>
+
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Modifier password</td>
+                <td><button (click)="modifierPassword()">Modifier</button></td>
+            </tr>
+
+
+
+
+        </table>
+
+        <br>
+
+        <div *ngIf="roleP==1 && roleAdmin!=1 ">
+            <br>
+            <br>
+            <h2 class="titre"> Historique de vos paiements</h2>
+            <br>
+            <br>
+            <br>
+            <app-paiement-associe-participant [utilisateur]="utilisateur"></app-paiement-associe-participant>
+
+            <h2 class="titre"> Historique de vos relances </h2>
+            <br>
+            <br>
+            <br>
+            <app-relance-associe-participant [utilisateur]="utilisateur"></app-relance-associe-participant>
+
+
+        </div>
 
     </div>
 
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Modifier password</td>
-        <td><button (click)="modifierPassword()">Modifier</button></td>
-    </tr>
+</body>
 
-
-
-
-</table>
-
-<br>
-
-<div *ngIf="roleP==1">
-    <br>
-    <br>
-    <h2 class="titre"> Historique de vos paiements</h2>
-    <br>
-    <br>
-    <br>
-    <app-paiement-associe-participant [utilisateur]="utilisateur"></app-paiement-associe-participant>
-
-    <h2 class="titre"> Historique de vos relances </h2>
-    <br>
-    <br>
-    <br>
-    <app-relance-associe-participant [utilisateur]="utilisateur"></app-relance-associe-participant>
-
-
-</div>
-
-<br>
-<button class="deconnexion" (click)="afficherFormations()">Retour</button>
+</html>

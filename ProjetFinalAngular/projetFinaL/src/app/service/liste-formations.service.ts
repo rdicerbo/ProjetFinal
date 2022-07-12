@@ -39,7 +39,7 @@ export class ListeFormationsService {
 
   //Methode getByIdFormateur
   getByIdFormateur(idFormateur: number) {
-    return this.http.get<Formation>('http://localhost:4222/formationsParFormateur/' + idFormateur);
+    return this.http.get<Formation[]>('http://localhost:4222/formationsParFormateur/' + idFormateur);
   }
 
   //Methode recuperer formations associé participant
@@ -91,6 +91,11 @@ export class ListeFormationsService {
   //Methode getformationsGratuites
   formationsGratuites() {
     return this.http.get<Formation[]>('http://localhost:4222/formationsGratuites');
+  }
+
+  //Methode ajouterPdf
+  ajouterPdf(id: number, data: FormData) {
+    return this.http.put('http://localhost:4222/formationsPdf/' + id, data);
   }
 
 }
