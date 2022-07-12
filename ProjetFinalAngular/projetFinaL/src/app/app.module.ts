@@ -61,6 +61,8 @@ import { PageAdminComponent } from './page-admin/page-admin.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderAssistantComponent } from './header-assistant/header-assistant.component';
 import { HeaderCommerciauxComponent } from './header-commerciaux/header-commerciaux.component';
+import { HeaderFormateurComponent } from './header-formateur/header-formateur.component';
+import { HeaderParticipantComponent } from './header-participant/header-participant.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,9 @@ import { HeaderCommerciauxComponent } from './header-commerciaux/header-commerci
     ConvertirProspectComponent,
     PageAdminComponent,
     HeaderAssistantComponent,
-    HeaderCommerciauxComponent
+    HeaderCommerciauxComponent,
+    HeaderFormateurComponent,
+    HeaderParticipantComponent
 
 
   ],

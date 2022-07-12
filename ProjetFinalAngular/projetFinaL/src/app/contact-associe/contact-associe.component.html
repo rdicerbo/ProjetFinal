@@ -7,31 +7,37 @@
 </head>
 
 <body>
-    <app-header></app-header>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleC==1">
+        <app-header-commerciaux></app-header-commerciaux>
+    </div>
     <div class="main">
         <h1>Contact associe</h1>
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Contact</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Contact</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom</td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
 
-    </tr>
-
-
-    <tr>
-        <td>{{contact.idContact}}</td>
-        <td>{{contact.commercial.nom}}</td>
-        <td>{{contact.commercial.prenom}}</td>
-        <td>{{contact.commercial.mail}}</td>
+            </tr>
 
 
-    </tr>
-</table>
+            <tr>
+                <td>{{contact.idContact}}</td>
+                <td>{{contact.commercial.nom}}</td>
+                <td>{{contact.commercial.prenom}}</td>
+                <td>{{contact.commercial.mail}}</td>
 
-</div>
+
+            </tr>
+        </table>
+
+    </div>
 
 </body>
 

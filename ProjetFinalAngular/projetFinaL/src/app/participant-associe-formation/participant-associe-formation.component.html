@@ -1,21 +1,34 @@
+<!DOCTYPE html>
+<html>
 
-<table class="center">
-	<tr>
-		<td style="background-color: rgb(127, 203, 144)">Id</td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom</td>
-        
-</tr>
-<tr *ngFor="let p of participants">
-    <td>{{p.id}}</td>
-    <td>{{p.mail}}</td>
-    <td>{{p.nom}}</td>
-    <td>{{p.prenom}}</td>
-</tr>	
-		
-</table>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<br>
-<button (click)="Retour()">Retour</button>
+</head>
 
+<body>
+    <app-header-formateur></app-header-formateur>
+    <div class="main">
+
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id</td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom</td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom</td>
+
+            </tr>
+            <tr *ngFor="let p of participants">
+                <td>{{p.id}}</td>
+                <td>{{p.mail}}</td>
+                <td>{{p.nom}}</td>
+                <td>{{p.prenom}}</td>
+            </tr>
+
+        </table>
+
+        <br>
+    </div>
+</body>
+
+</html>

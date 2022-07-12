@@ -60,8 +60,20 @@ export class AuthComponent implements OnInit {
             }
 
           }
+
           if (this.roles[i].idRole == 5) {
             this.roleF = 1
+
+            let tampon = true;
+            for (let i = 0; i < this.roles.length; i++) {
+              if (this.roles[i].idRole == 1) {
+                tampon = false;
+              }
+            }
+            if (tampon) {
+              this.router.navigateByUrl('pageFormateur');
+            }
+
 
           }
 
@@ -85,8 +97,20 @@ export class AuthComponent implements OnInit {
 
           if (this.roles[i].idRole == 4) {
             this.roleP = 1
-
+            let tampon = true;
+            for (let i = 0; i < this.roles.length; i++) {
+              if (this.roles[i].idRole == 1) {
+                tampon = false;
+              }
+            }
+            if (tampon) {
+              this.router.navigateByUrl('pageParticipant');
+            }
           }
+
+
+
+
           if (this.roles[i].idRole == 1) {
             this.roleAdmin = 1
 

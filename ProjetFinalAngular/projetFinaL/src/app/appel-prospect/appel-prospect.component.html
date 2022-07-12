@@ -1,13 +1,28 @@
-<h1>Appeler un contact</h1>
+!DOCTYPE html>
+<html>
 
-<form (ngSubmit)="AppelerContact()">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <p>Commentaire</p>
-    <input type="text" [(ngModel)]="contact.commentaire" name="commentaire">
+<body>
 
-    <br>
-    <button class="class1" type="submit">Ajouter</button>
+    <app-header-commerciaux></app-header-commerciaux>
+    <div class="main">
 
-</form>
 
-<button class="class1" (click)="Retour()">Retour</button>
+        <h1>Appeler un contact</h1>
+
+        <form (ngSubmit)="AppelerContact()">
+
+            <p>Commentaire</p>
+            <input type="text" [(ngModel)]="contact.commentaire" name="commentaire">
+
+            <br>
+            <button class="class1" type="submit">Ajouter</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

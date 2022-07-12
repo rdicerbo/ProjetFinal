@@ -41,7 +41,5 @@ export class RdvProspectComponent implements OnInit {
     )
     this.router.navigateByUrl('')
   }
-  Retour() {
-    this.router.navigateByUrl('');
-  }
+
 }

@@ -46,11 +46,6 @@ export class PaiementAssociePFComponent implements OnInit {
     )
   }
 
-  //Methode Retour
-  Retour() {
-    this.router.navigateByUrl('');
-  }
-
   //Methode Payer
   Payer() {
     this.newPaiement.date = new Date();

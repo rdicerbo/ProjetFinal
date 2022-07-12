@@ -1,95 +1,113 @@
-<h2>Liste des formations vous concernant</h2>
+<!DOCTYPE html>
+<html>
 
-<br>
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
-        <td style="background-color: rgb(127, 203, 144)">Paiement</td>
-        <td style="background-color: rgb(127, 203, 144)">Relance</td>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </tr>
+</head>
 
-    <tr>
-        <td style="background-color: #C4ABFE" colspan="8">Liste formations en cours</td>
-    </tr>
-
-    <tr *ngFor="let f of formationsEncours">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
-        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
-    </tr>
-
-    <tr>
-        <td style="background-color: #E7A9FE" colspan="8">Liste formations a venir</td>
-    </tr>
-
-    <tr *ngFor="let f of formationsAvenir">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
-        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
-    </tr>
-
-    <tr>
-        <td style="background-color: #F4DCFE" colspan="8">Liste formations finies</td>
-    </tr>
-
-    <tr *ngFor="let f of formationsFini">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.formateur.nom}}</td>
-        <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
-        <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
-        <td><button (click)=" Pdf(f.idFormation)"> Diplome </button></td>
-    </tr>
+<body>
+    <app-header-participant></app-header-participant>
+    <div class="main">
 
 
-</table>
 
-<br>
-<br>
-<h2>Liste des formations gratuites</h2>
+        <h2>Liste des formations vous concernant</h2>
 
-<br>
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
-        <td style="background-color: rgb(127, 203, 144)">Description</td>
-        <td style="background-color: rgb(127, 203, 144)">Date debut</td>
-        <td style="background-color: rgb(127, 203, 144)">Date fin</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
+        <br>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Description</td>
+                <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+                <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
+                <td style="background-color: rgb(127, 203, 144)">Paiement</td>
+                <td style="background-color: rgb(127, 203, 144)">Relance</td>
 
-        <td style="background-color: rgb(127, 203, 144)">Telecharger formation</td>
+            </tr>
 
-    </tr>
+            <tr>
+                <td style="background-color: #C4ABFE" colspan="8">Liste formations en cours</td>
+            </tr>
 
-    <tr *ngFor="let f of formationsGratuites">
-        <td>{{f.idFormation}}</td>
-        <td>{{f.libForm}}</td>
-        <td>{{f.description}}</td>
-        <td>{{f.dateDebut}}</td>
-        <td>{{f.dateFin}}</td>
-        <td>{{f.formateur.nom}}</td>
+            <tr *ngFor="let f of formationsEncours">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.formateur.nom}}</td>
+                <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+                <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
+            </tr>
 
-        <td><a href="http://localhost:4222/{{f.pdf}}"> Telechargement </a>
-    </tr>
+            <tr>
+                <td style="background-color: #E7A9FE" colspan="8">Liste formations a venir</td>
+            </tr>
 
-</table>
+            <tr *ngFor="let f of formationsAvenir">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.formateur.nom}}</td>
+                <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+                <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
+            </tr>
+
+            <tr>
+                <td style="background-color: #F4DCFE" colspan="8">Liste formations finies</td>
+            </tr>
+
+            <tr *ngFor="let f of formationsFini">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.formateur.nom}}</td>
+                <td><button (click)=" afficherPaiement(f.idFormation)"> Paiement </button></td>
+                <td><button (click)=" afficherRelances(f.idFormation)"> Relance </button></td>
+                <td><button (click)=" Pdf(f.idFormation)"> Diplome </button></td>
+            </tr>
+
+
+        </table>
+
+        <br>
+        <br>
+        <h2>Liste des formations gratuites</h2>
+
+        <br>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom formation</td>
+                <td style="background-color: rgb(127, 203, 144)">Description</td>
+                <td style="background-color: rgb(127, 203, 144)">Date debut</td>
+                <td style="background-color: rgb(127, 203, 144)">Date fin</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom du formateur</td>
+
+                <td style="background-color: rgb(127, 203, 144)">Telecharger formation</td>
+
+            </tr>
+
+            <tr *ngFor="let f of formationsGratuites">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libForm}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.formateur.nom}}</td>
+
+                <td><a href="http://localhost:4222/{{f.pdf}}"> Telechargement </a>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+</html>

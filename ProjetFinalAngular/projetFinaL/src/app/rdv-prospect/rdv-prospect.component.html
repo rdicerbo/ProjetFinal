@@ -1,16 +1,32 @@
-<h1>Fixer un Rdv</h1>
+!DOCTYPE html>
+<html>
 
-<form (ngSubmit)="RdvContact()">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-    <p>Commentaire</p>
-    <input type="text" [(ngModel)]="contact.commentaire" name="commentaire">
-    <br>
-    <p>Date</p>
-    <input type="datetime-local" [(ngModel)]="contact.date" name="date" min="09:00" max="18:00">
-    <br>
-    <button class="class1" type="submit">Ajouter</button>
+<body>
 
-</form>
+    <app-header-commerciaux></app-header-commerciaux>
+    <div class="main">
 
 
-<button class="class1" (click)="Retour()">Retour</button>
+
+        <h1>Fixer un Rdv</h1>
+
+        <form (ngSubmit)="RdvContact()">
+
+            <p>Commentaire</p>
+            <input type="text" [(ngModel)]="contact.commentaire" name="commentaire">
+            <br>
+            <p>Date</p>
+            <input type="datetime-local" [(ngModel)]="contact.date" name="date" min="09:00" max="18:00">
+            <br>
+            <button class="class1" type="submit">Ajouter</button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

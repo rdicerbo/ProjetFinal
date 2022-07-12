@@ -37,8 +37,5 @@ export class RelanceAssociePFComponent implements OnInit {
   }
 
 
-  Retour() {
-    this.router.navigateByUrl('');
-  }
 
 }

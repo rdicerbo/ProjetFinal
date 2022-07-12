@@ -7,32 +7,39 @@
 </head>
 
 <body>
-    <app-header></app-header>
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleC==1">
+        <app-header-commerciaux></app-header-commerciaux>
+    </div>
     <div class="main">
+
         <h1>Modifier le prospect souhaite</h1>
 
-<form (ngSubmit)="modif()">
+        <form (ngSubmit)="modif()">
 
-    <p>Nom</p>
-    <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
-    <br>
+            <p>Nom</p>
+            <input type="text" name="nomProspect" placeholder="Nom" [(ngModel)]="prospect.nomProspect">
+            <br>
 
-    <p>Prenom</p>
-    <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
-    <br>
+            <p>Prenom</p>
+            <input type="text" name="prenomProspect" placeholder="Prenom" [(ngModel)]="prospect.prenomProspect">
+            <br>
 
-    <p>Adresse mail</p>
-    <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
-    <br>
+            <p>Adresse mail</p>
+            <input type="text" name="emailProspect" placeholder="Mail" [(ngModel)]="prospect.emailProspect">
+            <br>
 
-    <p>Numero de telephone</p>
-    <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
-    <br>
-    <br>
-    <button class="class2" type="submit">Modifier</button>
+            <p>Numero de telephone</p>
+            <input type="text" name="numTel" placeholder="NumTel" [(ngModel)]="prospect.numTel">
+            <br>
+            <br>
+            <button class="class2" type="submit">Modifier</button>
 
-</form>
-</div>
+        </form>
+    </div>
 
 </body>
 
