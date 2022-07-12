@@ -41,9 +41,10 @@ export class RdvProspectComponent implements OnInit {
     this.serviceC.ajouterC(this.contact).subscribe(
       response => {
         this.contact = response
-        this.serviceM.mailRdv(this.utilisateur.id, this.contact).subscribe();
+
       }
     )
+    this.serviceM.mailRdv(this.utilisateur.id, this.contact).subscribe();
     this.router.navigateByUrl('')
   }
   Retour() {
