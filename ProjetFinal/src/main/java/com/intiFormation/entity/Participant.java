@@ -28,6 +28,7 @@ public class Participant extends Utilisateur{
 	@OneToMany(mappedBy="participant", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Relance> relances;
+	
 
 	public List<Formation> getFormations() {
 		return formations;

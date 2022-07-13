@@ -6,28 +6,27 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intiFormation.dao.IcommercialDao;
-import com.intiFormation.entity.Commercial;
+import com.intiFormation.dao.IchoixDao;
+import com.intiFormation.entity.Choix;
 
 @Service
-public class CommercialService implements IcommercialService {
-	
+public class ChoixService implements IchoixService {
 	@Autowired
-	IcommercialDao cdao; 
+	IchoixDao cdao; 
 	
-	public void ajouter (Commercial c) {
+	public void ajouter (Choix c) {
 		// TODO Auto-generated method stub
 		cdao.save(c); 
 	}
 
 	@Override
-	public Optional<Commercial> chercherParId(int id) {
+	public Optional<Choix> chercherParId(int id) {
 		// TODO Auto-generated method stub
 		return cdao.findById(id);
 	}
 
 	@Override
-	public List<Commercial> chercherTt() {
+	public List<Choix> chercherTt() {
 		// TODO Auto-generated method stub
 		return cdao.findAll();
 	}
@@ -39,7 +38,7 @@ public class CommercialService implements IcommercialService {
 	}
 
 	@Override
-	public void modifier(Commercial c) {
+	public void modifier(Choix c) {
 		// TODO Auto-generated method stub
 		cdao.save(c); 
 	}

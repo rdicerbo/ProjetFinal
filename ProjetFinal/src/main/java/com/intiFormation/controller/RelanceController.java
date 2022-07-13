@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Relance;
 import com.intiFormation.service.IrelanceService;

@@ -6,42 +6,42 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intiFormation.dao.IcommercialDao;
-import com.intiFormation.entity.Commercial;
+import com.intiFormation.dao.IquizDao;
+import com.intiFormation.entity.Quiz;
 
 @Service
-public class CommercialService implements IcommercialService {
-	
+public class QuizService implements IquizService{
 	@Autowired
-	IcommercialDao cdao; 
+	IquizDao qdao; 
 	
-	public void ajouter (Commercial c) {
+	public void ajouter (Quiz q) {
 		// TODO Auto-generated method stub
-		cdao.save(c); 
+		qdao.save(q); 
 	}
 
 	@Override
-	public Optional<Commercial> chercherParId(int id) {
+	public Optional<Quiz> chercherParId(int id) {
 		// TODO Auto-generated method stub
-		return cdao.findById(id);
+		return qdao.findById(id);
 	}
 
 	@Override
-	public List<Commercial> chercherTt() {
+	public List<Quiz> chercherTt() {
 		// TODO Auto-generated method stub
-		return cdao.findAll();
+		return qdao.findAll();
 	}
 
 	@Override
 	public void supprimer(int id) {
 		// TODO Auto-generated method stub
-		cdao.deleteById(id);
+		qdao.deleteById(id);
 	}
 
 	@Override
-	public void modifier(Commercial c) {
+	public void modifier(Quiz q) {
 		// TODO Auto-generated method stub
-		cdao.save(c); 
+		qdao.save(q); 
 	}
+
 
 }
