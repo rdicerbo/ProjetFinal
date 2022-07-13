@@ -16,6 +16,20 @@ public class Formateur extends Utilisateur{
 	@OneToMany(mappedBy="formateur", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Formation> formations;
+	
+	@OneToMany(mappedBy="formateur", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@JsonIgnore
+	private List<Quiz> quizs;
+	
+	
+
+	public List<Quiz> getQuizs() {
+		return quizs;
+	}
+
+	public void setQuizs(List<Quiz> quizs) {
+		this.quizs = quizs;
+	}
 
 	public List<Formation> getFormations() {
 		return formations;

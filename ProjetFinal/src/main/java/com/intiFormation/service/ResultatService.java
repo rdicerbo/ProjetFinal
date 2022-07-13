@@ -6,42 +6,41 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intiFormation.dao.IcommercialDao;
-import com.intiFormation.entity.Commercial;
+import com.intiFormation.dao.IresultatDao;
+import com.intiFormation.entity.Resultat;
 
 @Service
-public class CommercialService implements IcommercialService {
-	
+public class ResultatService implements IresultatService{
 	@Autowired
-	IcommercialDao cdao; 
+	IresultatDao rdao; 
 	
-	public void ajouter (Commercial c) {
+	public void ajouter (Resultat r) {
 		// TODO Auto-generated method stub
-		cdao.save(c); 
+		rdao.save(r); 
 	}
 
 	@Override
-	public Optional<Commercial> chercherParId(int id) {
+	public Optional<Resultat> chercherParId(int id) {
 		// TODO Auto-generated method stub
-		return cdao.findById(id);
+		return rdao.findById(id);
 	}
 
 	@Override
-	public List<Commercial> chercherTt() {
+	public List<Resultat> chercherTt() {
 		// TODO Auto-generated method stub
-		return cdao.findAll();
+		return rdao.findAll();
 	}
 
 	@Override
 	public void supprimer(int id) {
 		// TODO Auto-generated method stub
-		cdao.deleteById(id);
+		rdao.deleteById(id);
 	}
 
 	@Override
-	public void modifier(Commercial c) {
+	public void modifier(Resultat r) {
 		// TODO Auto-generated method stub
-		cdao.save(c); 
+		rdao.save(r); 
 	}
 
 }

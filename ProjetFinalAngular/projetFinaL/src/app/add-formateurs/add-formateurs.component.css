@@ -1,42 +1,36 @@
-h1
-{
-      color: black;
-      text-align: center;
-      background-color: rgb(209, 9, 245,0.2);
-      border: 1px solid rgb(209, 9, 245,0.5);
-      margin-left: -12px;
-      margin-right: -11px;
-      margin-top: -10px;
+h1 {
+    color: black;
+    text-align: center;
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgb(209, 9, 245, 0.5);
+    margin-left: -12px;
+    margin-right: -11px;
+    margin-top: -10px;
 }
 
-button
-{
-    background-color:rgb(127, 203, 144,0.5);
+button {
+    background-color: rgb(127, 203, 144, 0.5);
     border-radius: 10px;
     border-color: rgb(127, 203, 144);
-    margin-left: 1400px;
+    margin-left: 43.5%;
 }
 
-input
-{
+input {
     border-radius: 10px;
+    margin-left: 43.5%;
     text-align: center;
-    margin-left: 755px;
 }
 
-p
-{
+p {
     text-align: center;
     color: rgb(127, 203, 144);
 }
 
-.class1
-{
+.class1 {
     margin-left: 789px;
 }
 
-.class2
-{
+.class2 {
     margin-left: 815px;
 }
 
