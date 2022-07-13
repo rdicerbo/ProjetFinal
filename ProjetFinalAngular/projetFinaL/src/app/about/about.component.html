@@ -7,7 +7,28 @@
 </head>
 
 <body>
-    <app-header-participant></app-header-participant>
+    <div *ngIf="roleAdmin!=1 && roleC==1">
+        <app-header-commerciaux></app-header-commerciaux>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleF==1">
+        <app-header-formateur></app-header-formateur>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleP==1">
+        <app-header-participant></app-header-participant>
+    </div>
+
+    <div *ngIf="roleAdmin!=1 && roleA==1">
+        <app-header-assistant></app-header-assistant>
+    </div>
+
+    <div *ngIf="roleAdmin==1">
+        <app-header></app-header>
+    </div>
+
+
+
     <div class="main">
 
         <h1> A propos de eFormation <img class="theImage" src="assets/images/graduation-hat.png"></h1>
