@@ -58,6 +58,8 @@ import { AboutComponent } from './about/about.component';
 import { AddQuizComponent } from './add-quiz/add-quiz.component';
 import { AfficherQuizComponent } from './afficher-quiz/afficher-quiz.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { ListeQuizComponent } from './liste-quiz/liste-quiz.component';
+import { PasserQuizComponent } from './passer-quiz/passer-quiz.component';
 
 
 
@@ -124,7 +126,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'ajouterQuiz', component: AddQuizComponent },
   { path: 'afficherQuiz/:idQuiz', component: AfficherQuizComponent },
-  { path: 'ajouterQuestion/:idQuiz', component: AddQuestionComponent }
+  { path: 'ajouterQuestion/:idQuiz', component: AddQuestionComponent },
+  { path: 'listeQuiz/:idFormation', component: ListeQuizComponent },
+  { path: 'passerQuiz/:idQuiz', component: PasserQuizComponent }
 
 
 ];

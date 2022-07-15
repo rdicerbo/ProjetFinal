@@ -67,6 +67,8 @@ import { AboutComponent } from './about/about.component';
 import { AddQuizComponent } from './add-quiz/add-quiz.component';
 import { AfficherQuizComponent } from './afficher-quiz/afficher-quiz.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
+import { ListeQuizComponent } from './liste-quiz/liste-quiz.component';
+import { PasserQuizComponent } from './passer-quiz/passer-quiz.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +131,9 @@ import { AddQuestionComponent } from './add-question/add-question.component';
     AboutComponent,
     AddQuizComponent,
     AfficherQuizComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    ListeQuizComponent,
+    PasserQuizComponent
 
 
   ],

@@ -46,7 +46,6 @@ export class AfficherQuizComponent implements OnInit {
     this.getQuizById();
     this.getAllQuestions();
     this.getAllChoix();
-    this.getChoixByIdQuestion();
 
   }
 
@@ -83,11 +82,15 @@ export class AfficherQuizComponent implements OnInit {
         this.quiz = response
         console.log(this.quiz.idQuiz)
         this.quiz.nbQuestion++
+        this.quiz.scoreReussite = this.quiz.nbQuestion / 2;
+        console.log(this.quiz.nbQuestion / 2)
+        console.log(this.quiz.scoreReussite)
         this.serviceQ.modifierQ(this.quiz).subscribe()
         this.question.quiz = this.quiz;
         this.serviceQuestion.ajouterQ(this.question).subscribe(
           response => {
             this.question = response
+            this.getAllQuestions();
             this.router.navigateByUrl('afficherQuiz/' + this.id)
           }
         )
@@ -96,12 +99,13 @@ export class AfficherQuizComponent implements OnInit {
 
   }
 
-  AjouterChoix() {
+  AjouterChoix(q: Question) {
 
-    this.selectedChoix.question = this.selectedquestion;
+    this.selectedChoix.question = q;
     this.serviceC.ajouterC(this.selectedChoix).subscribe(
       response => {
         this.selectedChoix = response
+        this.getAllChoix();
         this.router.navigateByUrl('afficherQuiz/' + this.id)
       }
     )
@@ -111,6 +115,8 @@ export class AfficherQuizComponent implements OnInit {
   supprimerQuestion(id: number) {
     this.serviceQuestion.supprimer(id).subscribe(
       response => {
+        this.quiz.nbQuestion--
+        this.serviceQ.modifierQ(this.quiz).subscribe()
         this.getAllQuestions();
       }
     )

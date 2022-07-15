@@ -1,4 +1,15 @@
-<form (ngSubmit)="AjouterQuestion()">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <app-header-formateur></app-header-formateur>
+    <div class="main">
+        <form (ngSubmit)="AjouterQuestion()">
 
 
     libQuestion <input type="text" name="libQuestion" placeholder="libQuestion" [(ngModel)]="question.libQuestion">
@@ -6,3 +17,7 @@
     <button class="class1" type="submit">Ajouter</button>
 
 </form>
+</div>
+</body>
+
+</html>

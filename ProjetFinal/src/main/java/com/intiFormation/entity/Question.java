@@ -26,7 +26,7 @@ public class Question {
 	@JoinColumn(name="idQuiz")
 	private Quiz quiz;
 	
-	@OneToMany(mappedBy="question", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="question", cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
 	@JsonIgnore
 	private List<Choix> choix;
 

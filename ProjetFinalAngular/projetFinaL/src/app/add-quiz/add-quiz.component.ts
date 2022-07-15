@@ -68,4 +68,13 @@ export class AddQuizComponent implements OnInit {
 
 
   }
+
+  supprimerQuiz(idQuiz:number){
+    this.serviceQ.supprimer(idQuiz).subscribe(
+      response => {
+        this.getAllQuiz()
+        this.router.navigateByUrl('ajouterQuiz')
+      }
+    );
+  }
 }

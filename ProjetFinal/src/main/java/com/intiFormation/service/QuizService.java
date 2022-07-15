@@ -43,5 +43,11 @@ public class QuizService implements IquizService{
 		qdao.save(q); 
 	}
 
+	@Override
+	public List<Quiz> chercherTtParIdForm(int idForm) {
+		// TODO Auto-generated method stub
+		return qdao.findByFormation_idFormation(idForm);
+	}
+
 
 }

@@ -117,5 +117,9 @@ export class PageParticipantComponent implements OnInit {
     });
   }
 
+  Quiz(idForm:number){
+    this.router.navigateByUrl('listeQuiz/' + idForm);
+  }
+
 
 }

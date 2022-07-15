@@ -29,6 +29,7 @@ import com.intiFormation.entity.MyConstants;
 import com.intiFormation.entity.Participant;
 import com.intiFormation.entity.Prospect;
 import com.intiFormation.entity.Relance;
+import com.intiFormation.entity.Resultat;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IcommercialService;
 import com.intiFormation.service.IcontactService;
@@ -126,5 +127,35 @@ public class EmailController {
 	        return "message envoye";
 	    }
 	    
+	    @PutMapping("/sendEmailResultatTest/{id}")
+	    public String sendEmailRelance(@PathVariable("id") int id,@RequestBody Resultat r) {
+		 
+	 
+	    	Participant p = partService.chercherParId(id).get();
+
+	        SimpleMailMessage message = new SimpleMailMessage();
+	        
+	        message.setTo(p.getMail());
+	        message.setSubject("Votre Resultat");
+	        
+	        if(r.isReussite()) {
+	        	message.setText("Bonjour,\n"+
+	        		       "Veuillez trouvez ci-joint le resultat du quizz associsé à la formation "+ r.getQuiz().getFormation().getLibForm()+".\n"+
+	        		       "Vous avez obtenues " + r.getScore() +" points sur "+r.getQuiz().getNbQuestion()+" questions. \n"+
+	        		       "Felicitations vous avez validé ce test.");
+	        	
+	        }else {
+	        	message.setText("Bonjour,\n"+
+	        		       "Veuillez trouvez ci-joint le resultat du quizz associsé à la formation "+ r.getQuiz().getFormation().getLibForm()+".\n"+
+	        		       "Vous avez obtenues " + r.getScore()+ " points sur "+r.getQuiz().getNbQuestion()+" questions. \n"+
+	        		       "Désolé vous avez échoué au test.");
+	        }
+	        
+
+	        // Send Message!
+	        this.emailSender.send(message);
+
+	        return "message envoye";
+	    }
 	 
 }

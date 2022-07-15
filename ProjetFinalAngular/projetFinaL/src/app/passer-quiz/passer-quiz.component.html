@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <app-header-participant></app-header-participant>
+    <div class="main">
+
+
+        <ul *ngFor="let q of questions">
+            <form>
+                <b>Q: {{q.libQuestion}} </b>
+                <!--{{q.explication}}-->
+                <div *ngFor="let c of choix">
+                    <li *ngIf="c.question.idQuestion == q.idQuestion">
+                        <!-- {{c.reponse}} -->
+                        <label class="" [attr.for]="c.idChoix">
+                            <input type="checkbox" id="{{c.idChoix}}" (change)="correction(c)">
+                            {{c.libChoix}}
+                        </label>
+                    </li>
+
+                </div>
+
+            </form>
+            <p *ngIf="afficher">
+                {{q.explication}}
+            </p>
+
+        </ul>
+
+        <button class="class1" (click)="validerTest()" type="submit">Valider</button>
+    </div>
+</body>
+
+</html>

@@ -11,5 +11,7 @@ public interface IquizService {
 	public List<Quiz> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Quiz q); 
+	public List<Quiz> chercherTtParIdForm(int idForm);
+	
 
 }

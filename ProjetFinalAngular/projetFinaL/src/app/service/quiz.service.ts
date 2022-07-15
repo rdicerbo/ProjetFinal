@@ -35,5 +35,11 @@ export class QuizService {
     return this.http.get<Quiz>('http://localhost:4222/quizs/' + id);
   }
 
+   //Methode getById
+   getByIdFormation(idFormation: number) {
+    return this.http.get<Quiz[]>('http://localhost:4222/quizsByIdFormation/' + idFormation);
+  }
+
+
 
 }

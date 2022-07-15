@@ -50,5 +50,10 @@ public class QuizController {
 	public void modifier(@RequestBody Quiz q) {
 		qService.ajouter(q); 
 	}
-
+	
+	@GetMapping("/quizsByIdFormation/{id}")
+	public List<Quiz> chercherttparIdFormation(@PathVariable("id") int id){
+		List<Quiz> liste=qService.chercherTtParIdForm(id); 
+		return liste; 
+	}
 }

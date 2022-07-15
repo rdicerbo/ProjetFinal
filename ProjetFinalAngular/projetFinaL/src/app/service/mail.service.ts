@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Contact } from '../models/Contact.model';
 import { Prospect } from '../models/Prospect.model';
 import { Relance } from '../models/Relance.model';
+import { Resultat } from '../models/Resultat.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class MailService {
   }
   mailRelance(id: number, r: Relance) {
     return this.http.put('http://localhost:4222/sendEmailRelance/' + id, r);
+  }
+
+  mailResultat(id: number, r: Resultat) {
+    return this.http.put('http://localhost:4222/sendEmailResultatTest/' + id, r);
   }
 
 }

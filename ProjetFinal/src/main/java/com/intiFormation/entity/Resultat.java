@@ -32,6 +32,7 @@ public class Resultat {
 		this.idResultat = idResultat;
 	}
 
+	
 	public int getScore() {
 		return score;
 	}

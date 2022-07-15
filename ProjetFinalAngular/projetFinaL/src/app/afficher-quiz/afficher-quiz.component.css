@@ -18,16 +18,11 @@ input {
     text-align: center;
 }
 
-p {
-    text-align: center;
-    font-size: large;
-}
+
 
 hr {
     background-color: rgb(209, 9, 245, 0.4);
-    width: 250px;
     height: 3px;
-    border: 0ch;
 }
 
 
@@ -73,4 +68,158 @@ button {
 
 body {
     font-family: "Lato", sans-serif;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgb(209, 9, 245, 0.5);
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: -10px;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+
+input {
+    border-radius: 10px;
+    text-align: center;
+}
+
+p {
+    font-size: large;
+}
+
+
+
+
+.center {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 1000px;
+}
+
+th,
+td {
+    border: 0.2px solid rgb(209, 9, 245, 0.2);
+    width: 10%;
+    text-align: center;
+    border-radius: 3px;
+
+}
+
+h4 {
+    text-align: center;
+}
+
+.el {
+    color: rgb(127, 203, 144);
+}
+
+button {
+    background-color: rgb(127, 203, 144, 0.5);
+    border-radius: 10px;
+    border-color: rgb(127, 203, 144);
+}
+
+.deconnexion {
+    margin-left: 1085px;
+}
+
+.chercher {
+    margin-left: 800px;
+}
+
+.chercher2 {
+    margin-left: 735px;
+}
+
+.chercher3 {
+    margin-left: 750px;
+}
+
+.chercher4 {
+    margin-left: 750px;
+    background-color: rgb(209, 9, 245, 0.5);
+    border-color: rgb(209, 9, 245);
+}
+
+h2 {
+    text-align: center;
+    color: black
+}
+
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(209, 9, 245, 0.2);
+    border: 1px solid rgb(209, 9, 245, 0.5);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #818181;
+}
+
+.main {
+    margin-left: 200px;
+    /* Same as the width of the sidenav */
+}
+
+.sidenav a.SousMenu {
+    padding: 6px 6px 6px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+
+}
+
+.sidenav a.SousMenu:hover {
+    color: #818181;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+    .sidenav p {
+        font-size: 5px;
+    }
+
+    .sidenav .aPetit {
+        font-size: 5px;
+    }
+
 }
