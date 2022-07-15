@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Question {
 	@Id
@@ -25,6 +27,7 @@ public class Question {
 	private Quiz quiz;
 	
 	@OneToMany(mappedBy="question", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Choix> choix;
 
 	public int getIdQuestion() {

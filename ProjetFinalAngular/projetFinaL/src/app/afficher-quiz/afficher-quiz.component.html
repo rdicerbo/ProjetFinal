@@ -1,0 +1,61 @@
+<h1> Quiz de la formation {{quiz.formation.libForm}}</h1>
+
+<ul *ngFor="let q of questions">
+    Q: {{q.libQuestion}} : {{q.explication}}
+    <div *ngFor="let c of choix">
+        <li *ngIf="c.question.idQuestion == q.idQuestion"> {{c.libChoix}} {{c.reponse}}</li>
+    </div>
+
+</ul>
+
+<form (ngSubmit)="AjouterQuestion()">
+
+
+    libQuestion <input type="text" name="libQuestion" placeholder="libQuestion" [(ngModel)]="question.libQuestion">
+    explication <input type="text" name="explication" placeholder="explication" [(ngModel)]="question.explication">
+    <button class="class1" type="submit">Ajouter Question</button>
+
+</form>
+
+<form (ngSubmit)="AjouterChoix()">
+
+    Question
+    <select class="class2" name="selectedquestion" [(ngModel)]="selectedquestion">
+        <option *ngFor="let q of questions" [ngValue]="q">
+            {{q.libQuestion}}
+        </option>
+    </select>
+    libChoix <input type="text" name="libChoix" placeholder="libChoix" [(ngModel)]="selectedChoix.libChoix">
+    reponse <input type="number" min="0" max="1" name="reponse" placeholder="reponse"
+        [(ngModel)]="selectedChoix.reponse">
+    <button class="class1" type="submit">Ajouter Reponse</button>
+
+</form>
+
+<br>
+<hr>
+<h3> supprimer question</h3>
+<hr>
+<select class="class2" name="SuppQuest" [(ngModel)]="SuppQuest">
+    <option *ngFor="let q of questions" [ngValue]="q">
+        {{q.libQuestion}}
+    </option>
+</select>
+
+<button class="class1" (click)="supprimerQuestion(SuppQuest.idQuestion)">Supprimer</button>
+
+<br>
+<hr>
+<h3> supprimer réponse</h3>
+<hr>
+<select class="class2" name="Suppselectedquestion" [(ngModel)]="Suppselectedquestion">
+    <option *ngFor="let q of questions" [ngValue]="q">
+        {{q.libQuestion}}
+    </option>
+</select>
+<select class="class2" name="SuppChoix" [(ngModel)]="SuppChoix">
+    <option *ngFor="let c of ChoixByQuestion" [ngValue]="c">
+        {{c.libChoix}}
+    </option>
+</select>
+<button class="class1" (click)="supprimerChoix(SuppChoix.idChoix)">Supprimer</button>

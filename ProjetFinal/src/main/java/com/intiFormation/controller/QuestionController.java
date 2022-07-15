@@ -51,6 +51,12 @@ public class QuestionController {
 	public void modifier(@RequestBody Question q) {
 		qService.ajouter(q); 
 	}
+	
+	@GetMapping("/questionsByIdQuiz/{id}")
+	public List<Question> chercherttbyIdQuiz(@PathVariable("id") int id){
+		List<Question> liste=qService.findByQuiz_idQuiz(id); 
+		return liste; 
+	}
 
 
 }

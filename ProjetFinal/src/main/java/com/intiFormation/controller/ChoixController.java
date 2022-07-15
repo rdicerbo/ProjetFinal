@@ -49,5 +49,11 @@ public class ChoixController {
 	public void modifier(@RequestBody Choix c) {
 		cService.ajouter(c); 
 	}
+	
+	@GetMapping("/choixByIdQuestion/{id}")
+	public List<Choix> choixByIdQuestion(@PathVariable("id") int id){
+		List<Choix> liste=cService.findByQuestion_idQuestion(id); 
+		return liste; 
+	}
 
 }

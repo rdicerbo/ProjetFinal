@@ -44,5 +44,11 @@ public class QuestionService implements IquestionService{
 		qdao.save(q); 
 	}
 
+	@Override
+	public List<Question> findByQuiz_idQuiz(int id) {
+		// TODO Auto-generated method stub
+		return qdao.findByQuiz_idQuiz(id);
+	}
+
 
 }
