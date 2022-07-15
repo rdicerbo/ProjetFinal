@@ -32,6 +32,7 @@ public class Quiz {
 	private Formation formation;
 	
 	@OneToMany(mappedBy="quiz", cascade = CascadeType.PERSIST)
+	@JsonIgnore
 	private List<Resultat> resultats;
 	
 	
