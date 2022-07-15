@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+</head>
+<h1>Ajouter un quiz</h1>
+<h3>Liste Quiz</h3>
+<hr>
+<br>
+<table class="center">
+    <tr>
+        <td style="background-color: rgb(127, 203, 144)">Id Quiz</td>
+        <td style="background-color: rgb(127, 203, 144)">Nom Quiz</td>
+        <td style="background-color: rgb(127, 203, 144)">nbQuestion</td>
+        <td style="background-color: rgb(127, 203, 144)">scoreReussite</td>
+        <td style="background-color: rgb(127, 203, 144)">formateur</td>
+        <td style="background-color: rgb(127, 203, 144)">formation</td>
+        <td style="background-color: rgb(127, 203, 144)">Afficher</td>
+
+
+    </tr>
+
+    <tr *ngFor="let q of quizs">
+        <td>{{q.idQuiz}}</td>
+        <td>{{q.nom}}</td>
+        <td>{{q.nbQuestion}}</td>
+        <td>{{q.scoreReussite}}</td>
+        <td>{{q.formateur.nom}}</td>
+        <td>{{q.formation.libForm}}</td>
+        <td><button class="class1" (click)="afficherQuiz(q.idQuiz,q.nbQuestion)">Afficher</button></td>
+    </tr>
+
+</table>
+<hr>
+<h3> Ajouter un quiz</h3>
+<hr>
+<form (ngSubmit)="AjouterQuiz()">
+
+    Nom quiz<input type="text" name="nom" placeholder="nom" [(ngModel)]="quiz.nom">
+    Formation
+    <select class="class2" name="selectedFormation" [(ngModel)]="selectedFormation">
+        <option *ngFor="let f of formations" [ngValue]="f">
+            {{f.libForm}} {{f.description}}
+        </option>
+    </select>
+
+    <button class="class1" type="submit">Ajouter</button>
+
+</form>
+
+
+
+</html>

@@ -55,6 +55,9 @@ import { ListeContactsComponent } from './liste-contacts/liste-contacts.componen
 import { PageFormateurComponent } from './page-formateur/page-formateur.component';
 import { PageParticipantComponent } from './page-participant/page-participant.component';
 import { AboutComponent } from './about/about.component';
+import { AddQuizComponent } from './add-quiz/add-quiz.component';
+import { AfficherQuizComponent } from './afficher-quiz/afficher-quiz.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 
 
@@ -118,7 +121,10 @@ const routes: Routes = [
   { path: 'listeContacts', component: ListeContactsComponent },
   { path: 'pageFormateur', component: PageFormateurComponent },
   { path: 'pageParticipant', component: PageParticipantComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'ajouterQuiz', component: AddQuizComponent },
+  { path: 'afficherQuiz/:idQuiz', component: AfficherQuizComponent },
+  { path: 'ajouterQuestion/:idQuiz', component: AddQuestionComponent }
 
 
 ];

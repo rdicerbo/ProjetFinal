@@ -11,4 +11,5 @@ public interface IquestionService {
 	public List<Question> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Question q); 
+	public List<Question> findByQuiz_idQuiz(int id);
 }

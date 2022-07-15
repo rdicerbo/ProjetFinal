@@ -27,9 +27,9 @@ export class ModifFormateursComponent implements OnInit {
     this.roleA = JSON.parse(sessionStorage['roleA']);
     this.roleP = JSON.parse(sessionStorage['roleP']);
     this.roleAdmin = JSON.parse(sessionStorage['roleAdmin']);
-    this.formateur = new Formateur
     this.chargerFormateur();
   }
+
 
   //Methode chargerFormations
   chargerFormateur() {

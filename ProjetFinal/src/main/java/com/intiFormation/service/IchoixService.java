@@ -11,5 +11,6 @@ public interface IchoixService {
 	public List<Choix> chercherTt(); 
 	public void supprimer(int id); 
 	public void modifier(Choix c); 
+	public List<Choix> findByQuestion_idQuestion(int id);
 
 }

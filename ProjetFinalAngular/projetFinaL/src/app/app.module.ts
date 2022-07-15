@@ -64,6 +64,9 @@ import { HeaderCommerciauxComponent } from './header-commerciaux/header-commerci
 import { HeaderFormateurComponent } from './header-formateur/header-formateur.component';
 import { HeaderParticipantComponent } from './header-participant/header-participant.component';
 import { AboutComponent } from './about/about.component';
+import { AddQuizComponent } from './add-quiz/add-quiz.component';
+import { AfficherQuizComponent } from './afficher-quiz/afficher-quiz.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +126,10 @@ import { AboutComponent } from './about/about.component';
     HeaderCommerciauxComponent,
     HeaderFormateurComponent,
     HeaderParticipantComponent,
-    AboutComponent
+    AboutComponent,
+    AddQuizComponent,
+    AfficherQuizComponent,
+    AddQuestionComponent
 
 
   ],

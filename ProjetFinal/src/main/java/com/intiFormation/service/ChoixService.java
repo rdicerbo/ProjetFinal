@@ -43,4 +43,10 @@ public class ChoixService implements IchoixService {
 		cdao.save(c); 
 	}
 
+	@Override
+	public List<Choix> findByQuestion_idQuestion(int id) {
+		
+		return findByQuestion_idQuestion(id);
+	}
+
 }

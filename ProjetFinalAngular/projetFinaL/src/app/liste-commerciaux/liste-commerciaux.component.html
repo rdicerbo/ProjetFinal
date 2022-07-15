@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -10,43 +9,43 @@
     <app-header></app-header>
     <div class="main">
 
-<h1> Liste Commerciaux</h1>
+        <h1> Liste Commerciaux</h1>
 
 
-<table class="center">
-    <tr>
-        <td style="background-color: rgb(127, 203, 144)">Id Commercial</td>
-        <td style="background-color: rgb(127, 203, 144)">Mail</td>
-        <td style="background-color: rgb(127, 203, 144)">Nom Commercial</td>
-        <td style="background-color: rgb(127, 203, 144)">Prenom Commercial</td>
+        <table class="center">
+            <tr>
+                <td style="background-color: rgb(127, 203, 144)">Id Commercial</td>
+                <td style="background-color: rgb(127, 203, 144)">Mail</td>
+                <td style="background-color: rgb(127, 203, 144)">Nom Commercial</td>
+                <td style="background-color: rgb(127, 203, 144)">Prenom Commercial</td>
 
-        <td style="background-color: rgb(127, 203, 144)">Action1</td>
-        <td style="background-color: rgb(127, 203, 144)">Action2</td>
-        <td style="background-color: rgb(127, 203, 144)">Action3</td>
-
-
-    </tr>
-
-    <tr *ngFor="let c of commerciaux">
-        <td>{{c.id}}</td>
-        <td>{{c.mail}}</td>
-        <td>{{c.nom}}</td>
-        <td>{{c.prenom}}</td>
-
-        <td><button (click)="supprimer(c.id)">Supprimer</button></td>
-        <td><button (click)="modifier(c.id)">Modifier</button></td>
-        <td><button (click)="afficher(c.id)">Contacts</button></td>
+                <td style="background-color: rgb(127, 203, 144)">Supprimer</td>
+                <td style="background-color: rgb(127, 203, 144)">Modifier</td>
+                <td style="background-color: rgb(127, 203, 144)">Contacts</td>
 
 
+            </tr>
 
+            <tr *ngFor="let c of commerciaux">
+                <td>{{c.id}}</td>
+                <td>{{c.mail}}</td>
+                <td>{{c.nom}}</td>
+                <td>{{c.prenom}}</td>
 
-    </tr>
-
-</table>
+                <td><button (click)="supprimer(c.id)">Supprimer</button></td>
+                <td><button (click)="modifier(c.id)">Modifier</button></td>
+                <td><button (click)="afficher(c.id)">Contacts</button></td>
 
 
 
-</div>
+
+            </tr>
+
+        </table>
+
+
+
+    </div>
 
 </body>
 
